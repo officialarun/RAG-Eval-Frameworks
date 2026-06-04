@@ -1,0 +1,50 @@
+{
+    "total_questions": 20,
+    "avg_embedding_score": 0.6356,
+    "avg_llm_score": 0.74,
+    "retrieval_success_rate": 0.0,
+    "best_questions": [
+        {
+            "question": "Why are transformers efficient?",
+            "llm_score": 1.0
+        },
+        {
+            "question": "What mechanism powers transformers?",
+            "llm_score": 1.0
+        },
+        {
+            "question": "Who proposed the original transformer architecture?",
+            "llm_score": 1.0
+        },
+        {
+            "question": "What can modern transformer systems do to eliminate the need for learning-rate warm-up?",
+            "llm_score": 1.0
+        },
+        {
+            "question": "What style of kernels are used in modern transformer systems?",
+            "llm_score": 1.0
+        }
+    ],
+    "worst_questions": [
+        {
+            "question": "What is a transformer?",
+            "llm_score": 0.0
+        },
+        {
+            "question": "What is the first step in processing inputs in a transformer?",
+            "llm_score": 0.0
+        },
+        {
+            "question": "What mechanism is used to mix information across positions?",
+            "llm_score": 0.0
+        },
+        {
+            "question": "What is a key component of modern transformer systems?",
+            "llm_score": 0.6
+        },
+        {
+            "question": "Why were previous models difficult to scale?",
+            "llm_score": 0.6
+        }
+    ]
+}

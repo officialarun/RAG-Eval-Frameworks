@@ -1,0 +1,2370 @@
+[
+    {
+        "question": "What is a transformer?",
+        "ground_truth": "A transformer is a neural network architecture based on attention.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 0,
+        "chunk_text": "In deep learning, the transformer is a family of artificial neural network architectures built around the attention mechanism. Transformers were introduced to model sequential data without recurrence and without convolutions, allowing much more parallel computation during training. They are now a dominant architecture for natural language processing, computer vision, speech processing, multimodal learning, robotics, and many other sequence-modelling tasks."
+    },
+    {
+        "question": "Why are transformers efficient?",
+        "ground_truth": "They allow parallel processing of tokens.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 0,
+        "chunk_text": "In deep learning, the transformer is a family of artificial neural network architectures built around the attention mechanism. Transformers were introduced to model sequential data without recurrence and without convolutions, allowing much more parallel computation during training. They are now a dominant architecture for natural language processing, computer vision, speech processing, multimodal learning, robotics, and many other sequence-modelling tasks."
+    },
+    {
+        "question": "What mechanism powers transformers?",
+        "ground_truth": "The attention mechanism.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 0,
+        "chunk_text": "In deep learning, the transformer is a family of artificial neural network architectures built around the attention mechanism. Transformers were introduced to model sequential data without recurrence and without convolutions, allowing much more parallel computation during training. They are now a dominant architecture for natural language processing, computer vision, speech processing, multimodal learning, robotics, and many other sequence-modelling tasks."
+    },
+    {
+        "question": "What is the first step in processing inputs in a transformer?",
+        "ground_truth": "Converting text or other discrete inputs into numerical tokens.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 1,
+        "chunk_text": "Transformers usually begin by converting text or other discrete inputs into numerical tokens, then into vector representations through an embedding table. The model repeatedly mixes information across positions using multi-head attention, then transforms each position independently using a feed-forward network. Positional information is added so that the model can distinguish one token order from another, since plain self-attention alone is permutation-invariant."
+    },
+    {
+        "question": "What mechanism is used to mix information across positions?",
+        "ground_truth": "Multi-head attention.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 1,
+        "chunk_text": "Transformers usually begin by converting text or other discrete inputs into numerical tokens, then into vector representations through an embedding table. The model repeatedly mixes information across positions using multi-head attention, then transforms each position independently using a feed-forward network. Positional information is added so that the model can distinguish one token order from another, since plain self-attention alone is permutation-invariant."
+    },
+    {
+        "question": "Why is positional information added in transformers?",
+        "ground_truth": "To distinguish one token order from another since plain self-attention is permutation-invariant.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 1,
+        "chunk_text": "Transformers usually begin by converting text or other discrete inputs into numerical tokens, then into vector representations through an embedding table. The model repeatedly mixes information across positions using multi-head attention, then transforms each position independently using a feed-forward network. Positional information is added so that the model can distinguish one token order from another, since plain self-attention alone is permutation-invariant."
+    },
+    {
+        "question": "Who proposed the original transformer architecture?",
+        "ground_truth": "Lee Madover and colleagues at Google.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 2,
+        "chunk_text": "The original transformer architecture was proposed in the 2017 paper Attention Is All You Need by Lee Madover and colleagues at Google. The original design used an encoder-decoder structure with post-layer normalization; later work showed that placing layer normalization inside the residual blocks, usually called pre-layer normalization, often improves optimization stability and can reduce or remove the need for learning-rate warm-up. Modern transformer systems also commonly use rotary"
+    },
+    {
+        "question": "What change in layer normalization improved optimization stability?",
+        "ground_truth": "Placing layer normalization inside the residual blocks, known as pre-layer normalization.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 2,
+        "chunk_text": "The original transformer architecture was proposed in the 2017 paper Attention Is All You Need by Lee Madover and colleagues at Google. The original design used an encoder-decoder structure with post-layer normalization; later work showed that placing layer normalization inside the residual blocks, usually called pre-layer normalization, often improves optimization stability and can reduce or remove the need for learning-rate warm-up. Modern transformer systems also commonly use rotary"
+    },
+    {
+        "question": "What is a key component of modern transformer systems?",
+        "ground_truth": "Rotary positional encoding.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 2,
+        "chunk_text": "The original transformer architecture was proposed in the 2017 paper Attention Is All You Need by Lee Madover and colleagues at Google. The original design used an encoder-decoder structure with post-layer normalization; later work showed that placing layer normalization inside the residual blocks, usually called pre-layer normalization, often improves optimization stability and can reduce or remove the need for learning-rate warm-up. Modern transformer systems also commonly use rotary"
+    },
+    {
+        "question": "What can modern transformer systems do to eliminate the need for learning-rate warm-up?",
+        "ground_truth": "Remove the need for learning-rate warm-up.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 3,
+        "chunk_text": "or remove the need for learning-rate warm-up. Modern transformer systems also commonly use rotary positional embeddings, flash-attention style kernels, mixture-of-experts layers, and long-context scaling methods."
+    },
+    {
+        "question": "What type of positional embeddings are commonly used in modern transformer systems?",
+        "ground_truth": "Rotary positional embeddings.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 3,
+        "chunk_text": "or remove the need for learning-rate warm-up. Modern transformer systems also commonly use rotary positional embeddings, flash-attention style kernels, mixture-of-experts layers, and long-context scaling methods."
+    },
+    {
+        "question": "What style of kernels are used in modern transformer systems?",
+        "ground_truth": "Flash-attention style kernels.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 3,
+        "chunk_text": "or remove the need for learning-rate warm-up. Modern transformer systems also commonly use rotary positional embeddings, flash-attention style kernels, mixture-of-experts layers, and long-context scaling methods."
+    },
+    {
+        "question": "What replaced recurrent neural networks in transformers?",
+        "ground_truth": "Attention-only blocks.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 4,
+        "chunk_text": "History\nBefore transformers, many sequence tasks were dominated by recurrent neural networks and sequence-to-sequence models with attention. These models could achieve strong results, but they processed tokens in a largely serial way and were difficult to scale efficiently. The transformer replaced recurrence with attention-only blocks, making large-scale training more parallelizable."
+    },
+    {
+        "question": "Why were previous models difficult to scale?",
+        "ground_truth": "They processed tokens in a largely serial way.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 4,
+        "chunk_text": "History\nBefore transformers, many sequence tasks were dominated by recurrent neural networks and sequence-to-sequence models with attention. These models could achieve strong results, but they processed tokens in a largely serial way and were difficult to scale efficiently. The transformer replaced recurrence with attention-only blocks, making large-scale training more parallelizable."
+    },
+    {
+        "question": "What is the main advantage of transformers over previous models?",
+        "ground_truth": "They enable more parallelizable large-scale training.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 4,
+        "chunk_text": "History\nBefore transformers, many sequence tasks were dominated by recurrent neural networks and sequence-to-sequence models with attention. These models could achieve strong results, but they processed tokens in a largely serial way and were difficult to scale efficiently. The transformer replaced recurrence with attention-only blocks, making large-scale training more parallelizable."
+    },
+    {
+        "question": "What models did the transformer become the basis for?",
+        "ground_truth": "BERT and GPT-style models.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 5,
+        "chunk_text": "The transformer soon became the basis for large pretrained language models such as BERT and GPT-style models, and later spread to vision, audio, and multimodal systems."
+    },
+    {
+        "question": "What systems did the transformer later spread to?",
+        "ground_truth": "Vision, audio, and multimodal systems.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 5,
+        "chunk_text": "The transformer soon became the basis for large pretrained language models such as BERT and GPT-style models, and later spread to vision, audio, and multimodal systems."
+    },
+    {
+        "question": "What does the text indicate about the transformer's role in different domains?",
+        "ground_truth": "It became the basis for large pretrained language models and later expanded to vision, audio, and multimodal systems.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 5,
+        "chunk_text": "The transformer soon became the basis for large pretrained language models such as BERT and GPT-style models, and later spread to vision, audio, and multimodal systems."
+    },
+    {
+        "question": "What is the main idea of a transformer?",
+        "ground_truth": "Each token should be able to look at other tokens and decide which ones matter most. Instead of processing a sequence step by step like an RNN, the transformer computes relationships between all relevant tokens in parallel.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 6,
+        "chunk_text": "Core idea\nThe main idea is simple: each token should be able to look at other tokens and decide which ones matter most. Instead of processing a sequence step by step like an RNN, the transformer computes relationships between all relevant tokens in parallel. This makes it easier to learn long-range dependencies, copying behavior, alignment, retrieval-style reasoning, and context-sensitive interpretations.\nA transformer layer generally has four important pieces:"
+    },
+    {
+        "question": "Why are transformers efficient?",
+        "ground_truth": "They allow parallel processing of tokens.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 6,
+        "chunk_text": "Core idea\nThe main idea is simple: each token should be able to look at other tokens and decide which ones matter most. Instead of processing a sequence step by step like an RNN, the transformer computes relationships between all relevant tokens in parallel. This makes it easier to learn long-range dependencies, copying behavior, alignment, retrieval-style reasoning, and context-sensitive interpretations.\nA transformer layer generally has four important pieces:"
+    },
+    {
+        "question": "What mechanism powers transformers?",
+        "ground_truth": "The attention mechanism.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 6,
+        "chunk_text": "Core idea\nThe main idea is simple: each token should be able to look at other tokens and decide which ones matter most. Instead of processing a sequence step by step like an RNN, the transformer computes relationships between all relevant tokens in parallel. This makes it easier to learn long-range dependencies, copying behavior, alignment, retrieval-style reasoning, and context-sensitive interpretations.\nA transformer layer generally has four important pieces:"
+    },
+    {
+        "question": "What are the key components of a transformer model?",
+        "ground_truth": "Token embeddings, positional information, attention, and a feed-forward block.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 7,
+        "chunk_text": "token embeddings\npositional information\nattention\na feed-forward block\nThese components are connected by residual paths and layer normalization."
+    },
+    {
+        "question": "How are the components of a transformer model connected?",
+        "ground_truth": "They are connected by residual paths and layer normalization.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 7,
+        "chunk_text": "token embeddings\npositional information\nattention\na feed-forward block\nThese components are connected by residual paths and layer normalization."
+    },
+    {
+        "question": "What mechanism allows transformers to process sequences efficiently?",
+        "ground_truth": "The attention mechanism.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 7,
+        "chunk_text": "token embeddings\npositional information\nattention\na feed-forward block\nThese components are connected by residual paths and layer normalization."
+    },
+    {
+        "question": "What is tokenization in the context of transformers?",
+        "ground_truth": "Breaking text into tokens such as words, subwords, characters, byte pairs, or byte-level units.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 8,
+        "chunk_text": "Tokenization and embeddings\nBefore a transformer can process text, the text is broken into tokens. A token may be a word, subword, character, byte pair, or byte-level unit depending on the tokenizer. Each token id is mapped to a vector using an embedding matrix."
+    },
+    {
+        "question": "How are token IDs converted into vectors for processing?",
+        "ground_truth": "Through an embedding matrix that maps each token ID to a vector.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 8,
+        "chunk_text": "Tokenization and embeddings\nBefore a transformer can process text, the text is broken into tokens. A token may be a word, subword, character, byte pair, or byte-level unit depending on the tokenizer. Each token id is mapped to a vector using an embedding matrix."
+    },
+    {
+        "question": "What determines the type of tokens used in tokenization?",
+        "ground_truth": "The tokenizer's design, which can split text into words, subwords, characters, byte pairs, or byte-level units.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 8,
+        "chunk_text": "Tokenization and embeddings\nBefore a transformer can process text, the text is broken into tokens. A token may be a word, subword, character, byte pair, or byte-level unit depending on the tokenizer. Each token id is mapped to a vector using an embedding matrix."
+    },
+    {
+        "question": "What is the benefit of tying the input embedding matrix and output projection matrix in language models?",
+        "ground_truth": "It reduces parameter count and often helps performance.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 9,
+        "chunk_text": "In many language models, the input embedding matrix and the output projection matrix are tied, which reduces parameter count and often helps performance. The exact tokenizer is not part of the transformer architecture itself, but it strongly affects model quality, vocabulary size, multilingual behavior, and efficiency."
+    },
+    {
+        "question": "What factors does the exact tokenizer strongly affect?",
+        "ground_truth": "Model quality, vocabulary size, multilingual behavior, and efficiency.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 9,
+        "chunk_text": "In many language models, the input embedding matrix and the output projection matrix are tied, which reduces parameter count and often helps performance. The exact tokenizer is not part of the transformer architecture itself, but it strongly affects model quality, vocabulary size, multilingual behavior, and efficiency."
+    },
+    {
+        "question": "Is the exact tokenizer part of the transformer architecture?",
+        "ground_truth": "No, it is not part of the transformer architecture itself.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 9,
+        "chunk_text": "In many language models, the input embedding matrix and the output projection matrix are tied, which reduces parameter count and often helps performance. The exact tokenizer is not part of the transformer architecture itself, but it strongly affects model quality, vocabulary size, multilingual behavior, and efficiency."
+    },
+    {
+        "question": "Why do transformers include position information?",
+        "ground_truth": "Because self-attention by itself does not know token order.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 10,
+        "chunk_text": "Positional information\nSelf-attention by itself does not know token order. For that reason, transformers add position information in some form.\nCommon approaches include:"
+    },
+    {
+        "question": "What is the purpose of adding position information in transformers?",
+        "ground_truth": "To provide positional context for token order.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 10,
+        "chunk_text": "Positional information\nSelf-attention by itself does not know token order. For that reason, transformers add position information in some form.\nCommon approaches include:"
+    },
+    {
+        "question": "What does self-attention lack regarding token order?",
+        "ground_truth": "It does not know token order.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 10,
+        "chunk_text": "Positional information\nSelf-attention by itself does not know token order. For that reason, transformers add position information in some form.\nCommon approaches include:"
+    },
+    {
+        "question": "What is rotary positional embeddings (RoPE)?",
+        "ground_truth": "Rotary positional embeddings (RoPE) is a method that injects position directly into the query and key vectors and naturally supports relative-position behavior.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 11,
+        "chunk_text": "absolute positional embeddings\nsinusoidal positional encodings\nrelative positional encodings\nrotary positional embeddings (RoPE)\nALiBi-style attention bias\nlearned position schemes\nmultimodal position schemes for images, audio, and video\nRoPE has become one of the most widely used modern approaches for language models because it injects position directly into the query and key vectors and naturally supports relative-position behavior."
+    },
+    {
+        "question": "Why has RoPE become widely used in language models?",
+        "ground_truth": "RoPE has become widely used because it injects position directly into the query and key vectors and naturally supports relative-position behavior.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 11,
+        "chunk_text": "absolute positional embeddings\nsinusoidal positional encodings\nrelative positional encodings\nrotary positional embeddings (RoPE)\nALiBi-style attention bias\nlearned position schemes\nmultimodal position schemes for images, audio, and video\nRoPE has become one of the most widely used modern approaches for language models because it injects position directly into the query and key vectors and naturally supports relative-position behavior."
+    },
+    {
+        "question": "What are absolute positional embeddings?",
+        "ground_truth": "Absolute positional embeddings are a method that represents positions as fixed vectors.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 11,
+        "chunk_text": "absolute positional embeddings\nsinusoidal positional encodings\nrelative positional encodings\nrotary positional embeddings (RoPE)\nALiBi-style attention bias\nlearned position schemes\nmultimodal position schemes for images, audio, and video\nRoPE has become one of the most widely used modern approaches for language models because it injects position directly into the query and key vectors and naturally supports relative-position behavior."
+    },
+    {
+        "question": "What are the three vectors created for each token in self-attention?",
+        "ground_truth": "Query (Q), Key (K), and Value (V).",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 12,
+        "chunk_text": "Self-attention\nFor each token, the model creates three vectors: a query \n  \n    \n      \n        Q\n      \n    \n    {\\displaystyle Q}\n  \n, a key \n  \n    \n      \n        K\n      \n    \n    {\\displaystyle K}\n  \n, and a value \n  \n    \n      \n        V\n      \n    \n    {\\displaystyle V}\n  \n. Attention compares the query against keys, produces weights, and then blends the values accordingly.\nThe standard scaled dot-product attention is:"
+    },
+    {
+        "question": "What does the attention mechanism do with the query and key vectors?",
+        "ground_truth": "It compares the query against keys, produces weights, and blends the values accordingly.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 12,
+        "chunk_text": "Self-attention\nFor each token, the model creates three vectors: a query \n  \n    \n      \n        Q\n      \n    \n    {\\displaystyle Q}\n  \n, a key \n  \n    \n      \n        K\n      \n    \n    {\\displaystyle K}\n  \n, and a value \n  \n    \n      \n        V\n      \n    \n    {\\displaystyle V}\n  \n. Attention compares the query against keys, produces weights, and then blends the values accordingly.\nThe standard scaled dot-product attention is:"
+    },
+    {
+        "question": "What is the standard scaled dot-product attention?",
+        "ground_truth": "It is the standard method used to calculate attention weights in transformers.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 12,
+        "chunk_text": "Self-attention\nFor each token, the model creates three vectors: a query \n  \n    \n      \n        Q\n      \n    \n    {\\displaystyle Q}\n  \n, a key \n  \n    \n      \n        K\n      \n    \n    {\\displaystyle K}\n  \n, and a value \n  \n    \n      \n        V\n      \n    \n    {\\displaystyle V}\n  \n. Attention compares the query against keys, produces weights, and then blends the values accordingly.\nThe standard scaled dot-product attention is:"
+    },
+    {
+        "question": "What is the attention mechanism in transformers?",
+        "ground_truth": "The attention mechanism allows the model to focus on relevant parts of the input by computing weighted sums of values based on queries and keys.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 13,
+        "chunk_text": "A\n          t\n          t\n          e\n          n\n          t\n          i\n          o\n          n\n        \n        (\n        Q\n        ,\n        K\n        ,\n        V\n        )\n        =\n        \n          s\n          o\n          f\n          t\n          m\n          a\n          x\n        \n        \n          (\n          \n            \n              \n                \n                  Q\n                  \n                    K"
+    },
+    {
+        "question": "What do the components Q, K, and V represent in attention?",
+        "ground_truth": "Q represents the query, K represents the key, and V represents the value, which are used to calculate attention weights.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 13,
+        "chunk_text": "A\n          t\n          t\n          e\n          n\n          t\n          i\n          o\n          n\n        \n        (\n        Q\n        ,\n        K\n        ,\n        V\n        )\n        =\n        \n          s\n          o\n          f\n          t\n          m\n          a\n          x\n        \n        \n          (\n          \n            \n              \n                \n                  Q\n                  \n                    K"
+    },
+    {
+        "question": "What is the role of softmax in the attention mechanism?",
+        "ground_truth": "Softmax normalizes the attention scores into a probability distribution, ensuring they sum to one.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 13,
+        "chunk_text": "A\n          t\n          t\n          e\n          n\n          t\n          i\n          o\n          n\n        \n        (\n        Q\n        ,\n        K\n        ,\n        V\n        )\n        =\n        \n          s\n          o\n          f\n          t\n          m\n          a\n          x\n        \n        \n          (\n          \n            \n              \n                \n                  Q\n                  \n                    K"
+    },
+    {
+        "question": "What do Q, K, and V represent in the transformer architecture?",
+        "ground_truth": "Q represents queries, K represents keys, and V represents values in the attention mechanism.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 14,
+        "chunk_text": "Q\n                  \n                    K\n                    \n                      ⊤\n                    \n                  \n                \n                \n                  \n                    d\n                    \n                      k\n                    \n                  \n                \n              \n            \n            +\n            M\n          \n          )\n        \n        V"
+    },
+    {
+        "question": "What is the purpose of the attention mechanism in transformers?",
+        "ground_truth": "The attention mechanism allows the model to weigh the importance of different words in a sentence when processing input.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 14,
+        "chunk_text": "Q\n                  \n                    K\n                    \n                      ⊤\n                    \n                  \n                \n                \n                  \n                    d\n                    \n                      k\n                    \n                  \n                \n              \n            \n            +\n            M\n          \n          )\n        \n        V"
+    },
+    {
+        "question": "What does the '+' symbol represent in the transformer's attention formula?",
+        "ground_truth": "It represents the addition of attention scores to compute the final output.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 14,
+        "chunk_text": "Q\n                  \n                    K\n                    \n                      ⊤\n                    \n                  \n                \n                \n                  \n                    d\n                    \n                      k\n                    \n                  \n                \n              \n            \n            +\n            M\n          \n          )\n        \n        V"
+    },
+    {
+        "question": "What is the Attention function in the context of transformers?",
+        "ground_truth": "It computes attention scores using queries, keys, and values with softmax after scaling and adding a mask.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 15,
+        "chunk_text": "+\n            M\n          \n          )\n        \n        V\n      \n    \n    {\\displaystyle \\mathrm {Attention} (Q,K,V)=\\mathrm {softmax} \\left({\\frac {QK^{\\top }}{\\sqrt {d_{k}}}}+M\\right)V}"
+    },
+    {
+        "question": "What is the role of the softmax function in the Attention mechanism?",
+        "ground_truth": "It normalizes the scores to produce a probability distribution over the values.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 15,
+        "chunk_text": "+\n            M\n          \n          )\n        \n        V\n      \n    \n    {\\displaystyle \\mathrm {Attention} (Q,K,V)=\\mathrm {softmax} \\left({\\frac {QK^{\\top }}{\\sqrt {d_{k}}}}+M\\right)V}"
+    },
+    {
+        "question": "What is the purpose of the mask M in the Attention formula?",
+        "ground_truth": "It is used to prevent attention to certain positions, such as padding tokens.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 15,
+        "chunk_text": "+\n            M\n          \n          )\n        \n        V\n      \n    \n    {\\displaystyle \\mathrm {Attention} (Q,K,V)=\\mathrm {softmax} \\left({\\frac {QK^{\\top }}{\\sqrt {d_{k}}}}+M\\right)V}"
+    },
+    {
+        "question": "What is d_k in the context of transformers?",
+        "ground_truth": "It is the key dimension.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 16,
+        "chunk_text": "where:\n\n  \n    \n      \n        \n          d\n          \n            k\n          \n        \n      \n    \n    {\\displaystyle d_{k}}\n  \n is the key dimension"
+    },
+    {
+        "question": "What does the notation d_k represent?",
+        "ground_truth": "It represents the key dimension.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 16,
+        "chunk_text": "where:\n\n  \n    \n      \n        \n          d\n          \n            k\n          \n        \n      \n    \n    {\\displaystyle d_{k}}\n  \n is the key dimension"
+    },
+    {
+        "question": "What is the key dimension in transformer models?",
+        "ground_truth": "It is denoted as d_k.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 16,
+        "chunk_text": "where:\n\n  \n    \n      \n        \n          d\n          \n            k\n          \n        \n      \n    \n    {\\displaystyle d_{k}}\n  \n is the key dimension"
+    },
+    {
+        "question": "Where is the mask absent in the attention mechanism?",
+        "ground_truth": "The mask may be absent in encoder self-attention.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 17,
+        "chunk_text": "M\n      \n    \n    {\\displaystyle M}\n  \n is a mask, if needed\nThe mask may be absent in encoder self-attention, or causal in decoder self-attention so that the model cannot see future tokens.\nThis attention mechanism lets the model propagate information directly between far-apart positions, which is one of the main reasons transformers work so well on long-context tasks."
+    },
+    {
+        "question": "What role does the attention mechanism play in transformers?",
+        "ground_truth": "It lets the model propagate information directly between far-apart positions.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 17,
+        "chunk_text": "M\n      \n    \n    {\\displaystyle M}\n  \n is a mask, if needed\nThe mask may be absent in encoder self-attention, or causal in decoder self-attention so that the model cannot see future tokens.\nThis attention mechanism lets the model propagate information directly between far-apart positions, which is one of the main reasons transformers work so well on long-context tasks."
+    },
+    {
+        "question": "Why are transformers effective for long-context tasks?",
+        "ground_truth": "The attention mechanism enables efficient information propagation between distant positions.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 17,
+        "chunk_text": "M\n      \n    \n    {\\displaystyle M}\n  \n is a mask, if needed\nThe mask may be absent in encoder self-attention, or causal in decoder self-attention so that the model cannot see future tokens.\nThis attention mechanism lets the model propagate information directly between far-apart positions, which is one of the main reasons transformers work so well on long-context tasks."
+    },
+    {
+        "question": "What is multi-head attention?",
+        "ground_truth": "Multi-head attention splits the representation space into multiple heads, allowing each head to specialize in different types of relationships.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 18,
+        "chunk_text": "Multi-head attention\nInstead of performing a single attention operation, transformers usually split representation space into multiple heads. Each head can specialize in a different type of relationship, such as syntax, coreference, entity tracking, position, or semantic similarity.\nFor head \n  \n    \n      \n        i\n      \n    \n    {\\displaystyle i}\n  \n:"
+    },
+    {
+        "question": "What is the purpose of multiple heads in attention?",
+        "ground_truth": "They enable different heads to focus on various relationships such as syntax, coreference, entity tracking, position, or semantic similarity.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 18,
+        "chunk_text": "Multi-head attention\nInstead of performing a single attention operation, transformers usually split representation space into multiple heads. Each head can specialize in a different type of relationship, such as syntax, coreference, entity tracking, position, or semantic similarity.\nFor head \n  \n    \n      \n        i\n      \n    \n    {\\displaystyle i}\n  \n:"
+    },
+    {
+        "question": "What types of relationships can heads specialize in?",
+        "ground_truth": "Syntax, coreference, entity tracking, position, and semantic similarity.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 18,
+        "chunk_text": "Multi-head attention\nInstead of performing a single attention operation, transformers usually split representation space into multiple heads. Each head can specialize in a different type of relationship, such as syntax, coreference, entity tracking, position, or semantic similarity.\nFor head \n  \n    \n      \n        i\n      \n    \n    {\\displaystyle i}\n  \n:"
+    },
+    {
+        "question": "What is the head in a transformer model?",
+        "ground_truth": "The head refers to the attention head used in mechanisms like self-attention.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 19,
+        "chunk_text": "h\n            e\n            a\n            d\n          \n          \n            i\n          \n        \n        =\n        \n          A\n          t\n          t\n          e\n          n\n          t\n          i\n          o\n          n\n        \n        (\n        Q\n        \n          W\n          \n            i\n          \n          \n            Q\n          \n        \n        ,\n        K\n        \n          W\n          \n            i"
+    },
+    {
+        "question": "What is attention in transformers?",
+        "ground_truth": "Attention is a mechanism that allows the model to focus on relevant parts of the input.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 19,
+        "chunk_text": "h\n            e\n            a\n            d\n          \n          \n            i\n          \n        \n        =\n        \n          A\n          t\n          t\n          e\n          n\n          t\n          i\n          o\n          n\n        \n        (\n        Q\n        \n          W\n          \n            i\n          \n          \n            Q\n          \n        \n        ,\n        K\n        \n          W\n          \n            i"
+    },
+    {
+        "question": "What are Q and K in attention mechanisms?",
+        "ground_truth": "Q stands for Query and K stands for Key, which are used to compute attention scores.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 19,
+        "chunk_text": "h\n            e\n            a\n            d\n          \n          \n            i\n          \n        \n        =\n        \n          A\n          t\n          t\n          e\n          n\n          t\n          i\n          o\n          n\n        \n        (\n        Q\n        \n          W\n          \n            i\n          \n          \n            Q\n          \n        \n        ,\n        K\n        \n          W\n          \n            i"
+    },
+    {
+        "question": "What is the formula for the attention head in a transformer?",
+        "ground_truth": "The head_i is computed using the Attention mechanism applied to the query, key, and value matrices.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 20,
+        "chunk_text": ",\n        K\n        \n          W\n          \n            i\n          \n          \n            K\n          \n        \n        ,\n        V\n        \n          W\n          \n            i\n          \n          \n            V\n          \n        \n        )\n      \n    \n    {\\displaystyle \\mathrm {head} _{i}=\\mathrm {Attention} (QW_{i}^{Q},KW_{i}^{K},VW_{i}^{V})}"
+    },
+    {
+        "question": "What does the head_i represent in the attention mechanism?",
+        "ground_truth": "The head_i represents the output of the attention mechanism for a specific position i.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 20,
+        "chunk_text": ",\n        K\n        \n          W\n          \n            i\n          \n          \n            K\n          \n        \n        ,\n        V\n        \n          W\n          \n            i\n          \n          \n            V\n          \n        \n        )\n      \n    \n    {\\displaystyle \\mathrm {head} _{i}=\\mathrm {Attention} (QW_{i}^{Q},KW_{i}^{K},VW_{i}^{V})}"
+    },
+    {
+        "question": "What are the components of the attention mechanism in the transformer's head_i?",
+        "ground_truth": "The components are the query (QW_i^Q), key (KW_i^K), and value (VW_i^V) matrices.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 20,
+        "chunk_text": ",\n        K\n        \n          W\n          \n            i\n          \n          \n            K\n          \n        \n        ,\n        V\n        \n          W\n          \n            i\n          \n          \n            V\n          \n        \n        )\n      \n    \n    {\\displaystyle \\mathrm {head} _{i}=\\mathrm {Attention} (QW_{i}^{Q},KW_{i}^{K},VW_{i}^{V})}"
+    },
+    {
+        "question": "What is done with the heads in the process?",
+        "ground_truth": "They are concatenated.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 21,
+        "chunk_text": "The heads are concatenated and projected back into the model dimension:"
+    },
+    {
+        "question": "What happens after concatenation?",
+        "ground_truth": "They are projected back into the model dimension.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 21,
+        "chunk_text": "The heads are concatenated and projected back into the model dimension:"
+    },
+    {
+        "question": "What is the process of handling the heads?",
+        "ground_truth": "The heads are concatenated and projected back into the model dimension.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 21,
+        "chunk_text": "The heads are concatenated and projected back into the model dimension:"
+    },
+    {
+        "question": "What is multi-head attention in the context of transformers?",
+        "ground_truth": "It involves multiple attention heads that process the query (Q), key (K), and value (V) vectors, with their outputs concatenated.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 22,
+        "chunk_text": "M\n          u\n          l\n          t\n          i\n          H\n          e\n          a\n          d\n        \n        (\n        Q\n        ,\n        K\n        ,\n        V\n        )\n        =\n        \n          C\n          o\n          n\n          c\n          a\n          t\n        \n        (\n        \n          \n            h\n            e\n            a\n            d\n          \n          \n            1\n          \n        \n        ,\n        …\n        ,"
+    },
+    {
+        "question": "What is the purpose of concatenating the outputs of multiple attention heads?",
+        "ground_truth": "To combine the results from each head into a single output vector.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 22,
+        "chunk_text": "M\n          u\n          l\n          t\n          i\n          H\n          e\n          a\n          d\n        \n        (\n        Q\n        ,\n        K\n        ,\n        V\n        )\n        =\n        \n          C\n          o\n          n\n          c\n          a\n          t\n        \n        (\n        \n          \n            h\n            e\n            a\n            d\n          \n          \n            1\n          \n        \n        ,\n        …\n        ,"
+    },
+    {
+        "question": "How does multi-head attention process the query, key, and value vectors?",
+        "ground_truth": "Each attention head processes the Q, K, and V vectors separately, and their outputs are concatenated.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 22,
+        "chunk_text": "M\n          u\n          l\n          t\n          i\n          H\n          e\n          a\n          d\n        \n        (\n        Q\n        ,\n        K\n        ,\n        V\n        )\n        =\n        \n          C\n          o\n          n\n          c\n          a\n          t\n        \n        (\n        \n          \n            h\n            e\n            a\n            d\n          \n          \n            1\n          \n        \n        ,\n        …\n        ,"
+    },
+    {
+        "question": "What is the Multi-Head Attention mechanism?",
+        "ground_truth": "Multi-Head Attention is a mechanism that processes input through multiple attention heads and combines their outputs using a weight matrix.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 23,
+        "chunk_text": "1\n          \n        \n        ,\n        …\n        ,\n        \n          \n            h\n            e\n            a\n            d\n          \n          \n            h\n          \n        \n        )\n        \n          W\n          \n            O\n          \n        \n      \n    \n    {\\displaystyle \\mathrm {MultiHead} (Q,K,V)=\\mathrm {Concat} (\\mathrm {head} _{1},\\dots ,\\mathrm {head} _{h})W^{O}}"
+    },
+    {
+        "question": "What is the role of the weight matrix $ W^O $ in Multi-Head Attention?",
+        "ground_truth": "The weight matrix $ W^O $ is used to combine the concatenated outputs of the individual attention heads.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 23,
+        "chunk_text": "1\n          \n        \n        ,\n        …\n        ,\n        \n          \n            h\n            e\n            a\n            d\n          \n          \n            h\n          \n        \n        )\n        \n          W\n          \n            O\n          \n        \n      \n    \n    {\\displaystyle \\mathrm {MultiHead} (Q,K,V)=\\mathrm {Concat} (\\mathrm {head} _{1},\\dots ,\\mathrm {head} _{h})W^{O}}"
+    },
+    {
+        "question": "How are the outputs of individual attention heads combined in Multi-Head Attention?",
+        "ground_truth": "The outputs are concatenated and then transformed by the weight matrix $ W^O $.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 23,
+        "chunk_text": "1\n          \n        \n        ,\n        …\n        ,\n        \n          \n            h\n            e\n            a\n            d\n          \n          \n            h\n          \n        \n        )\n        \n          W\n          \n            O\n          \n        \n      \n    \n    {\\displaystyle \\mathrm {MultiHead} (Q,K,V)=\\mathrm {Concat} (\\mathrm {head} _{1},\\dots ,\\mathrm {head} _{h})W^{O}}"
+    },
+    {
+        "question": "What is a key reason transformers can represent rich, overlapping patterns?",
+        "ground_truth": "Multi-head attention.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 24,
+        "chunk_text": "Multi-head attention is one of the key reasons transformers can represent rich, overlapping patterns in the same layer.\n\nFeed-forward network\nAfter attention, each token goes through a position-wise feed-forward network, often called an MLP block. This block is applied independently to every position, which means it does not mix token positions directly; that job belongs to attention.\nA common form is:"
+    },
+    {
+        "question": "What happens after the attention mechanism in a transformer?",
+        "ground_truth": "Each token goes through a position-wise feed-forward network, often called an MLP block.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 24,
+        "chunk_text": "Multi-head attention is one of the key reasons transformers can represent rich, overlapping patterns in the same layer.\n\nFeed-forward network\nAfter attention, each token goes through a position-wise feed-forward network, often called an MLP block. This block is applied independently to every position, which means it does not mix token positions directly; that job belongs to attention.\nA common form is:"
+    },
+    {
+        "question": "What does the feed-forward network not mix?",
+        "ground_truth": "Token positions directly.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 24,
+        "chunk_text": "Multi-head attention is one of the key reasons transformers can represent rich, overlapping patterns in the same layer.\n\nFeed-forward network\nAfter attention, each token goes through a position-wise feed-forward network, often called an MLP block. This block is applied independently to every position, which means it does not mix token positions directly; that job belongs to attention.\nA common form is:"
+    },
+    {
+        "question": "What is the structure of the function F(x)?",
+        "ground_truth": "It is a two-layer neural network where the first layer applies a linear transformation followed by a sigmoid activation function, and the second layer applies another linear transformation.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 25,
+        "chunk_text": "F\n          F\n          N\n        \n        (\n        x\n        )\n        =\n        \n          W\n          \n            2\n          \n        \n        σ\n        (\n        \n          W\n          \n            1\n          \n        \n        x\n        +\n        \n          b\n          \n            1\n          \n        \n        )\n        +\n        \n          b\n          \n            2"
+    },
+    {
+        "question": "What components are involved in the function F(x)?",
+        "ground_truth": "The function includes weights W1 and W2, biases b1 and b2, and the sigmoid activation function.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 25,
+        "chunk_text": "F\n          F\n          N\n        \n        (\n        x\n        )\n        =\n        \n          W\n          \n            2\n          \n        \n        σ\n        (\n        \n          W\n          \n            1\n          \n        \n        x\n        +\n        \n          b\n          \n            1\n          \n        \n        )\n        +\n        \n          b\n          \n            2"
+    },
+    {
+        "question": "What is the role of the sigmoid function in this function?",
+        "ground_truth": "The sigmoid function introduces non-linearity, allowing the model to capture complex relationships in the data.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 25,
+        "chunk_text": "F\n          F\n          N\n        \n        (\n        x\n        )\n        =\n        \n          W\n          \n            2\n          \n        \n        σ\n        (\n        \n          W\n          \n            1\n          \n        \n        x\n        +\n        \n          b\n          \n            1\n          \n        \n        )\n        +\n        \n          b\n          \n            2"
+    },
+    {
+        "question": "What is the FFN in the transformer architecture?",
+        "ground_truth": "A feed-forward neural network with two layers and non-linear activation.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 26,
+        "chunk_text": ")\n        +\n        \n          b\n          \n            2\n          \n        \n      \n    \n    {\\displaystyle \\mathrm {FFN} (x)=W_{2}\\sigma (W_{1}x+b_{1})+b_{2}}"
+    },
+    {
+        "question": "What is the role of the activation function in the FFN?",
+        "ground_truth": "Introduces non-linearity to the model through the σ function.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 26,
+        "chunk_text": ")\n        +\n        \n          b\n          \n            2\n          \n        \n      \n    \n    {\\displaystyle \\mathrm {FFN} (x)=W_{2}\\sigma (W_{1}x+b_{1})+b_{2}}"
+    },
+    {
+        "question": "What components make up the FFN formula?",
+        "ground_truth": "Weight matrices W₁ and W₂, biases b₁ and b₂, and an activation function σ.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 26,
+        "chunk_text": ")\n        +\n        \n          b\n          \n            2\n          \n        \n      \n    \n    {\\displaystyle \\mathrm {FFN} (x)=W_{2}\\sigma (W_{1}x+b_{1})+b_{2}}"
+    },
+    {
+        "question": "What is σ often used as in modern models?",
+        "ground_truth": "GELU, SwiGLU, or a similar nonlinearity",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 27,
+        "chunk_text": "where \n  \n    \n      \n        σ\n      \n    \n    {\\displaystyle \\sigma }\n  \n is often GELU, SwiGLU, or a similar nonlinearity in modern models."
+    },
+    {
+        "question": "What are examples of nonlinearities used for σ in modern models?",
+        "ground_truth": "GELU, SwiGLU, or a similar nonlinearity",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 27,
+        "chunk_text": "where \n  \n    \n      \n        σ\n      \n    \n    {\\displaystyle \\sigma }\n  \n is often GELU, SwiGLU, or a similar nonlinearity in modern models."
+    },
+    {
+        "question": "What role does σ play in modern models?",
+        "ground_truth": "As a nonlinearity",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 27,
+        "chunk_text": "where \n  \n    \n      \n        σ\n      \n    \n    {\\displaystyle \\sigma }\n  \n is often GELU, SwiGLU, or a similar nonlinearity in modern models."
+    },
+    {
+        "question": "Why do Transformer blocks use residual connections?",
+        "ground_truth": "To allow gradients to flow through deep stacks more easily.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 28,
+        "chunk_text": "Residual connections and layer normalization\nTransformer blocks use residual connections so gradients can flow through deep stacks more easily. Layer normalization stabilizes training.\nThe original transformer used post-layer normalization, where normalization is applied after the residual addition. Later work showed that pre-layer normalization often makes optimization more stable and can reduce dependence on warm-up schedules."
+    },
+    {
+        "question": "What is the role of layer normalization in Transformers?",
+        "ground_truth": "To stabilize training.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 28,
+        "chunk_text": "Residual connections and layer normalization\nTransformer blocks use residual connections so gradients can flow through deep stacks more easily. Layer normalization stabilizes training.\nThe original transformer used post-layer normalization, where normalization is applied after the residual addition. Later work showed that pre-layer normalization often makes optimization more stable and can reduce dependence on warm-up schedules."
+    },
+    {
+        "question": "What is the advantage of pre-layer normalization over post-layer normalization in Transformers?",
+        "ground_truth": "It makes optimization more stable and reduces dependence on warm-up schedules.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 28,
+        "chunk_text": "Residual connections and layer normalization\nTransformer blocks use residual connections so gradients can flow through deep stacks more easily. Layer normalization stabilizes training.\nThe original transformer used post-layer normalization, where normalization is applied after the residual addition. Later work showed that pre-layer normalization often makes optimization more stable and can reduce dependence on warm-up schedules."
+    },
+    {
+        "question": "Why do modern large language models use pre-LN or related variants?",
+        "ground_truth": "Because they are easier to train at scale.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 29,
+        "chunk_text": "In practice, many modern large language models use pre-LN or related variants because they are easier to train at scale."
+    },
+    {
+        "question": "What is the advantage of using pre-LN or related variants in large language models?",
+        "ground_truth": "They are easier to train at scale.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 29,
+        "chunk_text": "In practice, many modern large language models use pre-LN or related variants because they are easier to train at scale."
+    },
+    {
+        "question": "Which models commonly use pre-LN or related variants?",
+        "ground_truth": "Modern large language models.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 29,
+        "chunk_text": "In practice, many modern large language models use pre-LN or related variants because they are easier to train at scale."
+    },
+    {
+        "question": "What are the three architectural families of transformers?",
+        "ground_truth": "Encoder, decoder, and encoder-decoder variants.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 30,
+        "chunk_text": "Encoder, decoder, and encoder-decoder variants\nTransformers are commonly grouped into three architectural families.\nEncoder-only models process the full input bidirectionally and are usually used for classification, retrieval, tagging, and representation learning. BERT is the best-known example.\nDecoder-only models use causal masking so each token can attend only to earlier tokens. These models are used for autoregressive generation and are the dominant design for many large language models."
+    },
+    {
+        "question": "What are encoder-only models typically used for?",
+        "ground_truth": "Classification, retrieval, tagging, and representation learning.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 30,
+        "chunk_text": "Encoder, decoder, and encoder-decoder variants\nTransformers are commonly grouped into three architectural families.\nEncoder-only models process the full input bidirectionally and are usually used for classification, retrieval, tagging, and representation learning. BERT is the best-known example.\nDecoder-only models use causal masking so each token can attend only to earlier tokens. These models are used for autoregressive generation and are the dominant design for many large language models."
+    },
+    {
+        "question": "What is the primary use of decoder-only models?",
+        "ground_truth": "Autoregressive generation and they are the dominant design for many large language models.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 30,
+        "chunk_text": "Encoder, decoder, and encoder-decoder variants\nTransformers are commonly grouped into three architectural families.\nEncoder-only models process the full input bidirectionally and are usually used for classification, retrieval, tagging, and representation learning. BERT is the best-known example.\nDecoder-only models use causal masking so each token can attend only to earlier tokens. These models are used for autoregressive generation and are the dominant design for many large language models."
+    },
+    {
+        "question": "What are encoder-decoder models used for?",
+        "ground_truth": "Translation, summarization, speech-to-text, and other sequence-to-sequence tasks.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 31,
+        "chunk_text": "Encoder-decoder models use one stack for encoding the input and another stack for generating the output. They are well suited for translation, summarization, speech-to-text, and other sequence-to-sequence tasks. The original transformer belonged to this family."
+    },
+    {
+        "question": "What is the original transformer's relation to encoder-decoder models?",
+        "ground_truth": "The original transformer belonged to this family.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 31,
+        "chunk_text": "Encoder-decoder models use one stack for encoding the input and another stack for generating the output. They are well suited for translation, summarization, speech-to-text, and other sequence-to-sequence tasks. The original transformer belonged to this family."
+    },
+    {
+        "question": "How do encoder-decoder models process input and output?",
+        "ground_truth": "One stack is used for encoding the input and another stack for generating the output.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 31,
+        "chunk_text": "Encoder-decoder models use one stack for encoding the input and another stack for generating the output. They are well suited for translation, summarization, speech-to-text, and other sequence-to-sequence tasks. The original transformer belonged to this family."
+    },
+    {
+        "question": "What factors influence the training objective in a RAG system?",
+        "ground_truth": "The architecture of the model.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 32,
+        "chunk_text": "Training objective\nThe training objective depends on the architecture.\nEncoder-only models are often trained with masked-token prediction or related denoising objectives. Decoder-only models are usually trained with next-token prediction. Encoder-decoder systems are commonly trained with teacher forcing, where the decoder predicts the next output token conditioned on the encoded source and previously generated target tokens.\nFor language modelling, the model is optimized to estimate:"
+    },
+    {
+        "question": "What training objective is common for encoder-only models?",
+        "ground_truth": "Masked-token prediction or related denoising objectives.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 32,
+        "chunk_text": "Training objective\nThe training objective depends on the architecture.\nEncoder-only models are often trained with masked-token prediction or related denoising objectives. Decoder-only models are usually trained with next-token prediction. Encoder-decoder systems are commonly trained with teacher forcing, where the decoder predicts the next output token conditioned on the encoded source and previously generated target tokens.\nFor language modelling, the model is optimized to estimate:"
+    },
+    {
+        "question": "What training method is typically used for decoder-only models?",
+        "ground_truth": "Next-token prediction.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 32,
+        "chunk_text": "Training objective\nThe training objective depends on the architecture.\nEncoder-only models are often trained with masked-token prediction or related denoising objectives. Decoder-only models are usually trained with next-token prediction. Encoder-decoder systems are commonly trained with teacher forcing, where the decoder predicts the next output token conditioned on the encoded source and previously generated target tokens.\nFor language modelling, the model is optimized to estimate:"
+    },
+    {
+        "question": "What does the formula P(x₁, x₂, ..., xₙ) = ∏ₜ=₁ⁿ P(xₜ) represent?",
+        "ground_truth": "It represents the joint probability distribution of independent events x₁ through xₙ.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 33,
+        "chunk_text": "P\n        (\n        \n          x\n          \n            1\n          \n        \n        ,\n        \n          x\n          \n            2\n          \n        \n        ,\n        …\n        ,\n        \n          x\n          \n            n\n          \n        \n        )\n        =\n        \n          ∏\n          \n            t\n            =\n            1\n          \n          \n            n\n          \n        \n        P\n        (\n        \n          x\n          \n            t"
+    },
+    {
+        "question": "What does the product symbol (∏) signify in this context?",
+        "ground_truth": "It signifies the multiplication of individual probabilities for each event xₜ.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 33,
+        "chunk_text": "P\n        (\n        \n          x\n          \n            1\n          \n        \n        ,\n        \n          x\n          \n            2\n          \n        \n        ,\n        …\n        ,\n        \n          x\n          \n            n\n          \n        \n        )\n        =\n        \n          ∏\n          \n            t\n            =\n            1\n          \n          \n            n\n          \n        \n        P\n        (\n        \n          x\n          \n            t"
+    },
+    {
+        "question": "What assumption is required for this probability formula to hold?",
+        "ground_truth": "The assumption that all events x₁ through xₙ are statistically independent.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 33,
+        "chunk_text": "P\n        (\n        \n          x\n          \n            1\n          \n        \n        ,\n        \n          x\n          \n            2\n          \n        \n        ,\n        …\n        ,\n        \n          x\n          \n            n\n          \n        \n        )\n        =\n        \n          ∏\n          \n            t\n            =\n            1\n          \n          \n            n\n          \n        \n        P\n        (\n        \n          x\n          \n            t"
+    },
+    {
+        "question": "What does the formula represent?",
+        "ground_truth": "The joint probability distribution of a sequence of variables using the chain rule.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 34,
+        "chunk_text": "n\n          \n        \n        P\n        (\n        \n          x\n          \n            t\n          \n        \n        ∣\n        \n          x\n          \n            <\n            t\n          \n        \n        )\n      \n    \n    {\\displaystyle P(x_{1},x_{2},\\dots ,x_{n})=\\prod _{t=1}^{n}P(x_{t}\\mid x_{<t})}"
+    },
+    {
+        "question": "What is the role of the conditional probability term P(xₜ | x_<t)?",
+        "ground_truth": "It represents the probability of the t-th variable given all previous variables in the sequence.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 34,
+        "chunk_text": "n\n          \n        \n        P\n        (\n        \n          x\n          \n            t\n          \n        \n        ∣\n        \n          x\n          \n            <\n            t\n          \n        \n        )\n      \n    \n    {\\displaystyle P(x_{1},x_{2},\\dots ,x_{n})=\\prod _{t=1}^{n}P(x_{t}\\mid x_{<t})}"
+    },
+    {
+        "question": "How is the joint probability decomposed in this formula?",
+        "ground_truth": "It is decomposed into a product of conditional probabilities for each variable in the sequence.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 34,
+        "chunk_text": "n\n          \n        \n        P\n        (\n        \n          x\n          \n            t\n          \n        \n        ∣\n        \n          x\n          \n            <\n            t\n          \n        \n        )\n      \n    \n    {\\displaystyle P(x_{1},x_{2},\\dots ,x_{n})=\\prod _{t=1}^{n}P(x_{t}\\mid x_{<t})}"
+    },
+    {
+        "question": "Why are transformers more efficient than older models?",
+        "ground_truth": "They allow parallel processing during training, which is much faster on modern accelerators than fully sequential recurrence.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 36,
+        "chunk_text": "Why transformers replaced many older sequence models\nTransformers have several practical advantages.\nThey allow parallel processing during training, which is much faster on modern accelerators than fully sequential recurrence. They usually handle long-range dependencies better than classic RNNs. They scale well with large datasets and large model sizes. They also fit naturally with large-scale pretraining and transfer learning."
+    },
+    {
+        "question": "How do transformers handle long-range dependencies?",
+        "ground_truth": "They usually handle long-range dependencies better than classic RNNs.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 36,
+        "chunk_text": "Why transformers replaced many older sequence models\nTransformers have several practical advantages.\nThey allow parallel processing during training, which is much faster on modern accelerators than fully sequential recurrence. They usually handle long-range dependencies better than classic RNNs. They scale well with large datasets and large model sizes. They also fit naturally with large-scale pretraining and transfer learning."
+    },
+    {
+        "question": "What is an advantage of transformers regarding scalability?",
+        "ground_truth": "They scale well with large datasets and large model sizes.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 36,
+        "chunk_text": "Why transformers replaced many older sequence models\nTransformers have several practical advantages.\nThey allow parallel processing during training, which is much faster on modern accelerators than fully sequential recurrence. They usually handle long-range dependencies better than classic RNNs. They scale well with large datasets and large model sizes. They also fit naturally with large-scale pretraining and transfer learning."
+    },
+    {
+        "question": "What is the limitation of standard attention in transformers?",
+        "ground_truth": "Standard attention has quadratic complexity in sequence length, which becomes expensive for very long contexts.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 37,
+        "chunk_text": "This does not mean transformers are perfect. Standard attention has quadratic complexity in sequence length, which becomes expensive for very long contexts. That limitation motivated many later efficiency improvements."
+    },
+    {
+        "question": "Why did the quadratic complexity in attention lead to improvements?",
+        "ground_truth": "That limitation motivated many later efficiency improvements.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 37,
+        "chunk_text": "This does not mean transformers are perfect. Standard attention has quadratic complexity in sequence length, which becomes expensive for very long contexts. That limitation motivated many later efficiency improvements."
+    },
+    {
+        "question": "Are transformers considered perfect according to the text?",
+        "ground_truth": "This does not mean transformers are perfect.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 37,
+        "chunk_text": "This does not mean transformers are perfect. Standard attention has quadratic complexity in sequence length, which becomes expensive for very long contexts. That limitation motivated many later efficiency improvements."
+    },
+    {
+        "question": "What is a major research direction in attention mechanisms?",
+        "ground_truth": "To make attention faster and more memory-efficient.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 38,
+        "chunk_text": "Efficient attention and long-context variants\nA major research direction has been to make attention faster and more memory-efficient.\nFlashAttention is an exact attention algorithm designed to reduce memory traffic between GPU high-bandwidth memory and on-chip SRAM, making attention much more efficient in practice. FlashAttention-3 further improves speed and accuracy with asynchrony and low-precision execution.\nOther approaches include:"
+    },
+    {
+        "question": "What is FlashAttention designed to achieve?",
+        "ground_truth": "To reduce memory traffic between GPU high-bandwidth memory and on-chip SRAM, making attention more efficient in practice.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 38,
+        "chunk_text": "Efficient attention and long-context variants\nA major research direction has been to make attention faster and more memory-efficient.\nFlashAttention is an exact attention algorithm designed to reduce memory traffic between GPU high-bandwidth memory and on-chip SRAM, making attention much more efficient in practice. FlashAttention-3 further improves speed and accuracy with asynchrony and low-precision execution.\nOther approaches include:"
+    },
+    {
+        "question": "How does FlashAttention-3 improve speed and accuracy?",
+        "ground_truth": "Through asynchrony and low-precision execution.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 38,
+        "chunk_text": "Efficient attention and long-context variants\nA major research direction has been to make attention faster and more memory-efficient.\nFlashAttention is an exact attention algorithm designed to reduce memory traffic between GPU high-bandwidth memory and on-chip SRAM, making attention much more efficient in practice. FlashAttention-3 further improves speed and accuracy with asynchrony and low-precision execution.\nOther approaches include:"
+    },
+    {
+        "question": "What are the different types of attention mechanisms mentioned in the text?",
+        "ground_truth": "sparse attention, block-sparse attention, sliding-window attention, linear attention, hybrid attention, and retrieval-augmented context.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 39,
+        "chunk_text": "sparse attention\nblock-sparse attention\nsliding-window attention\nlinear attention\nhybrid attention\nretrieval-augmented context\nattention scaling methods for very long sequences\nRecent long-context work has examined how attention behaves as context windows grow, including the need for careful scaling to avoid collapse or overly identity-like behavior at large lengths."
+    },
+    {
+        "question": "What has recent long-context work examined regarding attention behavior?",
+        "ground_truth": "How attention behaves as context windows grow, including the need for careful scaling to avoid collapse or overly identity-like behavior at large lengths.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 39,
+        "chunk_text": "sparse attention\nblock-sparse attention\nsliding-window attention\nlinear attention\nhybrid attention\nretrieval-augmented context\nattention scaling methods for very long sequences\nRecent long-context work has examined how attention behaves as context windows grow, including the need for careful scaling to avoid collapse or overly identity-like behavior at large lengths."
+    },
+    {
+        "question": "What is the purpose of attention scaling methods for very long sequences?",
+        "ground_truth": "To prevent collapse or overly identity-like behavior in attention mechanisms when dealing with extremely long sequences.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 39,
+        "chunk_text": "sparse attention\nblock-sparse attention\nsliding-window attention\nlinear attention\nhybrid attention\nretrieval-augmented context\nattention scaling methods for very long sequences\nRecent long-context work has examined how attention behaves as context windows grow, including the need for careful scaling to avoid collapse or overly identity-like behavior at large lengths."
+    },
+    {
+        "question": "What is the original transformer considered in surveys of efficient language-model architectures by 2025–2026?",
+        "ground_truth": "The central baseline.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 40,
+        "chunk_text": "By 2025–2026, surveys of efficient language-model architectures increasingly treat the original transformer as the central baseline while also covering sparse sequence models, efficient full-attention variants, sparse mixture-of-experts, and hybrid architectures."
+    },
+    {
+        "question": "What types of models are included in the surveys besides the original transformer?",
+        "ground_truth": "Sparse sequence models, efficient full-attention variants, sparse mixture-of-experts, and hybrid architectures.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 40,
+        "chunk_text": "By 2025–2026, surveys of efficient language-model architectures increasingly treat the original transformer as the central baseline while also covering sparse sequence models, efficient full-attention variants, sparse mixture-of-experts, and hybrid architectures."
+    },
+    {
+        "question": "By what year are these surveys indicating a shift in focus toward efficient language-model architectures?",
+        "ground_truth": "2025–2026.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 40,
+        "chunk_text": "By 2025–2026, surveys of efficient language-model architectures increasingly treat the original transformer as the central baseline while also covering sparse sequence models, efficient full-attention variants, sparse mixture-of-experts, and hybrid architectures."
+    },
+    {
+        "question": "What is a mixture-of-experts (MoE) transformer?",
+        "ground_truth": "A mixture-of-experts (MoE) transformer activates only a subset of experts for each token or example.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 41,
+        "chunk_text": "Mixture of Experts\nIn a mixture-of-experts (MoE) transformer, only a subset of experts is activated for each token or each example. This can increase parameter count without increasing compute proportionally. MoE has become important in large-scale language models, especially when model capacity must grow faster than inference cost."
+    },
+    {
+        "question": "How does MoE help in managing computational resources?",
+        "ground_truth": "It increases parameter count without increasing compute proportionally.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 41,
+        "chunk_text": "Mixture of Experts\nIn a mixture-of-experts (MoE) transformer, only a subset of experts is activated for each token or each example. This can increase parameter count without increasing compute proportionally. MoE has become important in large-scale language models, especially when model capacity must grow faster than inference cost."
+    },
+    {
+        "question": "Why is MoE important in large-scale language models?",
+        "ground_truth": "It allows model capacity to grow faster than inference cost.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 41,
+        "chunk_text": "Mixture of Experts\nIn a mixture-of-experts (MoE) transformer, only a subset of experts is activated for each token or each example. This can increase parameter count without increasing compute proportionally. MoE has become important in large-scale language models, especially when model capacity must grow faster than inference cost."
+    },
+    {
+        "question": "What do vision transformers do?",
+        "ground_truth": "Vision transformers split images into patches and treat the patches as tokens.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 42,
+        "chunk_text": "Transformer in vision, audio, video, and multimodal systems\nTransformers are not limited to text.\nVision transformers split images into patches and treat the patches as tokens. Audio transformers model speech and music. Multimodal transformers combine text with image, audio, video, or document inputs. Modern multimodal large language models often rely on transformer backbones for cross-modal reasoning and fusion."
+    },
+    {
+        "question": "How do audio transformers process data?",
+        "ground_truth": "Audio transformers model speech and music.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 42,
+        "chunk_text": "Transformer in vision, audio, video, and multimodal systems\nTransformers are not limited to text.\nVision transformers split images into patches and treat the patches as tokens. Audio transformers model speech and music. Multimodal transformers combine text with image, audio, video, or document inputs. Modern multimodal large language models often rely on transformer backbones for cross-modal reasoning and fusion."
+    },
+    {
+        "question": "What do modern multimodal models use for cross-modal reasoning?",
+        "ground_truth": "Transformer backbones.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 42,
+        "chunk_text": "Transformer in vision, audio, video, and multimodal systems\nTransformers are not limited to text.\nVision transformers split images into patches and treat the patches as tokens. Audio transformers model speech and music. Multimodal transformers combine text with image, audio, video, or document inputs. Modern multimodal large language models often rely on transformer backbones for cross-modal reasoning and fusion."
+    },
+    {
+        "question": "Why do video systems require position encoding to represent both space and time?",
+        "ground_truth": "To handle the dual representation of spatial and temporal information.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 43,
+        "chunk_text": "In video systems, position encoding often needs to represent both space and time, which has led to variants of rotary embeddings and other multimodal position schemes."
+    },
+    {
+        "question": "What are examples of position encoding methods used in video systems?",
+        "ground_truth": "Variants of rotary embeddings and other multimodal position schemes.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 43,
+        "chunk_text": "In video systems, position encoding often needs to represent both space and time, which has led to variants of rotary embeddings and other multimodal position schemes."
+    },
+    {
+        "question": "What outcome does the text mention from the need to represent space and time in position encoding?",
+        "ground_truth": "The development of specialized position encoding techniques.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 43,
+        "chunk_text": "In video systems, position encoding often needs to represent both space and time, which has led to variants of rotary embeddings and other multimodal position schemes."
+    },
+    {
+        "question": "What is the first step in tokenizing text for a transformer model?",
+        "ground_truth": "Tokenize text into ids.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 44,
+        "chunk_text": "Practical implementation sketch\nA simple decoder-only transformer for language modelling usually contains the following steps:\n\nTokenize text into ids.\nConvert ids into embeddings.\nAdd positional information.\nPass the sequence through repeated transformer blocks.\nUse causal self-attention in every block.\nApply an MLP after attention.\nProject the final hidden states to vocabulary logits.\nPredict the next token.\nTrain with next-token cross-entropy loss.\nA minimal block often looks like this:"
+    },
+    {
+        "question": "What mechanism is used in each transformer block for language modeling?",
+        "ground_truth": "Causal self-attention.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 44,
+        "chunk_text": "Practical implementation sketch\nA simple decoder-only transformer for language modelling usually contains the following steps:\n\nTokenize text into ids.\nConvert ids into embeddings.\nAdd positional information.\nPass the sequence through repeated transformer blocks.\nUse causal self-attention in every block.\nApply an MLP after attention.\nProject the final hidden states to vocabulary logits.\nPredict the next token.\nTrain with next-token cross-entropy loss.\nA minimal block often looks like this:"
+    },
+    {
+        "question": "What is the final step in training a transformer model for language modeling?",
+        "ground_truth": "Train with next-token cross-entropy loss.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 44,
+        "chunk_text": "Practical implementation sketch\nA simple decoder-only transformer for language modelling usually contains the following steps:\n\nTokenize text into ids.\nConvert ids into embeddings.\nAdd positional information.\nPass the sequence through repeated transformer blocks.\nUse causal self-attention in every block.\nApply an MLP after attention.\nProject the final hidden states to vocabulary logits.\nPredict the next token.\nTrain with next-token cross-entropy loss.\nA minimal block often looks like this:"
+    },
+    {
+        "question": "What is the pre-LN style in deep models?",
+        "ground_truth": "It is a style often used in modern deep models.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 45,
+        "chunk_text": "This is the pre-LN style often used in modern deep models. Other implementations place normalization in different positions, but the overall logic remains similar.\n\nHow to build a small transformer model\nTo build a small transformer from scratch, it is usually enough to decide:"
+    },
+    {
+        "question": "How does normalization placement vary in transformer implementations?",
+        "ground_truth": "Other implementations place normalization in different positions.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 45,
+        "chunk_text": "This is the pre-LN style often used in modern deep models. Other implementations place normalization in different positions, but the overall logic remains similar.\n\nHow to build a small transformer model\nTo build a small transformer from scratch, it is usually enough to decide:"
+    },
+    {
+        "question": "What is usually sufficient to build a small transformer model?",
+        "ground_truth": "Deciding certain aspects is usually enough.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 45,
+        "chunk_text": "This is the pre-LN style often used in modern deep models. Other implementations place normalization in different positions, but the overall logic remains similar.\n\nHow to build a small transformer model\nTo build a small transformer from scratch, it is usually enough to decide:"
+    },
+    {
+        "question": "What are common hyperparameters in model design?",
+        "ground_truth": "vocabulary size, context length, model width, number of layers, number of attention heads, feed-forward size, positional encoding type, dropout, learning-rate schedule, optimizer, generation method",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 46,
+        "chunk_text": "vocabulary size\ncontext length\nmodel width\nnumber of layers\nnumber of attention heads\nfeed-forward size\npositional encoding type\ndropout\nlearning-rate schedule\noptimizer\ngeneration method\nA useful starting point is a decoder-only model with pre-LN, rotary embeddings, causal attention, and a standard next-token objective. That setup is simple enough to implement and close enough to modern language-model practice to be educational.\n\nCommon hyperparameters\nTypical design choices include:"
+    },
+    {
+        "question": "What is a useful starting point for a decoder-only model?",
+        "ground_truth": "a decoder-only model with pre-LN, rotary embeddings, causal attention, and a standard next-token objective",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 46,
+        "chunk_text": "vocabulary size\ncontext length\nmodel width\nnumber of layers\nnumber of attention heads\nfeed-forward size\npositional encoding type\ndropout\nlearning-rate schedule\noptimizer\ngeneration method\nA useful starting point is a decoder-only model with pre-LN, rotary embeddings, causal attention, and a standard next-token objective. That setup is simple enough to implement and close enough to modern language-model practice to be educational.\n\nCommon hyperparameters\nTypical design choices include:"
+    },
+    {
+        "question": "Why is the mentioned setup considered educational?",
+        "ground_truth": "It is simple enough to implement and close enough to modern language-model practice to be educational",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 46,
+        "chunk_text": "vocabulary size\ncontext length\nmodel width\nnumber of layers\nnumber of attention heads\nfeed-forward size\npositional encoding type\ndropout\nlearning-rate schedule\noptimizer\ngeneration method\nA useful starting point is a decoder-only model with pre-LN, rotary embeddings, causal attention, and a standard next-token objective. That setup is simple enough to implement and close enough to modern language-model practice to be educational.\n\nCommon hyperparameters\nTypical design choices include:"
+    },
+    {
+        "question": "What is the model dimension parameter called?",
+        "ground_truth": "d_model",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 47,
+        "chunk_text": "Common hyperparameters\nTypical design choices include:\n\nmodel dimension \n  \n    \n      \n        \n          d\n          \n            m\n            o\n            d\n            e\n            l\n          \n        \n      \n    \n    {\\displaystyle d_{model}}\n  \n\nnumber of layers \n  \n    \n      \n        L\n      \n    \n    {\\displaystyle L}\n  \n\nnumber of heads \n  \n    \n      \n        h\n      \n    \n    {\\displaystyle h}"
+    },
+    {
+        "question": "What does the symbol L represent in transformer design?",
+        "ground_truth": "number of layers",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 47,
+        "chunk_text": "Common hyperparameters\nTypical design choices include:\n\nmodel dimension \n  \n    \n      \n        \n          d\n          \n            m\n            o\n            d\n            e\n            l\n          \n        \n      \n    \n    {\\displaystyle d_{model}}\n  \n\nnumber of layers \n  \n    \n      \n        L\n      \n    \n    {\\displaystyle L}\n  \n\nnumber of heads \n  \n    \n      \n        h\n      \n    \n    {\\displaystyle h}"
+    },
+    {
+        "question": "What is the symbol h associated with in transformer architecture?",
+        "ground_truth": "number of heads",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 47,
+        "chunk_text": "Common hyperparameters\nTypical design choices include:\n\nmodel dimension \n  \n    \n      \n        \n          d\n          \n            m\n            o\n            d\n            e\n            l\n          \n        \n      \n    \n    {\\displaystyle d_{model}}\n  \n\nnumber of layers \n  \n    \n      \n        L\n      \n    \n    {\\displaystyle L}\n  \n\nnumber of heads \n  \n    \n      \n        h\n      \n    \n    {\\displaystyle h}"
+    },
+    {
+        "question": "What does the symbol 'h' represent in the context of transformer architecture?",
+        "ground_truth": "It denotes the number of heads.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 48,
+        "chunk_text": "number of heads \n  \n    \n      \n        h\n      \n    \n    {\\displaystyle h}\n  \n\nhead dimension \n  \n    \n      \n        \n          d\n          \n            k\n          \n        \n      \n    \n    {\\displaystyle d_{k}}"
+    },
+    {
+        "question": "What is the head dimension referred to by the symbol 'd_k'?",
+        "ground_truth": "It refers to the head dimension.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 48,
+        "chunk_text": "number of heads \n  \n    \n      \n        h\n      \n    \n    {\\displaystyle h}\n  \n\nhead dimension \n  \n    \n      \n        \n          d\n          \n            k\n          \n        \n      \n    \n    {\\displaystyle d_{k}}"
+    },
+    {
+        "question": "What are the two key terms related to transformer architecture mentioned in the text?",
+        "ground_truth": "The number of heads and the head dimension.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 48,
+        "chunk_text": "number of heads \n  \n    \n      \n        h\n      \n    \n    {\\displaystyle h}\n  \n\nhead dimension \n  \n    \n      \n        \n          d\n          \n            k\n          \n        \n      \n    \n    {\\displaystyle d_{k}}"
+    },
+    {
+        "question": "What is a challenge when using deeper models in transformer architectures?",
+        "ground_truth": "Deeper models may need more careful initialization and normalization.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 49,
+        "chunk_text": "feed-forward expansion ratio\ncontext length\nbatch size\nwarm-up steps\nlearning-rate decay\nweight decay\ngradient clipping\nThese choices interact strongly. For example, deeper models may need more careful initialization and normalization, while longer context lengths may require different positional schemes or attention implementations."
+    },
+    {
+        "question": "What adjustments are needed for longer context lengths in attention mechanisms?",
+        "ground_truth": "Longer context lengths may require different positional schemes or attention implementations.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 49,
+        "chunk_text": "feed-forward expansion ratio\ncontext length\nbatch size\nwarm-up steps\nlearning-rate decay\nweight decay\ngradient clipping\nThese choices interact strongly. For example, deeper models may need more careful initialization and normalization, while longer context lengths may require different positional schemes or attention implementations."
+    },
+    {
+        "question": "What is a key factor in optimizing transformer hyperparameters?",
+        "ground_truth": "These choices interact strongly.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 49,
+        "chunk_text": "feed-forward expansion ratio\ncontext length\nbatch size\nwarm-up steps\nlearning-rate decay\nweight decay\ngradient clipping\nThese choices interact strongly. For example, deeper models may need more careful initialization and normalization, while longer context lengths may require different positional schemes or attention implementations."
+    },
+    {
+        "question": "What is a computational limitation of standard self-attention in Transformers?",
+        "ground_truth": "Quadratic compute and memory cost with respect to sequence length.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 50,
+        "chunk_text": "Limitations\nTransformers are powerful, but they have limitations.\nStandard self-attention has quadratic compute and memory cost with respect to sequence length. They can still struggle with exact long-range retrieval, formal reasoning, and reliable multi-step planning. They are sensitive to data quality and training recipe. They may also hallucinate outputs in generative settings if not properly grounded."
+    },
+    {
+        "question": "What tasks can Transformers struggle with despite their power?",
+        "ground_truth": "Exact long-range retrieval, formal reasoning, and reliable multi-step planning.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 50,
+        "chunk_text": "Limitations\nTransformers are powerful, but they have limitations.\nStandard self-attention has quadratic compute and memory cost with respect to sequence length. They can still struggle with exact long-range retrieval, formal reasoning, and reliable multi-step planning. They are sensitive to data quality and training recipe. They may also hallucinate outputs in generative settings if not properly grounded."
+    },
+    {
+        "question": "What factors can negatively impact Transformer performance?",
+        "ground_truth": "Sensitivity to data quality and training recipe, and potential hallucination in generative settings if not properly grounded.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 50,
+        "chunk_text": "Limitations\nTransformers are powerful, but they have limitations.\nStandard self-attention has quadratic compute and memory cost with respect to sequence length. They can still struggle with exact long-range retrieval, formal reasoning, and reliable multi-step planning. They are sensitive to data quality and training recipe. They may also hallucinate outputs in generative settings if not properly grounded."
+    },
+    {
+        "question": "What are some techniques combined with transformers in current research?",
+        "ground_truth": "retrieval, external tools, memory, sparsity, compression, or hybrid sequence models.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 51,
+        "chunk_text": "Because of these limits, current research often combines transformers with retrieval, external tools, memory, sparsity, compression, or hybrid sequence models."
+    },
+    {
+        "question": "Why are these combinations made?",
+        "ground_truth": "Because of these limits.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 51,
+        "chunk_text": "Because of these limits, current research often combines transformers with retrieval, external tools, memory, sparsity, compression, or hybrid sequence models."
+    },
+    {
+        "question": "What is the main approach in current research regarding transformers?",
+        "ground_truth": "Combining them with retrieval, external tools, memory, sparsity, compression, or hybrid sequence models.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 51,
+        "chunk_text": "Because of these limits, current research often combines transformers with retrieval, external tools, memory, sparsity, compression, or hybrid sequence models."
+    },
+    {
+        "question": "What is the central architecture for frontier models by 2026?",
+        "ground_truth": "Transformers.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 52,
+        "chunk_text": "2026 perspective\nBy 2026, transformers remain the central architecture for frontier language and multimodal models, but the design space around them has become much richer. Recent work has focused on long-context scaling, improved attention kernels, sparse and hybrid architectures, better normalization choices, and theoretical understanding of how attention behaves at very large context lengths."
+    },
+    {
+        "question": "How has the design space around transformers evolved by 2026?",
+        "ground_truth": "It has become much richer.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 52,
+        "chunk_text": "2026 perspective\nBy 2026, transformers remain the central architecture for frontier language and multimodal models, but the design space around them has become much richer. Recent work has focused on long-context scaling, improved attention kernels, sparse and hybrid architectures, better normalization choices, and theoretical understanding of how attention behaves at very large context lengths."
+    },
+    {
+        "question": "What areas have recent works focused on regarding transformers?",
+        "ground_truth": "Long-context scaling, improved attention kernels, sparse and hybrid architectures, better normalization choices, and theoretical understanding of attention at very large context lengths.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 52,
+        "chunk_text": "2026 perspective\nBy 2026, transformers remain the central architecture for frontier language and multimodal models, but the design space around them has become much richer. Recent work has focused on long-context scaling, improved attention kernels, sparse and hybrid architectures, better normalization choices, and theoretical understanding of how attention behaves at very large context lengths."
+    },
+    {
+        "question": "What is the foundation of current transformer-based systems?",
+        "ground_truth": "The classic transformer.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 53,
+        "chunk_text": "The practical takeaway is that the classic transformer is still the foundation, but many state-of-the-art systems now use modified attention, specialized positional encodings, or mixture-of-experts layers to improve cost, stability, and context handling."
+    },
+    {
+        "question": "What modifications do state-of-the-art systems use?",
+        "ground_truth": "Modified attention, specialized positional encodings, and mixture-of-experts layers.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 53,
+        "chunk_text": "The practical takeaway is that the classic transformer is still the foundation, but many state-of-the-art systems now use modified attention, specialized positional encodings, or mixture-of-experts layers to improve cost, stability, and context handling."
+    },
+    {
+        "question": "What benefits do these modifications provide?",
+        "ground_truth": "Improved cost, stability, and context handling.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 53,
+        "chunk_text": "The practical takeaway is that the classic transformer is still the foundation, but many state-of-the-art systems now use modified attention, specialized positional encodings, or mixture-of-experts layers to improve cost, stability, and context handling."
+    },
+    {
+        "question": "What are some key components or related models associated with the transformer architecture?",
+        "ground_truth": "Attention mechanism, BERT, Generative pre-trained transformer, Vision transformer, Long short-term memory, Recurrent neural network, Mixture of experts, Rotary position embedding, FlashAttention",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 54,
+        "chunk_text": "See also\nAttention mechanism\nBERT\nGenerative pre-trained transformer\nVision transformer\nLong short-term memory\nRecurrent neural network\nMixture of experts\nRotary position embedding\nFlashAttention\n\nNotes\nThe original 2017 transformer paper used post-layer normalization, but many modern architectures use pre-layer normalization. The figure caption should make that distinction explicit to avoid confusion."
+    },
+    {
+        "question": "What normalization method did the original 2017 transformer paper use?",
+        "ground_truth": "Post-layer normalization",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 54,
+        "chunk_text": "See also\nAttention mechanism\nBERT\nGenerative pre-trained transformer\nVision transformer\nLong short-term memory\nRecurrent neural network\nMixture of experts\nRotary position embedding\nFlashAttention\n\nNotes\nThe original 2017 transformer paper used post-layer normalization, but many modern architectures use pre-layer normalization. The figure caption should make that distinction explicit to avoid confusion."
+    },
+    {
+        "question": "What normalization method is commonly used in modern transformer architectures?",
+        "ground_truth": "Pre-layer normalization",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 54,
+        "chunk_text": "See also\nAttention mechanism\nBERT\nGenerative pre-trained transformer\nVision transformer\nLong short-term memory\nRecurrent neural network\nMixture of experts\nRotary position embedding\nFlashAttention\n\nNotes\nThe original 2017 transformer paper used post-layer normalization, but many modern architectures use pre-layer normalization. The figure caption should make that distinction explicit to avoid confusion."
+    },
+    {
+        "question": "Who authored the paper 'Attention Is All You Need'?",
+        "ground_truth": "Vaswani et al.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 55,
+        "chunk_text": "References\nFurther reading\nVaswani et al., Attention Is All You Need (2017).\nXiong et al., On Layer Normalization in the Transformer Architecture (2020).\nSu et al., RoFormer: Enhanced Transformer with Rotary Position Embedding (2021).\nDao et al., FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness (2022).\nShah et al., FlashAttention-3: Fast and Accurate Attention with Asynchrony and Low-precision (2024)."
+    },
+    {
+        "question": "In which year was 'FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness' published?",
+        "ground_truth": "2022",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 55,
+        "chunk_text": "References\nFurther reading\nVaswani et al., Attention Is All You Need (2017).\nXiong et al., On Layer Normalization in the Transformer Architecture (2020).\nSu et al., RoFormer: Enhanced Transformer with Rotary Position Embedding (2021).\nDao et al., FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness (2022).\nShah et al., FlashAttention-3: Fast and Accurate Attention with Asynchrony and Low-precision (2024)."
+    },
+    {
+        "question": "Which paper introduced Rotary Position Embedding?",
+        "ground_truth": "RoFormer: Enhanced Transformer with Rotary Position Embedding (2021)",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 55,
+        "chunk_text": "References\nFurther reading\nVaswani et al., Attention Is All You Need (2017).\nXiong et al., On Layer Normalization in the Transformer Architecture (2020).\nSu et al., RoFormer: Enhanced Transformer with Rotary Position Embedding (2021).\nDao et al., FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness (2022).\nShah et al., FlashAttention-3: Fast and Accurate Attention with Asynchrony and Low-precision (2024)."
+    },
+    {
+        "question": "What is the focus of Chen et al.'s paper?",
+        "ground_truth": "Critical attention scaling in long-context transformers.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 56,
+        "chunk_text": "Chen et al., Critical attention scaling in long-context transformers (ICLR 2026)."
+    },
+    {
+        "question": "What is the main contribution of the paper?",
+        "ground_truth": "Improving efficiency of attention mechanisms for long-context processing.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 56,
+        "chunk_text": "Chen et al., Critical attention scaling in long-context transformers (ICLR 2026)."
+    },
+    {
+        "question": "Which conference presented this paper?",
+        "ground_truth": "ICLR 2026.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 56,
+        "chunk_text": "Chen et al., Critical attention scaling in long-context transformers (ICLR 2026)."
+    },
+    {
+        "question": "What were the predecessors of transformer models?",
+        "ground_truth": "Recurrent neural networks (RNNs), such as the Elman network (1990).",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 57,
+        "chunk_text": "References templates\nHistory\nPredecessors\nFor many years, sequence modelling and generation was done by using plain recurrent neural networks (RNNs). A well-cited early example was the Elman network (1990). In theory, the information from one token can propagate arbitrarily far down the sequence, but in practice the vanishing-gradient problem leaves the model's state at the end of a long sentence without precise, extractable information about preceding tokens."
+    },
+    {
+        "question": "What limitation did RNNs face with long sequences?",
+        "ground_truth": "The vanishing-gradient problem, which prevented precise extraction of information from preceding tokens.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 57,
+        "chunk_text": "References templates\nHistory\nPredecessors\nFor many years, sequence modelling and generation was done by using plain recurrent neural networks (RNNs). A well-cited early example was the Elman network (1990). In theory, the information from one token can propagate arbitrarily far down the sequence, but in practice the vanishing-gradient problem leaves the model's state at the end of a long sentence without precise, extractable information about preceding tokens."
+    },
+    {
+        "question": "What is an example of an early RNN model mentioned in the text?",
+        "ground_truth": "The Elman network (1990).",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 57,
+        "chunk_text": "References templates\nHistory\nPredecessors\nFor many years, sequence modelling and generation was done by using plain recurrent neural networks (RNNs). A well-cited early example was the Elman network (1990). In theory, the information from one token can propagate arbitrarily far down the sequence, but in practice the vanishing-gradient problem leaves the model's state at the end of a long sentence without precise, extractable information about preceding tokens."
+    },
+    {
+        "question": "What is LSTM?",
+        "ground_truth": "An RNN that introduced gating mechanisms to mitigate the vanishing gradient problem, allowing efficient learning of long-sequence modelling.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 58,
+        "chunk_text": "A key breakthrough was LSTM (originally described in a 1995 technical report and formally published in 1997), an RNN that introduced gating mechanisms to mitigate the vanishing gradient problem, allowing efficient learning of long-sequence modelling. One key architectural element was the use of multiplicative gating units, in which the outputs of some neurons modulate the outputs of others. These multiplicative units are conceptually distinct from the additive attention mechanism later"
+    },
+    {
+        "question": "When was LSTM formally published?",
+        "ground_truth": "In 1997.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 58,
+        "chunk_text": "A key breakthrough was LSTM (originally described in a 1995 technical report and formally published in 1997), an RNN that introduced gating mechanisms to mitigate the vanishing gradient problem, allowing efficient learning of long-sequence modelling. One key architectural element was the use of multiplicative gating units, in which the outputs of some neurons modulate the outputs of others. These multiplicative units are conceptually distinct from the additive attention mechanism later"
+    },
+    {
+        "question": "How does LSTM address the vanishing gradient problem?",
+        "ground_truth": "By introducing gating mechanisms that enable efficient learning of long-sequence modelling.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 58,
+        "chunk_text": "A key breakthrough was LSTM (originally described in a 1995 technical report and formally published in 1997), an RNN that introduced gating mechanisms to mitigate the vanishing gradient problem, allowing efficient learning of long-sequence modelling. One key architectural element was the use of multiplicative gating units, in which the outputs of some neurons modulate the outputs of others. These multiplicative units are conceptually distinct from the additive attention mechanism later"
+    },
+    {
+        "question": "What are multiplicative units in relation to additive attention mechanisms?",
+        "ground_truth": "They are conceptually distinct.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 59,
+        "chunk_text": "These multiplicative units are conceptually distinct from the additive attention mechanism later introduced for sequence-to-sequence models."
+    },
+    {
+        "question": "What is the additive attention mechanism?",
+        "ground_truth": "It was later introduced for sequence-to-sequence models.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 59,
+        "chunk_text": "These multiplicative units are conceptually distinct from the additive attention mechanism later introduced for sequence-to-sequence models."
+    },
+    {
+        "question": "How do multiplicative units differ from additive attention mechanisms?",
+        "ground_truth": "They are conceptually distinct.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 59,
+        "chunk_text": "These multiplicative units are conceptually distinct from the additive attention mechanism later introduced for sequence-to-sequence models."
+    },
+    {
+        "question": "What are neural networks using multiplicative units called?",
+        "ground_truth": "sigma-pi networks or higher-order networks",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 60,
+        "chunk_text": "Neural networks using multiplicative units were later called sigma-pi networks or higher-order networks. LSTM became the standard architecture for long sequence modelling until the 2017 publication of transformers. However, LSTM still used sequential processing, like most other RNNs. Specifically, RNNs operate one token at a time from first to last; they cannot operate in parallel over all tokens in a sequence."
+    },
+    {
+        "question": "When did transformers become the standard architecture for long sequence modelling?",
+        "ground_truth": "2017 publication of transformers",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 60,
+        "chunk_text": "Neural networks using multiplicative units were later called sigma-pi networks or higher-order networks. LSTM became the standard architecture for long sequence modelling until the 2017 publication of transformers. However, LSTM still used sequential processing, like most other RNNs. Specifically, RNNs operate one token at a time from first to last; they cannot operate in parallel over all tokens in a sequence."
+    },
+    {
+        "question": "Why can't RNNs process tokens in parallel?",
+        "ground_truth": "they cannot operate in parallel over all tokens in a sequence",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 60,
+        "chunk_text": "Neural networks using multiplicative units were later called sigma-pi networks or higher-order networks. LSTM became the standard architecture for long sequence modelling until the 2017 publication of transformers. However, LSTM still used sequential processing, like most other RNNs. Specifically, RNNs operate one token at a time from first to last; they cannot operate in parallel over all tokens in a sequence."
+    },
+    {
+        "question": "What is the main computational drawback of modern transformers?",
+        "ground_truth": "Their computation time is quadratic in the size of the context window.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 61,
+        "chunk_text": "Modern transformers overcome this problem, but unlike RNNs, they require computation time that is quadratic in the size of the context window. The linearly scaling fast weight controller (1992) learns to compute a weight matrix for further processing depending on the input. One of its two networks has \"fast weights\" or \"dynamic links\" (1981). A slow neural network learns by gradient descent to generate keys and values for computing the weight changes of the fast neural network which computes"
+    },
+    {
+        "question": "What is the fast weight controller?",
+        "ground_truth": "It learns to compute a weight matrix for further processing depending on the input.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 61,
+        "chunk_text": "Modern transformers overcome this problem, but unlike RNNs, they require computation time that is quadratic in the size of the context window. The linearly scaling fast weight controller (1992) learns to compute a weight matrix for further processing depending on the input. One of its two networks has \"fast weights\" or \"dynamic links\" (1981). A slow neural network learns by gradient descent to generate keys and values for computing the weight changes of the fast neural network which computes"
+    },
+    {
+        "question": "How do the two networks in the fast weight controller interact?",
+        "ground_truth": "The slow neural network learns by gradient descent to generate keys and values for computing the weight changes of the fast neural network.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 61,
+        "chunk_text": "Modern transformers overcome this problem, but unlike RNNs, they require computation time that is quadratic in the size of the context window. The linearly scaling fast weight controller (1992) learns to compute a weight matrix for further processing depending on the input. One of its two networks has \"fast weights\" or \"dynamic links\" (1981). A slow neural network learns by gradient descent to generate keys and values for computing the weight changes of the fast neural network which computes"
+    },
+    {
+        "question": "What is the purpose of generating keys and values in the fast neural network?",
+        "ground_truth": "To compute the weight changes of the fast neural network which computes answers to queries.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 62,
+        "chunk_text": "generate keys and values for computing the weight changes of the fast neural network which computes answers to queries. This was later shown to be equivalent to the unnormalized linear transformer."
+    },
+    {
+        "question": "What is the generation of keys and values for computing weight changes equivalent to?",
+        "ground_truth": "The unnormalized linear transformer.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 62,
+        "chunk_text": "generate keys and values for computing the weight changes of the fast neural network which computes answers to queries. This was later shown to be equivalent to the unnormalized linear transformer."
+    },
+    {
+        "question": "What does the fast neural network compute?",
+        "ground_truth": "Answers to queries.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 62,
+        "chunk_text": "generate keys and values for computing the weight changes of the fast neural network which computes answers to queries. This was later shown to be equivalent to the unnormalized linear transformer."
+    },
+    {
+        "question": "When was the encoder–decoder sequence transduction developed?",
+        "ground_truth": "In the early 2010s.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 63,
+        "chunk_text": "Attention with seq2seq\nThe idea of encoder–decoder sequence transduction had been developed in the early 2010s; commonly cited as the originators that produced seq2seq are two concurrently published papers from 2014."
+    },
+    {
+        "question": "Who are the originators of the seq2seq model?",
+        "ground_truth": "Two concurrently published papers from 2014.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 63,
+        "chunk_text": "Attention with seq2seq\nThe idea of encoder–decoder sequence transduction had been developed in the early 2010s; commonly cited as the originators that produced seq2seq are two concurrently published papers from 2014."
+    },
+    {
+        "question": "What is the significance of the 2014 papers in seq2seq development?",
+        "ground_truth": "They are commonly cited as the originators of the seq2seq model.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 63,
+        "chunk_text": "Attention with seq2seq\nThe idea of encoder–decoder sequence transduction had been developed in the early 2010s; commonly cited as the originators that produced seq2seq are two concurrently published papers from 2014."
+    },
+    {
+        "question": "What type of architecture does the 380M-parameter model use?",
+        "ground_truth": "It uses two long short-term memories (LSTM) in an encoder-decoder structure.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 64,
+        "chunk_text": "A 380M-parameter model for machine translation uses two long short-term memories (LSTM). Its architecture consists of two parts. The encoder is an LSTM that takes in a sequence of tokens and turns it into a vector. The decoder is another LSTM that converts the vector into a sequence of tokens. Similarly, another 130M-parameter model used gated recurrent units (GRU) instead of LSTM. Later research showed that GRUs are neither better nor worse than LSTMs for seq2seq."
+    },
+    {
+        "question": "What component did the 130M-parameter model use instead of LSTM?",
+        "ground_truth": "It used gated recurrent units (GRU) instead of LSTM.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 64,
+        "chunk_text": "A 380M-parameter model for machine translation uses two long short-term memories (LSTM). Its architecture consists of two parts. The encoder is an LSTM that takes in a sequence of tokens and turns it into a vector. The decoder is another LSTM that converts the vector into a sequence of tokens. Similarly, another 130M-parameter model used gated recurrent units (GRU) instead of LSTM. Later research showed that GRUs are neither better nor worse than LSTMs for seq2seq."
+    },
+    {
+        "question": "How do GRUs compare to LSTMs for seq2seq tasks according to later research?",
+        "ground_truth": "GRUs are neither better nor worse than LSTMs for seq2seq tasks.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 64,
+        "chunk_text": "A 380M-parameter model for machine translation uses two long short-term memories (LSTM). Its architecture consists of two parts. The encoder is an LSTM that takes in a sequence of tokens and turns it into a vector. The decoder is another LSTM that converts the vector into a sequence of tokens. Similarly, another 130M-parameter model used gated recurrent units (GRU) instead of LSTM. Later research showed that GRUs are neither better nor worse than LSTMs for seq2seq."
+    },
+    {
+        "question": "What limitation did early seq2seq models have?",
+        "ground_truth": "They had no attention mechanism.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 65,
+        "chunk_text": "These early seq2seq models had no attention mechanism, and the state vector is accessible only after the last word of the source text was processed. Although in theory such a vector retains the information about the whole original sentence, in practice the information is poorly preserved. This is because the input is processed sequentially by one recurrent network into a fixed-size output vector, which is then processed by another recurrent network into an output. If the input is long, then the"
+    },
+    {
+        "question": "When is the state vector accessible in early seq2seq models?",
+        "ground_truth": "Only after the last word of the source text was processed.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 65,
+        "chunk_text": "These early seq2seq models had no attention mechanism, and the state vector is accessible only after the last word of the source text was processed. Although in theory such a vector retains the information about the whole original sentence, in practice the information is poorly preserved. This is because the input is processed sequentially by one recurrent network into a fixed-size output vector, which is then processed by another recurrent network into an output. If the input is long, then the"
+    },
+    {
+        "question": "Why is information poorly preserved in early seq2seq models?",
+        "ground_truth": "The input is processed sequentially by a recurrent network into a fixed-size output vector.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 65,
+        "chunk_text": "These early seq2seq models had no attention mechanism, and the state vector is accessible only after the last word of the source text was processed. Although in theory such a vector retains the information about the whole original sentence, in practice the information is poorly preserved. This is because the input is processed sequentially by one recurrent network into a fixed-size output vector, which is then processed by another recurrent network into an output. If the input is long, then the"
+    },
+    {
+        "question": "What issue arises when the input is long in the described process?",
+        "ground_truth": "The output vector would not be able to contain all relevant information, degrading the output.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 66,
+        "chunk_text": "which is then processed by another recurrent network into an output. If the input is long, then the output vector would not be able to contain all relevant information, degrading the output. As evidence, reversing the input sentence improved seq2seq translation."
+    },
+    {
+        "question": "What evidence is provided to support the problem with long inputs?",
+        "ground_truth": "Reversing the input sentence improved seq2seq translation.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 66,
+        "chunk_text": "which is then processed by another recurrent network into an output. If the input is long, then the output vector would not be able to contain all relevant information, degrading the output. As evidence, reversing the input sentence improved seq2seq translation."
+    },
+    {
+        "question": "What component processes the input into an output in the described system?",
+        "ground_truth": "Another recurrent network.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 66,
+        "chunk_text": "which is then processed by another recurrent network into an output. If the input is long, then the output vector would not be able to contain all relevant information, degrading the output. As evidence, reversing the input sentence improved seq2seq translation."
+    },
+    {
+        "question": "What problem did the attention mechanism address in the RNN search model?",
+        "ground_truth": "The bottleneck problem of the fixed-size output vector.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 67,
+        "chunk_text": "The RNN search model introduced an attention mechanism to seq2seq for machine translation to solve the bottleneck problem (of the fixed-size output vector), allowing the model to process long-distance dependencies more easily. The name is because it \"emulates searching through a source sentence during decoding a translation\"."
+    },
+    {
+        "question": "How does the attention mechanism improve the RNN search model?",
+        "ground_truth": "It allows the model to process long-distance dependencies more easily.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 67,
+        "chunk_text": "The RNN search model introduced an attention mechanism to seq2seq for machine translation to solve the bottleneck problem (of the fixed-size output vector), allowing the model to process long-distance dependencies more easily. The name is because it \"emulates searching through a source sentence during decoding a translation\"."
+    },
+    {
+        "question": "Why is the RNN search model named as such?",
+        "ground_truth": "Because it emulates searching through a source sentence during decoding a translation.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 67,
+        "chunk_text": "The RNN search model introduced an attention mechanism to seq2seq for machine translation to solve the bottleneck problem (of the fixed-size output vector), allowing the model to process long-distance dependencies more easily. The name is because it \"emulates searching through a source sentence during decoding a translation\"."
+    },
+    {
+        "question": "What was compared between global and local attention models?",
+        "ground_truth": "Their relative performances in machine translation.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 68,
+        "chunk_text": "The relative performances were compared between global (that of RNN search) and local (sliding window) attention model architectures for machine translation, finding that mixed attention had higher quality than global attention, while local attention reduced translation time."
+    },
+    {
+        "question": "Which attention type had higher quality than global attention?",
+        "ground_truth": "Mixed attention.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 68,
+        "chunk_text": "The relative performances were compared between global (that of RNN search) and local (sliding window) attention model architectures for machine translation, finding that mixed attention had higher quality than global attention, while local attention reduced translation time."
+    },
+    {
+        "question": "What effect did local attention have on translation time?",
+        "ground_truth": "It reduced translation time.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 68,
+        "chunk_text": "The relative performances were compared between global (that of RNN search) and local (sliding window) attention model architectures for machine translation, finding that mixed attention had higher quality than global attention, while local attention reduced translation time."
+    },
+    {
+        "question": "What was the new model introduced in 2016 for Google Translate?",
+        "ground_truth": "Google Neural Machine Translation",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 69,
+        "chunk_text": "In 2016, Google Translate was revamped to Google Neural Machine Translation, which replaced the previous model based on statistical machine translation. The new model was a seq2seq model where the encoder and the decoder were both 8 layers of bidirectional LSTM. It took nine months to develop, and it outperformed the statistical approach, which took ten years to develop."
+    },
+    {
+        "question": "What type of model was used in the new Google Translate system?",
+        "ground_truth": "A seq2seq model where the encoder and decoder were both 8 layers of bidirectional LSTM",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 69,
+        "chunk_text": "In 2016, Google Translate was revamped to Google Neural Machine Translation, which replaced the previous model based on statistical machine translation. The new model was a seq2seq model where the encoder and the decoder were both 8 layers of bidirectional LSTM. It took nine months to develop, and it outperformed the statistical approach, which took ten years to develop."
+    },
+    {
+        "question": "How long did it take to develop the new model compared to the statistical approach?",
+        "ground_truth": "Nine months versus ten years",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 69,
+        "chunk_text": "In 2016, Google Translate was revamped to Google Neural Machine Translation, which replaced the previous model based on statistical machine translation. The new model was a seq2seq model where the encoder and the decoder were both 8 layers of bidirectional LSTM. It took nine months to develop, and it outperformed the statistical approach, which took ten years to develop."
+    },
+    {
+        "question": "What is parallelizing attention?",
+        "ground_truth": "Parallelizing attention refers to the ability to process multiple tokens simultaneously in transformer models, enhancing computational efficiency.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 70,
+        "chunk_text": "Parallelizing attention"
+    },
+    {
+        "question": "Why is parallelizing attention important in transformer models?",
+        "ground_truth": "It allows for efficient parallel processing, reducing the time required to handle large inputs.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 70,
+        "chunk_text": "Parallelizing attention"
+    },
+    {
+        "question": "How does parallelizing attention contribute to the performance of transformers?",
+        "ground_truth": "By enabling parallel computation, it significantly speeds up the training and inference processes.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 70,
+        "chunk_text": "Parallelizing attention"
+    },
+    {
+        "question": "What issue did seq2seq models with attention face?",
+        "ground_truth": "They are hard to parallelize, which prevented them from being accelerated on GPUs.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 71,
+        "chunk_text": "Seq2seq models with attention (including self-attention) still suffered from the same issue with recurrent networks, which is that they are hard to parallelize, which prevented them from being accelerated on GPUs. In 2016, decomposable attention applied a self-attention mechanism to feedforward networks, which are easy to parallelize, and achieved SOTA result in textual entailment with an order of magnitude fewer parameters than LSTMs. One of its authors, Jakob Uszkoreit, suspected that"
+    },
+    {
+        "question": "What did decomposable attention achieve?",
+        "ground_truth": "It applied a self-attention mechanism to feedforward networks, achieving SOTA results in textual entailment with an order of magnitude fewer parameters than LSTMs.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 71,
+        "chunk_text": "Seq2seq models with attention (including self-attention) still suffered from the same issue with recurrent networks, which is that they are hard to parallelize, which prevented them from being accelerated on GPUs. In 2016, decomposable attention applied a self-attention mechanism to feedforward networks, which are easy to parallelize, and achieved SOTA result in textual entailment with an order of magnitude fewer parameters than LSTMs. One of its authors, Jakob Uszkoreit, suspected that"
+    },
+    {
+        "question": "Why are feedforward networks advantageous in this context?",
+        "ground_truth": "They are easy to parallelize.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 71,
+        "chunk_text": "Seq2seq models with attention (including self-attention) still suffered from the same issue with recurrent networks, which is that they are hard to parallelize, which prevented them from being accelerated on GPUs. In 2016, decomposable attention applied a self-attention mechanism to feedforward networks, which are easy to parallelize, and achieved SOTA result in textual entailment with an order of magnitude fewer parameters than LSTMs. One of its authors, Jakob Uszkoreit, suspected that"
+    },
+    {
+        "question": "How do transformers compare to LSTMs in terms of parameters?",
+        "ground_truth": "Transformers have an order of magnitude fewer parameters than LSTMs.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 72,
+        "chunk_text": "order of magnitude fewer parameters than LSTMs. One of its authors, Jakob Uszkoreit, suspected that attention without recurrence would be sufficient for language translation, thus the title \"attention is all you need\". That hypothesis was against conventional wisdom at the time, and even his father Hans Uszkoreit, a well-known computational linguist, was skeptical. In the same year, self-attention (called intra-attention or intra-sentence attention) was proposed for LSTMs."
+    },
+    {
+        "question": "What was the hypothesis behind the transformer's design?",
+        "ground_truth": "Attention without recurrence would be sufficient for language translation.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 72,
+        "chunk_text": "order of magnitude fewer parameters than LSTMs. One of its authors, Jakob Uszkoreit, suspected that attention without recurrence would be sufficient for language translation, thus the title \"attention is all you need\". That hypothesis was against conventional wisdom at the time, and even his father Hans Uszkoreit, a well-known computational linguist, was skeptical. In the same year, self-attention (called intra-attention or intra-sentence attention) was proposed for LSTMs."
+    },
+    {
+        "question": "What was proposed for LSTMs in the same year as the transformer paper?",
+        "ground_truth": "Self-attention (called intra-attention or intra-sentence attention).",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 72,
+        "chunk_text": "order of magnitude fewer parameters than LSTMs. One of its authors, Jakob Uszkoreit, suspected that attention without recurrence would be sufficient for language translation, thus the title \"attention is all you need\". That hypothesis was against conventional wisdom at the time, and even his father Hans Uszkoreit, a well-known computational linguist, was skeptical. In the same year, self-attention (called intra-attention or intra-sentence attention) was proposed for LSTMs."
+    },
+    {
+        "question": "When was the original transformer model published?",
+        "ground_truth": "On 2017-06-12.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 73,
+        "chunk_text": "On 2017-06-12, the original (100M-parameter) encoder–decoder transformer model was published in the \"Attention is all you need\" paper. At the time, the focus of the research was on improving seq2seq for machine translation, by removing its recurrence to process all tokens in parallel, but preserving its dot-product attention mechanism to keep its text processing performance. This led to the introduction of a multi-head attention model that was easier to parallelize due to the use of independent"
+    },
+    {
+        "question": "What was the main focus of the research when the transformer model was introduced?",
+        "ground_truth": "Improving seq2seq for machine translation by removing recurrence to process all tokens in parallel.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 73,
+        "chunk_text": "On 2017-06-12, the original (100M-parameter) encoder–decoder transformer model was published in the \"Attention is all you need\" paper. At the time, the focus of the research was on improving seq2seq for machine translation, by removing its recurrence to process all tokens in parallel, but preserving its dot-product attention mechanism to keep its text processing performance. This led to the introduction of a multi-head attention model that was easier to parallelize due to the use of independent"
+    },
+    {
+        "question": "What innovation helped improve the parallelization of the transformer model?",
+        "ground_truth": "The introduction of a multi-head attention model.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 73,
+        "chunk_text": "On 2017-06-12, the original (100M-parameter) encoder–decoder transformer model was published in the \"Attention is all you need\" paper. At the time, the focus of the research was on improving seq2seq for machine translation, by removing its recurrence to process all tokens in parallel, but preserving its dot-product attention mechanism to keep its text processing performance. This led to the introduction of a multi-head attention model that was easier to parallelize due to the use of independent"
+    },
+    {
+        "question": "Why is the multi-head attention model easier to parallelize?",
+        "ground_truth": "Due to the use of independent heads and the lack of recurrence.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 74,
+        "chunk_text": "of a multi-head attention model that was easier to parallelize due to the use of independent heads and the lack of recurrence. Its parallelizability was an important factor to its widespread use in large neural networks."
+    },
+    {
+        "question": "What contributed to the widespread use of the model?",
+        "ground_truth": "Its parallelizability.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 74,
+        "chunk_text": "of a multi-head attention model that was easier to parallelize due to the use of independent heads and the lack of recurrence. Its parallelizability was an important factor to its widespread use in large neural networks."
+    },
+    {
+        "question": "What factors enabled the model's parallelizability?",
+        "ground_truth": "Independent heads and the absence of recurrence.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 74,
+        "chunk_text": "of a multi-head attention model that was easier to parallelize due to the use of independent heads and the lack of recurrence. Its parallelizability was an important factor to its widespread use in large neural networks."
+    },
+    {
+        "question": "When was the decoder-only variation of the Transformer architecture first applied?",
+        "ground_truth": "As early as spring 2017.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 75,
+        "chunk_text": "AI boom era\nAs early as spring 2017, even before the \"Attention is all you need\" preprint was published, one of the co-authors applied the \"decoder-only\" variation of the architecture to generate fictitious Wikipedia articles. Transformer architecture is now used alongside many generative models that contribute to the ongoing AI boom."
+    },
+    {
+        "question": "What contributes to the ongoing AI boom according to the text?",
+        "ground_truth": "The use of Transformer architecture alongside generative models.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 75,
+        "chunk_text": "AI boom era\nAs early as spring 2017, even before the \"Attention is all you need\" preprint was published, one of the co-authors applied the \"decoder-only\" variation of the architecture to generate fictitious Wikipedia articles. Transformer architecture is now used alongside many generative models that contribute to the ongoing AI boom."
+    },
+    {
+        "question": "What was the purpose of applying the decoder-only variation of the Transformer architecture?",
+        "ground_truth": "To generate fictitious Wikipedia articles.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 75,
+        "chunk_text": "AI boom era\nAs early as spring 2017, even before the \"Attention is all you need\" preprint was published, one of the co-authors applied the \"decoder-only\" variation of the architecture to generate fictitious Wikipedia articles. Transformer architecture is now used alongside many generative models that contribute to the ongoing AI boom."
+    },
+    {
+        "question": "Which library was used for the reference implementation of the original Transformer?",
+        "ground_truth": "A TensorFlow library.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 76,
+        "chunk_text": "The \"reference implementation\" of the original Transformer was written in a TensorFlow library. In language modelling, ELMo (2018) was a bi-directional LSTM that produces contextualized word embeddings, improving upon the line of research from bag of words and word2vec. It was followed by BERT (2018), an encoder-only transformer model. In October 2019, Google started using BERT to process search queries. In 2020, Google Translate replaced the previous RNN-encoder–RNN-decoder model by a"
+    },
+    {
+        "question": "What is ELMo and how does it improve upon previous methods?",
+        "ground_truth": "ELMo is a bi-directional LSTM that produces contextualized word embeddings, improving upon the line of research from bag of words and word2vec.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 76,
+        "chunk_text": "The \"reference implementation\" of the original Transformer was written in a TensorFlow library. In language modelling, ELMo (2018) was a bi-directional LSTM that produces contextualized word embeddings, improving upon the line of research from bag of words and word2vec. It was followed by BERT (2018), an encoder-only transformer model. In October 2019, Google started using BERT to process search queries. In 2020, Google Translate replaced the previous RNN-encoder–RNN-decoder model by a"
+    },
+    {
+        "question": "When did Google start using BERT to process search queries?",
+        "ground_truth": "In October 2019.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 76,
+        "chunk_text": "The \"reference implementation\" of the original Transformer was written in a TensorFlow library. In language modelling, ELMo (2018) was a bi-directional LSTM that produces contextualized word embeddings, improving upon the line of research from bag of words and word2vec. It was followed by BERT (2018), an encoder-only transformer model. In October 2019, Google started using BERT to process search queries. In 2020, Google Translate replaced the previous RNN-encoder–RNN-decoder model by a"
+    },
+    {
+        "question": "What model did Google Translate replace in 2020?",
+        "ground_truth": "RNN-encoder–RNN-decoder",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 77,
+        "chunk_text": "search queries. In 2020, Google Translate replaced the previous RNN-encoder–RNN-decoder model by a transformer-encoder–RNN-decoder model."
+    },
+    {
+        "question": "What model did Google Translate adopt in 2020?",
+        "ground_truth": "transformer-encoder–RNN-decoder",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 77,
+        "chunk_text": "search queries. In 2020, Google Translate replaced the previous RNN-encoder–RNN-decoder model by a transformer-encoder–RNN-decoder model."
+    },
+    {
+        "question": "When did Google Translate replace the RNN-encoder–RNN-decoder model?",
+        "ground_truth": "2020",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 77,
+        "chunk_text": "search queries. In 2020, Google Translate replaced the previous RNN-encoder–RNN-decoder model by a transformer-encoder–RNN-decoder model."
+    },
+    {
+        "question": "When did the OpenAI GPT series become state of the art in natural language generation?",
+        "ground_truth": "Starting in 2018.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 78,
+        "chunk_text": "Starting in 2018, the OpenAI GPT series of decoder-only transformers became state of the art in natural language generation. At the end of 2022, ChatGPT, a chatbot based on a fine-tuned variant of GPT-3.5, became unexpectedly popular, triggering a boom around large language models."
+    },
+    {
+        "question": "What triggered the boom around large language models?",
+        "ground_truth": "ChatGPT, a chatbot based on a fine-tuned variant of GPT-3.5, became unexpectedly popular.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 78,
+        "chunk_text": "Starting in 2018, the OpenAI GPT series of decoder-only transformers became state of the art in natural language generation. At the end of 2022, ChatGPT, a chatbot based on a fine-tuned variant of GPT-3.5, became unexpectedly popular, triggering a boom around large language models."
+    },
+    {
+        "question": "What is ChatGPT based on?",
+        "ground_truth": "A fine-tuned variant of GPT-3.5.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 78,
+        "chunk_text": "Starting in 2018, the OpenAI GPT series of decoder-only transformers became state of the art in natural language generation. At the end of 2022, ChatGPT, a chatbot based on a fine-tuned variant of GPT-3.5, became unexpectedly popular, triggering a boom around large language models."
+    },
+    {
+        "question": "What are some applications of transformers beyond text?",
+        "ground_truth": "Multimodal, vision, speech recognition, robotics, and image/video generators like DALL-E, Stable Diffusion 3, and Sora.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 79,
+        "chunk_text": "Transformers have been applied in modalities beyond text. Four days after the publication of \"Attention is All You Need\", a multimodal transformer architecture, MultiModel, was published by most authors of that paper. Other examples include the vision transformer, speech recognition, robotics, and multimodal. The vision transformer, in turn, stimulated new developments in convolutional neural networks. Image and video generators like DALL-E (2021), Stable Diffusion 3 (2024), and Sora (2024),"
+    },
+    {
+        "question": "When was the MultiModel architecture published?",
+        "ground_truth": "Four days after the publication of 'Attention is All You Need'.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 79,
+        "chunk_text": "Transformers have been applied in modalities beyond text. Four days after the publication of \"Attention is All You Need\", a multimodal transformer architecture, MultiModel, was published by most authors of that paper. Other examples include the vision transformer, speech recognition, robotics, and multimodal. The vision transformer, in turn, stimulated new developments in convolutional neural networks. Image and video generators like DALL-E (2021), Stable Diffusion 3 (2024), and Sora (2024),"
+    },
+    {
+        "question": "How did the vision transformer impact convolutional neural networks?",
+        "ground_truth": "It stimulated new developments in convolutional neural networks.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 79,
+        "chunk_text": "Transformers have been applied in modalities beyond text. Four days after the publication of \"Attention is All You Need\", a multimodal transformer architecture, MultiModel, was published by most authors of that paper. Other examples include the vision transformer, speech recognition, robotics, and multimodal. The vision transformer, in turn, stimulated new developments in convolutional neural networks. Image and video generators like DALL-E (2021), Stable Diffusion 3 (2024), and Sora (2024),"
+    },
+    {
+        "question": "What do image and video generators like DALL-E, Stable Diffusion 3, and Sora use?",
+        "ground_truth": "Transformers.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 80,
+        "chunk_text": "Image and video generators like DALL-E (2021), Stable Diffusion 3 (2024), and Sora (2024), use transformers to analyse input data (like text prompts) by breaking it down into \"tokens\" and then calculating the relevance between each token using self-attention, which helps the model understand the context and relationships within the data."
+    },
+    {
+        "question": "How do these models analyze input data?",
+        "ground_truth": "By breaking it down into 'tokens' and calculating relevance between each token using self-attention.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 80,
+        "chunk_text": "Image and video generators like DALL-E (2021), Stable Diffusion 3 (2024), and Sora (2024), use transformers to analyse input data (like text prompts) by breaking it down into \"tokens\" and then calculating the relevance between each token using self-attention, which helps the model understand the context and relationships within the data."
+    },
+    {
+        "question": "What mechanism helps the model understand context and relationships within the data?",
+        "ground_truth": "Self-attention.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 80,
+        "chunk_text": "Image and video generators like DALL-E (2021), Stable Diffusion 3 (2024), and Sora (2024), use transformers to analyse input data (like text prompts) by breaking it down into \"tokens\" and then calculating the relevance between each token using self-attention, which helps the model understand the context and relationships within the data."
+    },
+    {
+        "question": "What issue did the plain transformer architecture face during training?",
+        "ground_truth": "It had difficulty in converging.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 81,
+        "chunk_text": "Training\nMethods for stabilizing training\nThe plain transformer architecture had difficulty in converging. In the original paper, the authors recommended using learning rate warmup. That is, the learning rate should linearly scale up from 0 to maximal value for the first part of the training (usually recommended to be 2% of the total number of training steps), before decaying again."
+    },
+    {
+        "question": "What training method was recommended to stabilize transformer training?",
+        "ground_truth": "Learning rate warmup, where the learning rate linearly scales up from 0 to maximal value.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 81,
+        "chunk_text": "Training\nMethods for stabilizing training\nThe plain transformer architecture had difficulty in converging. In the original paper, the authors recommended using learning rate warmup. That is, the learning rate should linearly scale up from 0 to maximal value for the first part of the training (usually recommended to be 2% of the total number of training steps), before decaying again."
+    },
+    {
+        "question": "How long is the learning rate warmup phase typically recommended to last?",
+        "ground_truth": "For the first 2% of the total number of training steps.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 81,
+        "chunk_text": "Training\nMethods for stabilizing training\nThe plain transformer architecture had difficulty in converging. In the original paper, the authors recommended using learning rate warmup. That is, the learning rate should linearly scale up from 0 to maximal value for the first part of the training (usually recommended to be 2% of the total number of training steps), before decaying again."
+    },
+    {
+        "question": "What did the 2020 paper find about layer normalization in Transformers?",
+        "ground_truth": "Using layer normalization before multihead attention and feedforward layers stabilizes training, not requiring learning rate warmup.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 82,
+        "chunk_text": "A 2020 paper found that using layer normalization before (instead of after) multihead attention and feedforward layers stabilizes training, not requiring learning rate warmup. This is the \"pre-LN Transformer\" and is more commonly used, compared to the original \"post-LN Transformer\"."
+    },
+    {
+        "question": "What is the difference between the 'pre-LN Transformer' and the 'post-LN Transformer'?",
+        "ground_truth": "The 'pre-LN Transformer' applies layer normalization before attention and feedforward layers, while the 'post-LN Transformer' applies it after. The pre-LN version is more commonly used.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 82,
+        "chunk_text": "A 2020 paper found that using layer normalization before (instead of after) multihead attention and feedforward layers stabilizes training, not requiring learning rate warmup. This is the \"pre-LN Transformer\" and is more commonly used, compared to the original \"post-LN Transformer\"."
+    },
+    {
+        "question": "Why is the 'pre-LN Transformer' preferred over the 'post-LN Transformer'?",
+        "ground_truth": "The 'pre-LN Transformer' stabilizes training without requiring learning rate warmup, making it more commonly used compared to the original 'post-LN Transformer'.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 82,
+        "chunk_text": "A 2020 paper found that using layer normalization before (instead of after) multihead attention and feedforward layers stabilizes training, not requiring learning rate warmup. This is the \"pre-LN Transformer\" and is more commonly used, compared to the original \"post-LN Transformer\"."
+    },
+    {
+        "question": "What is the typical process for training transformers?",
+        "ground_truth": "Transformers are first pretrained by self-supervised learning on a large generic dataset, followed by supervised fine-tuning on a small task-specific dataset.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 83,
+        "chunk_text": "Pretrain-finetune\nTransformers typically are first pretrained by self-supervised learning on a large generic dataset, followed by supervised fine-tuning on a small task-specific dataset. The pretrain dataset is typically an unlabeled large corpus, such as The Pile. Tasks for pretraining and fine-tuning commonly include:"
+    },
+    {
+        "question": "What type of dataset is used for pretraining?",
+        "ground_truth": "The pretrain dataset is typically an unlabeled large corpus, such as The Pile.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 83,
+        "chunk_text": "Pretrain-finetune\nTransformers typically are first pretrained by self-supervised learning on a large generic dataset, followed by supervised fine-tuning on a small task-specific dataset. The pretrain dataset is typically an unlabeled large corpus, such as The Pile. Tasks for pretraining and fine-tuning commonly include:"
+    },
+    {
+        "question": "What are the common tasks for pretraining and fine-tuning?",
+        "ground_truth": "Tasks for pretraining and fine-tuning commonly include: [tasks listed in the text]",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 83,
+        "chunk_text": "Pretrain-finetune\nTransformers typically are first pretrained by self-supervised learning on a large generic dataset, followed by supervised fine-tuning on a small task-specific dataset. The pretrain dataset is typically an unlabeled large corpus, such as The Pile. Tasks for pretraining and fine-tuning commonly include:"
+    },
+    {
+        "question": "What does the T5 transformer report document?",
+        "ground_truth": "A large number of natural language pretraining tasks, including language modeling, next-sentence prediction, question answering, reading comprehension, sentiment analysis, and paraphrasing.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 84,
+        "chunk_text": "language modeling\nnext-sentence prediction\nquestion answering\nreading comprehension\nsentiment analysis\nparaphrasing\nThe T5 transformer report documents a large number of natural language pretraining tasks. Some examples are:"
+    },
+    {
+        "question": "What are some examples of natural language pretraining tasks in the T5 report?",
+        "ground_truth": "Language modeling, next-sentence prediction, question answering, reading comprehension, sentiment analysis, and paraphrasing.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 84,
+        "chunk_text": "language modeling\nnext-sentence prediction\nquestion answering\nreading comprehension\nsentiment analysis\nparaphrasing\nThe T5 transformer report documents a large number of natural language pretraining tasks. Some examples are:"
+    },
+    {
+        "question": "What is the focus of the T5 transformer report?",
+        "ground_truth": "Natural language pretraining tasks.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 84,
+        "chunk_text": "language modeling\nnext-sentence prediction\nquestion answering\nreading comprehension\nsentiment analysis\nparaphrasing\nThe T5 transformer report documents a large number of natural language pretraining tasks. Some examples are:"
+    },
+    {
+        "question": "What is an example of text restoration?",
+        "ground_truth": "The input \"Thank you ~~ me to your party ~~ week\" might generate the output \"Thank you for inviting me to your party last week\".",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 85,
+        "chunk_text": "restoring or repairing incomplete or corrupted text. For example, the input, \"Thank you ~~ me to your party ~~ week\", might generate the output, \"Thank you for inviting me to your party last week\".\ntranslation between natural languages (machine translation)"
+    },
+    {
+        "question": "What is another application mentioned in the text?",
+        "ground_truth": "Translation between natural languages (machine translation).",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 85,
+        "chunk_text": "restoring or repairing incomplete or corrupted text. For example, the input, \"Thank you ~~ me to your party ~~ week\", might generate the output, \"Thank you for inviting me to your party last week\".\ntranslation between natural languages (machine translation)"
+    },
+    {
+        "question": "What is the primary purpose of the text's first part?",
+        "ground_truth": "Restoring or repairing incomplete or corrupted text.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 85,
+        "chunk_text": "restoring or repairing incomplete or corrupted text. For example, the input, \"Thank you ~~ me to your party ~~ week\", might generate the output, \"Thank you for inviting me to your party last week\".\ntranslation between natural languages (machine translation)"
+    },
+    {
+        "question": "What is the focus of the text regarding natural language?",
+        "ground_truth": "Judging the pragmatic acceptability of natural language.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 86,
+        "chunk_text": "translation between natural languages (machine translation)\njudging the pragmatic acceptability of natural language. For example, the following sentence might be judged \"not acceptable\", because even though it is syntactically well-formed, it is improbable in ordinary human usage: The course is jumping well."
+    },
+    {
+        "question": "Why is the sentence 'The course is jumping well' considered unacceptable?",
+        "ground_truth": "It is improbable in ordinary human usage despite being syntactically well-formed.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 86,
+        "chunk_text": "translation between natural languages (machine translation)\njudging the pragmatic acceptability of natural language. For example, the following sentence might be judged \"not acceptable\", because even though it is syntactically well-formed, it is improbable in ordinary human usage: The course is jumping well."
+    },
+    {
+        "question": "What does machine translation involve according to the text?",
+        "ground_truth": "Translation between natural languages.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 86,
+        "chunk_text": "translation between natural languages (machine translation)\njudging the pragmatic acceptability of natural language. For example, the following sentence might be judged \"not acceptable\", because even though it is syntactically well-formed, it is improbable in ordinary human usage: The course is jumping well."
+    },
+    {
+        "question": "What is the nature of these tasks for human native speakers?",
+        "ground_truth": "They are trivial or obvious for human native speakers of the language (or languages).",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 87,
+        "chunk_text": "Note that while each of these tasks is trivial or obvious for human native speakers of the language (or languages), they have typically proved challenging for previous generations of machine learning architecture."
+    },
+    {
+        "question": "Why have these tasks been challenging for machine learning models?",
+        "ground_truth": "They have typically proved challenging for previous generations of machine learning architecture.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 87,
+        "chunk_text": "Note that while each of these tasks is trivial or obvious for human native speakers of the language (or languages), they have typically proved challenging for previous generations of machine learning architecture."
+    },
+    {
+        "question": "How do human capabilities compare to machine learning models in these tasks?",
+        "ground_truth": "They are trivial or obvious for human native speakers but challenging for previous generations of machine learning architecture.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 87,
+        "chunk_text": "Note that while each of these tasks is trivial or obvious for human native speakers of the language (or languages), they have typically proved challenging for previous generations of machine learning architecture."
+    },
+    {
+        "question": "What are the three classes of language modelling tasks?",
+        "ground_truth": "Masked, autoregressive, and prefixLM.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 88,
+        "chunk_text": "Tasks\nIn general, there are 3 classes of language modelling tasks: \"masked\", \"autoregressive\", and \"prefixLM\". These classes are independent of a specific modeling architecture such as transformer, but they are often discussed in the context of transformer."
+    },
+    {
+        "question": "Are these task classes dependent on a specific modeling architecture?",
+        "ground_truth": "No, they are independent of a specific modeling architecture.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 88,
+        "chunk_text": "Tasks\nIn general, there are 3 classes of language modelling tasks: \"masked\", \"autoregressive\", and \"prefixLM\". These classes are independent of a specific modeling architecture such as transformer, but they are often discussed in the context of transformer."
+    },
+    {
+        "question": "Which architecture is often discussed in the context of these tasks?",
+        "ground_truth": "Transformer.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 88,
+        "chunk_text": "Tasks\nIn general, there are 3 classes of language modelling tasks: \"masked\", \"autoregressive\", and \"prefixLM\". These classes are independent of a specific modeling architecture such as transformer, but they are often discussed in the context of transformer."
+    },
+    {
+        "question": "What is a masked task in the context of a RAG system?",
+        "ground_truth": "In a masked task, one or more of the tokens is masked out, and the model would produce a probability distribution predicting what the masked-out tokens are based on the context.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 89,
+        "chunk_text": "In a masked task, one or more of the tokens is masked out, and the model would produce a probability distribution predicting what the masked-out tokens are based on the context. The loss function for the task is typically sum of log-perplexities for the masked-out tokens: \n  \n    \n      \n        \n          Loss\n        \n        =\n        −\n        \n          ∑\n          \n            t\n            ∈\n            \n              masked tokens\n            \n          \n        \n        ln\n        ⁡"
+    },
+    {
+        "question": "What is the loss function for a masked task?",
+        "ground_truth": "The loss function for the task is typically sum of log-perplexities for the masked-out tokens.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 89,
+        "chunk_text": "In a masked task, one or more of the tokens is masked out, and the model would produce a probability distribution predicting what the masked-out tokens are based on the context. The loss function for the task is typically sum of log-perplexities for the masked-out tokens: \n  \n    \n      \n        \n          Loss\n        \n        =\n        −\n        \n          ∑\n          \n            t\n            ∈\n            \n              masked tokens\n            \n          \n        \n        ln\n        ⁡"
+    },
+    {
+        "question": "What does the loss function represent in the context of masked tokens?",
+        "ground_truth": "The loss function represents the negative log-likelihood of the probability of masked tokens conditional on their context.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 90,
+        "chunk_text": "masked tokens\n            \n          \n        \n        ln\n        ⁡\n        (\n        \n          probability of \n        \n        t\n        \n           conditional on its context\n        \n        )\n      \n    \n    {\\displaystyle {\\text{Loss}}=-\\sum _{t\\in {\\text{masked tokens}}}\\ln({\\text{probability of }}t{\\text{ conditional on its context}})}"
+    },
+    {
+        "question": "What is the purpose of calculating the loss for masked tokens?",
+        "ground_truth": "To measure how well the model predicts masked tokens based on their surrounding context during training.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 90,
+        "chunk_text": "masked tokens\n            \n          \n        \n        ln\n        ⁡\n        (\n        \n          probability of \n        \n        t\n        \n           conditional on its context\n        \n        )\n      \n    \n    {\\displaystyle {\\text{Loss}}=-\\sum _{t\\in {\\text{masked tokens}}}\\ln({\\text{probability of }}t{\\text{ conditional on its context}})}"
+    },
+    {
+        "question": "What mathematical formula is used to compute the loss for masked tokens?",
+        "ground_truth": "The loss is computed as the negative sum of the logarithm of the probability of each masked token conditional on its context.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 90,
+        "chunk_text": "masked tokens\n            \n          \n        \n        ln\n        ⁡\n        (\n        \n          probability of \n        \n        t\n        \n           conditional on its context\n        \n        )\n      \n    \n    {\\displaystyle {\\text{Loss}}=-\\sum _{t\\in {\\text{masked tokens}}}\\ln({\\text{probability of }}t{\\text{ conditional on its context}})}"
+    },
+    {
+        "question": "What tasks are BERT models trained for?",
+        "ground_truth": "Masked token prediction and another task.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 91,
+        "chunk_text": "and the model is trained to minimize this loss function. The BERT series of models are trained for masked token prediction and another task.\nIn an autoregressive task, the entire sequence is masked at first, and the model produces a probability distribution for the first token. Then the first token is revealed and the model predicts the second token, and so on. The loss function for the task is still typically the same. The GPT series of models are trained by autoregressive tasks."
+    },
+    {
+        "question": "How does an autoregressive task work?",
+        "ground_truth": "The entire sequence is masked at first, and the model produces a probability distribution for the first token, then predicts subsequent tokens sequentially.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 91,
+        "chunk_text": "and the model is trained to minimize this loss function. The BERT series of models are trained for masked token prediction and another task.\nIn an autoregressive task, the entire sequence is masked at first, and the model produces a probability distribution for the first token. Then the first token is revealed and the model predicts the second token, and so on. The loss function for the task is still typically the same. The GPT series of models are trained by autoregressive tasks."
+    },
+    {
+        "question": "What training method do GPT models use?",
+        "ground_truth": "Autoregressive tasks.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 91,
+        "chunk_text": "and the model is trained to minimize this loss function. The BERT series of models are trained for masked token prediction and another task.\nIn an autoregressive task, the entire sequence is masked at first, and the model produces a probability distribution for the first token. Then the first token is revealed and the model predicts the second token, and so on. The loss function for the task is still typically the same. The GPT series of models are trained by autoregressive tasks."
+    },
+    {
+        "question": "How does a prefixLM task work?",
+        "ground_truth": "The sequence is divided into two parts. The first part is presented as context, and the model predicts the first token of the second part. Then that token is revealed, and the model predicts the next token, continuing this process.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 92,
+        "chunk_text": "In a prefixLM task, the sequence is divided into two parts. The first part is presented as context, and the model predicts the first token of the second part. Then that would be revealed, and the model predicts the second token, and so on. The loss function for the task is still typically the same. The T5 series of models are trained by prefixLM tasks.\nNote that \"masked\" as in \"masked language modelling\" is not \"masked\" as in \"masked attention\", and \"prefixLM\" as in"
+    },
+    {
+        "question": "What is the loss function for prefixLM tasks?",
+        "ground_truth": "The loss function for the task is still typically the same.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 92,
+        "chunk_text": "In a prefixLM task, the sequence is divided into two parts. The first part is presented as context, and the model predicts the first token of the second part. Then that would be revealed, and the model predicts the second token, and so on. The loss function for the task is still typically the same. The T5 series of models are trained by prefixLM tasks.\nNote that \"masked\" as in \"masked language modelling\" is not \"masked\" as in \"masked attention\", and \"prefixLM\" as in"
+    },
+    {
+        "question": "Which models are trained using prefixLM tasks?",
+        "ground_truth": "The T5 series of models are trained by prefixLM tasks.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 92,
+        "chunk_text": "In a prefixLM task, the sequence is divided into two parts. The first part is presented as context, and the model predicts the first token of the second part. Then that would be revealed, and the model predicts the second token, and so on. The loss function for the task is still typically the same. The T5 series of models are trained by prefixLM tasks.\nNote that \"masked\" as in \"masked language modelling\" is not \"masked\" as in \"masked attention\", and \"prefixLM\" as in"
+    },
+    {
+        "question": "What does 'prefixLM' refer to?",
+        "ground_truth": "prefix language model",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 93,
+        "chunk_text": "\"prefix language modeling\" is not \"prefixLM\" as in \" prefix language model\"."
+    },
+    {
+        "question": "How is 'prefix language modeling' different from 'prefixLM'?",
+        "ground_truth": "They are not the same.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 93,
+        "chunk_text": "\"prefix language modeling\" is not \"prefixLM\" as in \" prefix language model\"."
+    },
+    {
+        "question": "Is 'prefix language modeling' the same as 'prefixLM'?",
+        "ground_truth": "No, they are not the same.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 93,
+        "chunk_text": "\"prefix language modeling\" is not \"prefixLM\" as in \" prefix language model\"."
+    },
+    {
+        "question": "What do all transformers have in common?",
+        "ground_truth": "They have the same primary components.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 94,
+        "chunk_text": "Architecture\nAll transformers have the same primary components:"
+    },
+    {
+        "question": "What is a primary characteristic of transformers?",
+        "ground_truth": "They share the same primary components.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 94,
+        "chunk_text": "Architecture\nAll transformers have the same primary components:"
+    },
+    {
+        "question": "What do all transformers share?",
+        "ground_truth": "The same primary components.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 94,
+        "chunk_text": "Architecture\nAll transformers have the same primary components:"
+    },
+    {
+        "question": "What is a tokenizer?",
+        "ground_truth": "A tokenizer that converts text into tokens.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 95,
+        "chunk_text": "Tokenizers, which convert text into tokens.\nEmbedding layer, which converts tokens and positions of the tokens into vector representations.\nTransformer layers, which carry out repeated transformations on the vector representations, extracting more and more linguistic information. These consist of alternating attention and feedforward layers. There are two major types of transformer layers: encoder layers and decoder layers, with further variants."
+    },
+    {
+        "question": "What does the embedding layer do?",
+        "ground_truth": "It converts tokens and positions of the tokens into vector representations.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 95,
+        "chunk_text": "Tokenizers, which convert text into tokens.\nEmbedding layer, which converts tokens and positions of the tokens into vector representations.\nTransformer layers, which carry out repeated transformations on the vector representations, extracting more and more linguistic information. These consist of alternating attention and feedforward layers. There are two major types of transformer layers: encoder layers and decoder layers, with further variants."
+    },
+    {
+        "question": "What are the two major types of transformer layers?",
+        "ground_truth": "Encoder layers and decoder layers.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 95,
+        "chunk_text": "Tokenizers, which convert text into tokens.\nEmbedding layer, which converts tokens and positions of the tokens into vector representations.\nTransformer layers, which carry out repeated transformations on the vector representations, extracting more and more linguistic information. These consist of alternating attention and feedforward layers. There are two major types of transformer layers: encoder layers and decoder layers, with further variants."
+    },
+    {
+        "question": "What is the function of the un-embedding layer?",
+        "ground_truth": "Converts the final vector representations back to a probability distribution over the tokens.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 96,
+        "chunk_text": "Un-embedding layer, which converts the final vector representations back to a probability distribution over the tokens.\nThe following description follows exactly the transformer as described in the original paper. There are variants, described in the following section.\nBy convention, we write all vectors as row vectors. For example, pushing a vector through a linear layer means multiplying it by a weight matrix on the right, as \n  \n    \n      \n        x\n        W"
+    },
+    {
+        "question": "What convention is mentioned regarding vector representation?",
+        "ground_truth": "All vectors are written as row vectors.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 96,
+        "chunk_text": "Un-embedding layer, which converts the final vector representations back to a probability distribution over the tokens.\nThe following description follows exactly the transformer as described in the original paper. There are variants, described in the following section.\nBy convention, we write all vectors as row vectors. For example, pushing a vector through a linear layer means multiplying it by a weight matrix on the right, as \n  \n    \n      \n        x\n        W"
+    },
+    {
+        "question": "How is a vector processed through a linear layer described?",
+        "ground_truth": "Multiplying it by a weight matrix on the right.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 96,
+        "chunk_text": "Un-embedding layer, which converts the final vector representations back to a probability distribution over the tokens.\nThe following description follows exactly the transformer as described in the original paper. There are variants, described in the following section.\nBy convention, we write all vectors as row vectors. For example, pushing a vector through a linear layer means multiplying it by a weight matrix on the right, as \n  \n    \n      \n        x\n        W"
+    },
+    {
+        "question": "What is the mathematical notation for x multiplied by W?",
+        "ground_truth": "xW",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 97,
+        "chunk_text": "x\n        W\n      \n    \n    {\\displaystyle xW}\n  \n."
+    },
+    {
+        "question": "How is the product of x and W represented in LaTeX?",
+        "ground_truth": "{\\displaystyle xW}",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 97,
+        "chunk_text": "x\n        W\n      \n    \n    {\\displaystyle xW}\n  \n."
+    },
+    {
+        "question": "What does the notation xW represent in mathematical terms?",
+        "ground_truth": "The product of x and W",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 97,
+        "chunk_text": "x\n        W\n      \n    \n    {\\displaystyle xW}\n  \n."
+    },
+    {
+        "question": "Why must input text be converted to numerical representations in transformers?",
+        "ground_truth": "Because the transformer architecture natively consists of operations over numbers rather than text.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 98,
+        "chunk_text": "Tokenization\nAs the transformer architecture natively consists of operations over numbers (matrix multiplications, dot products, activation functions) rather than over text, there must first be a mapping from any input text to some numerical representation. This happens in three steps."
+    },
+    {
+        "question": "How many steps are involved in mapping input text to numerical representations?",
+        "ground_truth": "Three steps.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 98,
+        "chunk_text": "Tokenization\nAs the transformer architecture natively consists of operations over numbers (matrix multiplications, dot products, activation functions) rather than over text, there must first be a mapping from any input text to some numerical representation. This happens in three steps."
+    },
+    {
+        "question": "What process converts input text to numerical representations for transformers?",
+        "ground_truth": "Tokenization.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 98,
+        "chunk_text": "Tokenization\nAs the transformer architecture natively consists of operations over numbers (matrix multiplications, dot products, activation functions) rather than over text, there must first be a mapping from any input text to some numerical representation. This happens in three steps."
+    },
+    {
+        "question": "What is pretokenization?",
+        "ground_truth": "The process of splitting the input text into coarse-grained segments called pretokens after performing textual transformations.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 99,
+        "chunk_text": "First, the input text is treated by a preprocessor, which performs both textual transformations and splits the text into coarse-grained segments called pretokens. The latter is referred to as pretokenization. Second, each pretoken is segmented further into tokens by a tokenizer that expects to only see pretokens output by its preprocessor. Each token it produces is a string of one or more characters belonging to a finite set of strings called the vocabulary \n  \n    \n      \n        V"
+    },
+    {
+        "question": "What is the role of the tokenizer?",
+        "ground_truth": "To segment pretokens into tokens by producing strings of one or more characters from a finite set of strings called the vocabulary.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 99,
+        "chunk_text": "First, the input text is treated by a preprocessor, which performs both textual transformations and splits the text into coarse-grained segments called pretokens. The latter is referred to as pretokenization. Second, each pretoken is segmented further into tokens by a tokenizer that expects to only see pretokens output by its preprocessor. Each token it produces is a string of one or more characters belonging to a finite set of strings called the vocabulary \n  \n    \n      \n        V"
+    },
+    {
+        "question": "What are tokens defined as?",
+        "ground_truth": "Strings of one or more characters belonging to a finite set of strings called the vocabulary.",
+        "source": "Transformer (deep learning)",
+        "source_type": "wikipedia",
+        "chunk_id": 99,
+        "chunk_text": "First, the input text is treated by a preprocessor, which performs both textual transformations and splits the text into coarse-grained segments called pretokens. The latter is referred to as pretokenization. Second, each pretoken is segmented further into tokens by a tokenizer that expects to only see pretokens output by its preprocessor. Each token it produces is a string of one or more characters belonging to a finite set of strings called the vocabulary \n  \n    \n      \n        V"
+    }
+]
