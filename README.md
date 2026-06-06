@@ -19,6 +19,7 @@ The framework allows:
 * Generation of evaluation reports
 
 ---
+![Architecture Diagram](artifacts/processtillnow.png)
 
 ## 2. Motivation
 
@@ -586,3 +587,10 @@ The project successfully evolved from a simple RAG chatbot into a RAG Evaluation
 The most important lesson learned was that retrieval quality cannot be reliably measured using exact chunk matching alone. Semantic evaluation and LLM-based judging provide a far more realistic assessment of RAG performance.
 
 Future work should focus on hybrid retrieval, reranking, hallucination detection, and richer benchmarking datasets.
+
+
+## hallucination detection blog: 
+https://oneuptime.com/blog/post/32026-01-30-hallucination-detection/view
+
+## llm-eval-projects-guide.docx
+https://docs.google.com/document/d/1JrwCVhrDScXxZ_1l9s04TmSUj4BaptTU/mobilebasic
