@@ -1,4 +1,5 @@
-from sources.wiki_source import load_wikipedia_documents
+# NEW
+from src.sources.wiki_source import load_wikipedia_documents
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 
 def load_chunks():

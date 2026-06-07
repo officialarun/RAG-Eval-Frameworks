@@ -11,3 +11,9 @@ wheels/
 
 # Chroma data
 chroma_db/
+
+.ipynb_checkpoints/
+
+.env
+
+data/documents/
