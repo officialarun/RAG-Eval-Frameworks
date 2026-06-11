@@ -2,6 +2,10 @@ from langchain_text_splitters import (
     RecursiveCharacterTextSplitter
 )
 
+from src_v2.chunking.structure_preserver import (
+    StructurePreserver
+)
+
 from src_v2.models import (
     Chunk,
     FlattenedSection,
@@ -13,7 +17,7 @@ class SectionChunker:
 
     def __init__(
         self,
-        chunk_size=1000,
+        chunk_size=100,
         chunk_overlap=200,
         max_section_length=2500
     ):
@@ -31,6 +35,9 @@ class SectionChunker:
                 chunk_size=chunk_size,
                 chunk_overlap=chunk_overlap
             )
+        )
+        self.preserver = (
+            StructurePreserver()
         )
 
     def chunk(
@@ -62,10 +69,10 @@ class SectionChunker:
                         parent_section_id=section.section_id,
                         chunk_order=chunk_counter,
                         fragment_index=-1,
-                        section_title=section.title,
+                        section_title=section.section_title,
                         path=section.path,
                         level=section.level,
-                        chunk_type="section",
+                        chunk_type="parent_section",
                         content=section.content
                     )
                 )
@@ -83,7 +90,7 @@ class SectionChunker:
                         parent_section_id=section.section_id,
                         chunk_order=chunk_counter,
                         fragment_index=-1,
-                        section_title=section.title,
+                        section_title=section.section_title,
                         path=section.path,
                         level=section.level,
                         chunk_type="parent_section",
@@ -93,9 +100,23 @@ class SectionChunker:
 
                 chunk_counter += 1
 
-                fragments = self.splitter.split_text(
-                    section.content
+                protected_text, mapping = (
+                    self.preserver.protect(
+                        section.content
+                    )
                 )
+
+                fragments = self.splitter.split_text(
+                    protected_text
+                )
+
+                fragments = [
+                    self.preserver.restore(
+                        fragment,
+                        mapping
+                    )
+                    for fragment in fragments
+                ]
 
                 for idx, fragment in enumerate(
                     fragments
@@ -108,7 +129,7 @@ class SectionChunker:
                             parent_section_id=section.section_id,
                             chunk_order=chunk_counter,
                             fragment_index=idx,
-                            section_title=section.title,
+                            section_title=section.section_title,
                             path=section.path,
                             level=section.level,
                             chunk_type="section_fragment",
