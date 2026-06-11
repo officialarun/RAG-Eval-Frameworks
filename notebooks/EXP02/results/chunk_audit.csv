@@ -1,0 +1,147 @@
+path,type,length
+Transformer (deep learning) > History > Predecessors,section,1968
+Transformer (deep learning) > History > Attention with seq2seq,section,2305
+Transformer (deep learning) > History > Parallelizing attention,section,1497
+Transformer (deep learning) > History > AI boom era,section,1883
+Transformer (deep learning) > Training > Methods for stabilizing training,section,627
+Transformer (deep learning) > Training > Pretrain-finetune,section,1252
+Transformer (deep learning) > Training > Tasks,section,2065
+Transformer (deep learning) > Architecture,section,1010
+Transformer (deep learning) > Architecture > Tokenization,parent_section,4295
+Transformer (deep learning) > Architecture > Tokenization,section_fragment,795
+Transformer (deep learning) > Architecture > Tokenization,section_fragment,975
+Transformer (deep learning) > Architecture > Tokenization,section_fragment,631
+Transformer (deep learning) > Architecture > Tokenization,section_fragment,480
+Transformer (deep learning) > Architecture > Tokenization,section_fragment,833
+Transformer (deep learning) > Architecture > Tokenization,section_fragment,871
+Transformer (deep learning) > Architecture > Embedding,section,1595
+Transformer (deep learning) > Architecture > Un-embedding,section,1307
+Transformer (deep learning) > Architecture > Positional encoding,parent_section,6402
+Transformer (deep learning) > Architecture > Positional encoding,section_fragment,1000
+Transformer (deep learning) > Architecture > Positional encoding,section_fragment,968
+Transformer (deep learning) > Architecture > Positional encoding,section_fragment,945
+Transformer (deep learning) > Architecture > Positional encoding,section_fragment,266
+Transformer (deep learning) > Architecture > Positional encoding,section_fragment,949
+Transformer (deep learning) > Architecture > Positional encoding,section_fragment,983
+Transformer (deep learning) > Architecture > Positional encoding,section_fragment,967
+Transformer (deep learning) > Architecture > Positional encoding,section_fragment,579
+Transformer (deep learning) > Architecture > Positional encoding,section_fragment,798
+Transformer (deep learning) > Architecture > Encoder–decoder (overview),section,1120
+Transformer (deep learning) > Architecture > Feedforward network,section,2077
+Transformer (deep learning) > Architecture > Scaled dot-product attention > Attention head,parent_section,10563
+Transformer (deep learning) > Architecture > Scaled dot-product attention > Attention head,section_fragment,996
+Transformer (deep learning) > Architecture > Scaled dot-product attention > Attention head,section_fragment,960
+Transformer (deep learning) > Architecture > Scaled dot-product attention > Attention head,section_fragment,960
+Transformer (deep learning) > Architecture > Scaled dot-product attention > Attention head,section_fragment,978
+Transformer (deep learning) > Architecture > Scaled dot-product attention > Attention head,section_fragment,944
+Transformer (deep learning) > Architecture > Scaled dot-product attention > Attention head,section_fragment,932
+Transformer (deep learning) > Architecture > Scaled dot-product attention > Attention head,section_fragment,977
+Transformer (deep learning) > Architecture > Scaled dot-product attention > Attention head,section_fragment,965
+Transformer (deep learning) > Architecture > Scaled dot-product attention > Attention head,section_fragment,903
+Transformer (deep learning) > Architecture > Scaled dot-product attention > Attention head,section_fragment,758
+Transformer (deep learning) > Architecture > Scaled dot-product attention > Attention head,section_fragment,976
+Transformer (deep learning) > Architecture > Scaled dot-product attention > Attention head,section_fragment,947
+Transformer (deep learning) > Architecture > Scaled dot-product attention > Attention head,section_fragment,777
+Transformer (deep learning) > Architecture > Scaled dot-product attention > Multihead attention,parent_section,5657
+Transformer (deep learning) > Architecture > Scaled dot-product attention > Multihead attention,section_fragment,979
+Transformer (deep learning) > Architecture > Scaled dot-product attention > Multihead attention,section_fragment,643
+Transformer (deep learning) > Architecture > Scaled dot-product attention > Multihead attention,section_fragment,999
+Transformer (deep learning) > Architecture > Scaled dot-product attention > Multihead attention,section_fragment,989
+Transformer (deep learning) > Architecture > Scaled dot-product attention > Multihead attention,section_fragment,979
+Transformer (deep learning) > Architecture > Scaled dot-product attention > Multihead attention,section_fragment,973
+Transformer (deep learning) > Architecture > Scaled dot-product attention > Multihead attention,section_fragment,894
+Transformer (deep learning) > Architecture > Scaled dot-product attention > Masked attention,parent_section,5780
+Transformer (deep learning) > Architecture > Scaled dot-product attention > Masked attention,section_fragment,998
+Transformer (deep learning) > Architecture > Scaled dot-product attention > Masked attention,section_fragment,990
+Transformer (deep learning) > Architecture > Scaled dot-product attention > Masked attention,section_fragment,954
+Transformer (deep learning) > Architecture > Scaled dot-product attention > Masked attention,section_fragment,849
+Transformer (deep learning) > Architecture > Scaled dot-product attention > Masked attention,section_fragment,928
+Transformer (deep learning) > Architecture > Scaled dot-product attention > Masked attention,section_fragment,842
+Transformer (deep learning) > Architecture > Scaled dot-product attention > Masked attention,section_fragment,360
+Transformer (deep learning) > Architecture > Scaled dot-product attention > Masked attention,section_fragment,658
+Transformer (deep learning) > Architecture > Encoder,parent_section,5402
+Transformer (deep learning) > Architecture > Encoder,section_fragment,977
+Transformer (deep learning) > Architecture > Encoder,section_fragment,933
+Transformer (deep learning) > Architecture > Encoder,section_fragment,850
+Transformer (deep learning) > Architecture > Encoder,section_fragment,940
+Transformer (deep learning) > Architecture > Encoder,section_fragment,908
+Transformer (deep learning) > Architecture > Encoder,section_fragment,732
+Transformer (deep learning) > Architecture > Encoder,section_fragment,640
+Transformer (deep learning) > Architecture > Decoder,parent_section,3228
+Transformer (deep learning) > Architecture > Decoder,section_fragment,531
+Transformer (deep learning) > Architecture > Decoder,section_fragment,988
+Transformer (deep learning) > Architecture > Decoder,section_fragment,879
+Transformer (deep learning) > Architecture > Decoder,section_fragment,778
+Transformer (deep learning) > Architecture > Decoder,section_fragment,484
+Transformer (deep learning) > Full transformer architecture > Sublayers,parent_section,2621
+Transformer (deep learning) > Full transformer architecture > Sublayers,section_fragment,215
+Transformer (deep learning) > Full transformer architecture > Sublayers,section_fragment,990
+Transformer (deep learning) > Full transformer architecture > Sublayers,section_fragment,958
+Transformer (deep learning) > Full transformer architecture > Sublayers,section_fragment,690
+Transformer (deep learning) > Full transformer architecture > Pseudocode,section,2319
+Transformer (deep learning) > Full transformer architecture > Terminology,parent_section,3112
+Transformer (deep learning) > Full transformer architecture > Terminology,section_fragment,577
+Transformer (deep learning) > Full transformer architecture > Terminology,section_fragment,910
+Transformer (deep learning) > Full transformer architecture > Terminology,section_fragment,986
+Transformer (deep learning) > Full transformer architecture > Terminology,section_fragment,794
+Transformer (deep learning) > Subsequent work > Alternative activation functions,section,282
+Transformer (deep learning) > Subsequent work > Alternative normalizations,section,178
+Transformer (deep learning) > Subsequent work > Alternative positional encodings,section,396
+Transformer (deep learning) > Subsequent work > Alternative positional encodings > RoPE,parent_section,7881
+Transformer (deep learning) > Subsequent work > Alternative positional encodings > RoPE,section_fragment,986
+Transformer (deep learning) > Subsequent work > Alternative positional encodings > RoPE,section_fragment,973
+Transformer (deep learning) > Subsequent work > Alternative positional encodings > RoPE,section_fragment,936
+Transformer (deep learning) > Subsequent work > Alternative positional encodings > RoPE,section_fragment,958
+Transformer (deep learning) > Subsequent work > Alternative positional encodings > RoPE,section_fragment,950
+Transformer (deep learning) > Subsequent work > Alternative positional encodings > RoPE,section_fragment,638
+Transformer (deep learning) > Subsequent work > Alternative positional encodings > RoPE,section_fragment,933
+Transformer (deep learning) > Subsequent work > Alternative positional encodings > RoPE,section_fragment,958
+Transformer (deep learning) > Subsequent work > Alternative positional encodings > RoPE,section_fragment,967
+Transformer (deep learning) > Subsequent work > Alternative positional encodings > RoPE,section_fragment,871
+Transformer (deep learning) > Subsequent work > Alternative positional encodings > RoPE,section_fragment,80
+Transformer (deep learning) > Subsequent work > Alternative positional encodings > ALiBi,parent_section,4753
+Transformer (deep learning) > Subsequent work > Alternative positional encodings > ALiBi,section_fragment,896
+Transformer (deep learning) > Subsequent work > Alternative positional encodings > ALiBi,section_fragment,899
+Transformer (deep learning) > Subsequent work > Alternative positional encodings > ALiBi,section_fragment,977
+Transformer (deep learning) > Subsequent work > Alternative positional encodings > ALiBi,section_fragment,947
+Transformer (deep learning) > Subsequent work > Alternative positional encodings > ALiBi,section_fragment,941
+Transformer (deep learning) > Subsequent work > Alternative positional encodings > ALiBi,section_fragment,675
+Transformer (deep learning) > Subsequent work > Alternative positional encodings > Relative Position Encodings,section,2187
+Transformer (deep learning) > Subsequent work > Efficient implementation,section,231
+Transformer (deep learning) > Subsequent work > Efficient implementation > KV caching,section,1109
+Transformer (deep learning) > Subsequent work > Efficient implementation > FlashAttention,section,1417
+Transformer (deep learning) > Subsequent work > Efficient implementation > Multi-Query Attention,parent_section,3425
+Transformer (deep learning) > Subsequent work > Efficient implementation > Multi-Query Attention,section_fragment,82
+Transformer (deep learning) > Subsequent work > Efficient implementation > Multi-Query Attention,section_fragment,955
+Transformer (deep learning) > Subsequent work > Efficient implementation > Multi-Query Attention,section_fragment,692
+Transformer (deep learning) > Subsequent work > Efficient implementation > Multi-Query Attention,section_fragment,915
+Transformer (deep learning) > Subsequent work > Efficient implementation > Multi-Query Attention,section_fragment,313
+Transformer (deep learning) > Subsequent work > Efficient implementation > Multi-Query Attention,section_fragment,688
+Transformer (deep learning) > Subsequent work > Efficient implementation > Speculative decoding,parent_section,5262
+Transformer (deep learning) > Subsequent work > Efficient implementation > Speculative decoding,section_fragment,976
+Transformer (deep learning) > Subsequent work > Efficient implementation > Speculative decoding,section_fragment,990
+Transformer (deep learning) > Subsequent work > Efficient implementation > Speculative decoding,section_fragment,916
+Transformer (deep learning) > Subsequent work > Efficient implementation > Speculative decoding,section_fragment,974
+Transformer (deep learning) > Subsequent work > Efficient implementation > Speculative decoding,section_fragment,829
+Transformer (deep learning) > Subsequent work > Efficient implementation > Speculative decoding,section_fragment,650
+Transformer (deep learning) > Subsequent work > Efficient implementation > Speculative decoding,section_fragment,421
+Transformer (deep learning) > Subsequent work > Sub-quadratic transformers,section,472
+Transformer (deep learning) > Subsequent work > Sub-quadratic transformers > Alternative attention graphs,section,1395
+Transformer (deep learning) > Subsequent work > Sub-quadratic transformers > Random Feature Attention,parent_section,10175
+Transformer (deep learning) > Subsequent work > Sub-quadratic transformers > Random Feature Attention,section_fragment,830
+Transformer (deep learning) > Subsequent work > Sub-quadratic transformers > Random Feature Attention,section_fragment,987
+Transformer (deep learning) > Subsequent work > Sub-quadratic transformers > Random Feature Attention,section_fragment,963
+Transformer (deep learning) > Subsequent work > Sub-quadratic transformers > Random Feature Attention,section_fragment,903
+Transformer (deep learning) > Subsequent work > Sub-quadratic transformers > Random Feature Attention,section_fragment,925
+Transformer (deep learning) > Subsequent work > Sub-quadratic transformers > Random Feature Attention,section_fragment,948
+Transformer (deep learning) > Subsequent work > Sub-quadratic transformers > Random Feature Attention,section_fragment,963
+Transformer (deep learning) > Subsequent work > Sub-quadratic transformers > Random Feature Attention,section_fragment,978
+Transformer (deep learning) > Subsequent work > Sub-quadratic transformers > Random Feature Attention,section_fragment,890
+Transformer (deep learning) > Subsequent work > Sub-quadratic transformers > Random Feature Attention,section_fragment,961
+Transformer (deep learning) > Subsequent work > Sub-quadratic transformers > Random Feature Attention,section_fragment,910
+Transformer (deep learning) > Subsequent work > Sub-quadratic transformers > Random Feature Attention,section_fragment,970
+Transformer (deep learning) > Subsequent work > Sub-quadratic transformers > Random Feature Attention,section_fragment,606
+Transformer (deep learning) > Subsequent work > Multimodality,section,2148
+Transformer (deep learning) > Applications,section,923
+Transformer (deep learning) > See also,section,547
+Transformer (deep learning) > References,section,23
