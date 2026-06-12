@@ -6,3 +6,6 @@ from .chunk import Chunk
 from .flattened_section import FlattenedSection
 from .question_sample import QuestionSample
 from .chunk_embedding import ChunkEmbedding
+from .retrieval_result import (
+    RetrievalResult
+)
