@@ -17,3 +17,5 @@ chroma_db/
 .env
 
 data/documents/
+experiments/data/cache
+experiments/.ipynb_checkpoints

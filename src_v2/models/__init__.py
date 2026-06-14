@@ -9,3 +9,9 @@ from .chunk_embedding import ChunkEmbedding
 from .retrieval_result import (
     RetrievalResult
 )
+from .hierarchical_retrieval_result import (
+    HierarchicalRetrievalResult
+)
+from .neighbor_retrieval_result import (
+    NeighborRetrievalResult
+)

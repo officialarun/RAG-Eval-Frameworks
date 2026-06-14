@@ -63,8 +63,7 @@ class DenseRetriever(
             if (
                 retrieval_config.EXCLUDE_REFERENCE_SECTIONS
                 and
-                meta["section_title"].strip().lower()
-                in retrieval_config.BAD_SECTIONS
+                retrieval_config.is_bad_section(meta["section_title"])
             ):
                 continue
 

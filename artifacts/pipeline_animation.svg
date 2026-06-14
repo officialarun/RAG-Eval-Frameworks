@@ -1,0 +1,408 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 760" width="1100" height="760" style="font-family:system-ui,sans-serif;background:#0d1117;border-radius:14px;">
+  <defs>
+    <linearGradient id="gPDF" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e74c3c"/><stop offset="100%" style="stop-color:#c0392b"/>
+    </linearGradient>
+    <linearGradient id="gParse" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e67e22"/><stop offset="100%" style="stop-color:#d35400"/>
+    </linearGradient>
+    <linearGradient id="gChunk" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f39c12"/><stop offset="100%" style="stop-color:#e67e22"/>
+    </linearGradient>
+    <linearGradient id="gEmbed" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2ecc71"/><stop offset="100%" style="stop-color:#27ae60"/>
+    </linearGradient>
+    <linearGradient id="gVec" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1abc9c"/><stop offset="100%" style="stop-color:#16a085"/>
+    </linearGradient>
+    <linearGradient id="gQA" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#9b59b6"/><stop offset="100%" style="stop-color:#8e44ad"/>
+    </linearGradient>
+    <linearGradient id="gRetr" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3498db"/><stop offset="100%" style="stop-color:#2980b9"/>
+    </linearGradient>
+    <linearGradient id="gEval" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e74c8b"/><stop offset="100%" style="stop-color:#c0395f"/>
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="3" stdDeviation="6" flood-color="#000" flood-opacity="0.55"/>
+    </filter>
+    <marker id="arr" markerWidth="10" markerHeight="10" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L0,8 L10,4 z" fill="#4a5568"/>
+    </marker>
+    <marker id="arrGold" markerWidth="10" markerHeight="10" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L0,8 L10,4 z" fill="#f1c40f"/>
+    </marker>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#ffffff07" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1100" height="760" fill="url(#grid)"/>
+
+  <!-- ─── TITLE ─── -->
+  <text x="550" y="40" text-anchor="middle" fill="#e6edf3" font-size="26" font-weight="800" letter-spacing="0.5">RAG Evaluation Framework — Pipeline</text>
+  <text x="550" y="66" text-anchor="middle" fill="#8b949e" font-size="14">PDF Corpus → Section Parsing → Chunking → Embedding → Vector Store → Q&amp;A Generation → Retrieval → Benchmarking → RAGAS</text>
+
+  <!-- ═══════════════════════════════════════════════ -->
+  <!-- ROW 1 — Stages 1–5 (left → right)             -->
+  <!-- Box: 160w × 125h, gap: 30px between boxes     -->
+  <!-- x positions: 30, 220, 410, 600, 790           -->
+  <!-- cy = 85 + 62 = 147                            -->
+  <!-- ═══════════════════════════════════════════════ -->
+
+  <!-- ── Stage 1: PDF Corpus ── -->
+  <g filter="url(#shadow)">
+    <rect x="30" y="85" width="160" height="125" rx="12" fill="url(#gPDF)" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="0.2s" fill="freeze"/>
+    </rect>
+    <text x="110" y="126" text-anchor="middle" fill="white" font-size="32" opacity="0">
+      📄<animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="0.2s" fill="freeze"/>
+    </text>
+    <text x="110" y="155" text-anchor="middle" fill="white" font-size="16" font-weight="700" opacity="0">
+      PDF Corpus<animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="0.2s" fill="freeze"/>
+    </text>
+    <text x="110" y="175" text-anchor="middle" fill="#ffdddd" font-size="13" opacity="0">
+      13 PDFs · GenAI/RAG<animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="0.2s" fill="freeze"/>
+    </text>
+    <text x="110" y="198" text-anchor="middle" fill="#ffaaaa" font-size="11" opacity="0">
+      Docling Parser<animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="0.2s" fill="freeze"/>
+    </text>
+  </g>
+  <rect x="60" y="72" width="100" height="18" rx="9" fill="#c0392b" opacity="0">
+    <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.5s" fill="freeze"/>
+  </rect>
+  <text x="110" y="85" text-anchor="middle" fill="white" font-size="11" font-weight="700" opacity="0">
+    STAGE 1  ✅<animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="0.5s" fill="freeze"/>
+  </text>
+
+  <!-- Arrow 1→2 -->
+  <line x1="192" y1="147" x2="218" y2="147" stroke="#5a6478" stroke-width="2.5" marker-end="url(#arr)" stroke-dasharray="26" stroke-dashoffset="26">
+    <animate attributeName="stroke-dashoffset" from="26" to="0" dur="0.25s" begin="0.6s" fill="freeze"/>
+  </line>
+
+  <!-- ── Stage 2: Section Parsing ── -->
+  <g filter="url(#shadow)">
+    <rect x="220" y="85" width="160" height="125" rx="12" fill="url(#gParse)" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="0.7s" fill="freeze"/>
+    </rect>
+    <text x="300" y="126" text-anchor="middle" fill="white" font-size="32" opacity="0">
+      🔍<animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="0.7s" fill="freeze"/>
+    </text>
+    <text x="300" y="155" text-anchor="middle" fill="white" font-size="16" font-weight="700" opacity="0">
+      Section Parsing<animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="0.7s" fill="freeze"/>
+    </text>
+    <text x="300" y="175" text-anchor="middle" fill="#ffe8cc" font-size="13" opacity="0">
+      Docling → Hierarchy<animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="0.7s" fill="freeze"/>
+    </text>
+    <text x="300" y="198" text-anchor="middle" fill="#ffcc99" font-size="11" opacity="0">
+      LevelInference · HierarchyBuilder<animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="0.7s" fill="freeze"/>
+    </text>
+  </g>
+  <rect x="250" y="72" width="100" height="18" rx="9" fill="#d35400" opacity="0">
+    <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="1.0s" fill="freeze"/>
+  </rect>
+  <text x="300" y="85" text-anchor="middle" fill="white" font-size="11" font-weight="700" opacity="0">
+    STAGE 2  ✅<animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="1.0s" fill="freeze"/>
+  </text>
+
+  <!-- Arrow 2→3 -->
+  <line x1="382" y1="147" x2="408" y2="147" stroke="#5a6478" stroke-width="2.5" marker-end="url(#arr)" stroke-dasharray="26" stroke-dashoffset="26">
+    <animate attributeName="stroke-dashoffset" from="26" to="0" dur="0.25s" begin="1.1s" fill="freeze"/>
+  </line>
+
+  <!-- ── Stage 3: Smart Chunking ── -->
+  <g filter="url(#shadow)">
+    <rect x="410" y="85" width="160" height="125" rx="12" fill="url(#gChunk)" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="1.2s" fill="freeze"/>
+    </rect>
+    <text x="490" y="126" text-anchor="middle" fill="white" font-size="32" opacity="0">
+      ✂️<animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="1.2s" fill="freeze"/>
+    </text>
+    <text x="490" y="155" text-anchor="middle" fill="white" font-size="16" font-weight="700" opacity="0">
+      Smart Chunking<animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="1.2s" fill="freeze"/>
+    </text>
+    <text x="490" y="175" text-anchor="middle" fill="#fff3cc" font-size="13" opacity="0">
+      Table-aware · Header dup<animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="1.2s" fill="freeze"/>
+    </text>
+    <text x="490" y="198" text-anchor="middle" fill="#ffe099" font-size="11" opacity="0">
+      Formula protection · 3-tier<animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="1.2s" fill="freeze"/>
+    </text>
+  </g>
+  <rect x="440" y="72" width="100" height="18" rx="9" fill="#e67e22" opacity="0">
+    <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="1.5s" fill="freeze"/>
+  </rect>
+  <text x="490" y="85" text-anchor="middle" fill="white" font-size="11" font-weight="700" opacity="0">
+    STAGE 3  ✅<animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="1.5s" fill="freeze"/>
+  </text>
+
+  <!-- Arrow 3→4 -->
+  <line x1="572" y1="147" x2="598" y2="147" stroke="#5a6478" stroke-width="2.5" marker-end="url(#arr)" stroke-dasharray="26" stroke-dashoffset="26">
+    <animate attributeName="stroke-dashoffset" from="26" to="0" dur="0.25s" begin="1.6s" fill="freeze"/>
+  </line>
+
+  <!-- ── Stage 4: Embedding ── -->
+  <g filter="url(#shadow)">
+    <rect x="600" y="85" width="160" height="125" rx="12" fill="url(#gEmbed)" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="1.7s" fill="freeze"/>
+    </rect>
+    <text x="680" y="126" text-anchor="middle" fill="white" font-size="32" opacity="0">
+      🧬<animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="1.7s" fill="freeze"/>
+    </text>
+    <text x="680" y="155" text-anchor="middle" fill="white" font-size="16" font-weight="700" opacity="0">
+      Embedding<animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="1.7s" fill="freeze"/>
+    </text>
+    <text x="680" y="175" text-anchor="middle" fill="#ccffe8" font-size="13" opacity="0">
+      nomic-embed-text<animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="1.7s" fill="freeze"/>
+    </text>
+    <text x="680" y="198" text-anchor="middle" fill="#99ffcc" font-size="11" opacity="0">
+      Ollama · Local · No GPU<animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="1.7s" fill="freeze"/>
+    </text>
+  </g>
+  <rect x="630" y="72" width="100" height="18" rx="9" fill="#27ae60" opacity="0">
+    <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="2.0s" fill="freeze"/>
+  </rect>
+  <text x="680" y="85" text-anchor="middle" fill="white" font-size="11" font-weight="700" opacity="0">
+    STAGE 4  ✅<animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="2.0s" fill="freeze"/>
+  </text>
+
+  <!-- Arrow 4→5 -->
+  <line x1="762" y1="147" x2="788" y2="147" stroke="#5a6478" stroke-width="2.5" marker-end="url(#arr)" stroke-dasharray="26" stroke-dashoffset="26">
+    <animate attributeName="stroke-dashoffset" from="26" to="0" dur="0.25s" begin="2.1s" fill="freeze"/>
+  </line>
+
+  <!-- ── Stage 5: Vector Store ── -->
+  <g filter="url(#shadow)">
+    <rect x="790" y="85" width="160" height="125" rx="12" fill="url(#gVec)" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="2.2s" fill="freeze"/>
+    </rect>
+    <text x="870" y="126" text-anchor="middle" fill="white" font-size="32" opacity="0">
+      🗄️<animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="2.2s" fill="freeze"/>
+    </text>
+    <text x="870" y="155" text-anchor="middle" fill="white" font-size="16" font-weight="700" opacity="0">
+      Vector Store<animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="2.2s" fill="freeze"/>
+    </text>
+    <text x="870" y="175" text-anchor="middle" fill="#ccfff5" font-size="13" opacity="0">
+      ChromaDB · Persisted<animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="2.2s" fill="freeze"/>
+    </text>
+    <text x="870" y="198" text-anchor="middle" fill="#99ffee" font-size="11" opacity="0">
+      Metadata inline with vectors<animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="2.2s" fill="freeze"/>
+    </text>
+  </g>
+  <rect x="820" y="72" width="100" height="18" rx="9" fill="#16a085" opacity="0">
+    <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="2.5s" fill="freeze"/>
+  </rect>
+  <text x="870" y="85" text-anchor="middle" fill="white" font-size="11" font-weight="700" opacity="0">
+    STAGE 5  ✅<animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="2.5s" fill="freeze"/>
+  </text>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- CONNECTOR: S5 bottom → sweeps down-left → S6 right -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <path d="M870,212 L870,265 Q870,295 840,295 L752,295" stroke="#5a6478" stroke-width="2.5" fill="none" marker-end="url(#arr)" stroke-dasharray="250" stroke-dashoffset="250">
+    <animate attributeName="stroke-dashoffset" from="250" to="0" dur="0.55s" begin="2.65s" fill="freeze"/>
+  </path>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- ROW 2 — Stages 6–8 (right → left)                 -->
+  <!-- S6 at x=590 (cx=670), S7 at x=290 (cx=430,w=250) -->
+  <!-- S8 at x=30  (cx=110)                              -->
+  <!-- cy = 300 + 62 = 362                               -->
+  <!-- ═══════════════════════════════════════════════════ -->
+
+  <!-- ── Stage 6: Q&A Generation ── -->
+  <g filter="url(#shadow)">
+    <rect x="590" y="300" width="160" height="125" rx="12" fill="url(#gQA)" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="3.0s" fill="freeze"/>
+    </rect>
+    <text x="670" y="341" text-anchor="middle" fill="white" font-size="32" opacity="0">
+      🤖<animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="3.0s" fill="freeze"/>
+    </text>
+    <text x="670" y="370" text-anchor="middle" fill="white" font-size="16" font-weight="700" opacity="0">
+      Q&amp;A Generation<animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="3.0s" fill="freeze"/>
+    </text>
+    <text x="670" y="390" text-anchor="middle" fill="#e8ccff" font-size="13" opacity="0">
+      627 Q&amp;A pairs · JSONL<animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="3.0s" fill="freeze"/>
+    </text>
+    <text x="670" y="412" text-anchor="middle" fill="#d4aaff" font-size="11" opacity="0">
+      gpt-5-nano · Ground truth<animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="3.0s" fill="freeze"/>
+    </text>
+  </g>
+  <rect x="610" y="286" width="120" height="18" rx="9" fill="#8e44ad" opacity="0">
+    <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="3.3s" fill="freeze"/>
+  </rect>
+  <text x="670" y="299" text-anchor="middle" fill="white" font-size="11" font-weight="700" opacity="0">
+    STAGE 6  ✅<animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="3.3s" fill="freeze"/>
+  </text>
+
+  <!-- Arrow S6 → S7 (left) -->
+  <line x1="588" y1="362" x2="542" y2="362" stroke="#5a6478" stroke-width="2.5" marker-end="url(#arr)" stroke-dasharray="46" stroke-dashoffset="46">
+    <animate attributeName="stroke-dashoffset" from="46" to="0" dur="0.3s" begin="3.4s" fill="freeze"/>
+  </line>
+
+  <!-- ── Stage 7: 5 Retrieval Strategies (wider box) ── -->
+  <g filter="url(#shadow)">
+    <rect x="290" y="300" width="250" height="125" rx="12" fill="url(#gRetr)" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="3.5s" fill="freeze"/>
+    </rect>
+    <text x="415" y="336" text-anchor="middle" fill="white" font-size="32" opacity="0">
+      🔎<animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="3.5s" fill="freeze"/>
+    </text>
+    <text x="415" y="362" text-anchor="middle" fill="white" font-size="16" font-weight="700" opacity="0">
+      5 Retrieval Strategies<animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="3.5s" fill="freeze"/>
+    </text>
+    <!-- Strategy tags -->
+    <text x="330" y="385" text-anchor="middle" fill="#ffddaa" font-size="12" font-weight="600" opacity="0">
+      BM25<animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="3.5s" fill="freeze"/>
+    </text>
+    <text x="375" y="385" text-anchor="middle" fill="#aaddff" font-size="12" font-weight="600" opacity="0">
+      Dense<animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="3.5s" fill="freeze"/>
+    </text>
+    <text x="420" y="385" text-anchor="middle" fill="#aaffcc" font-size="12" font-weight="600" opacity="0">
+      Hybrid<animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="3.5s" fill="freeze"/>
+    </text>
+    <text x="467" y="385" text-anchor="middle" fill="#ffaacc" font-size="12" font-weight="600" opacity="0">
+      Hier<animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="3.5s" fill="freeze"/>
+    </text>
+    <text x="510" y="385" text-anchor="middle" fill="#ddbbff" font-size="12" font-weight="600" opacity="0">
+      Neighbor<animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="3.5s" fill="freeze"/>
+    </text>
+    <text x="415" y="410" text-anchor="middle" fill="#cce4ff" font-size="11" opacity="0">
+      Lexical · Semantic · Hybrid Fusion · Context<animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="3.5s" fill="freeze"/>
+    </text>
+  </g>
+  <rect x="330" y="286" width="170" height="18" rx="9" fill="#2980b9" opacity="0">
+    <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="3.8s" fill="freeze"/>
+  </rect>
+  <text x="415" y="299" text-anchor="middle" fill="white" font-size="11" font-weight="700" opacity="0">
+    STAGE 7  ✅<animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="3.8s" fill="freeze"/>
+  </text>
+
+  <!-- Arrow S7 → S8 (left) -->
+  <line x1="288" y1="362" x2="194" y2="362" stroke="#5a6478" stroke-width="2.5" marker-end="url(#arr)" stroke-dasharray="94" stroke-dashoffset="94">
+    <animate attributeName="stroke-dashoffset" from="94" to="0" dur="0.3s" begin="3.9s" fill="freeze"/>
+  </line>
+
+  <!-- ── Stage 8: Benchmarking ── -->
+  <g filter="url(#shadow)">
+    <rect x="30" y="300" width="160" height="125" rx="12" fill="url(#gEval)" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="4.0s" fill="freeze"/>
+    </rect>
+    <text x="110" y="341" text-anchor="middle" fill="white" font-size="32" opacity="0">
+      📊<animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="4.0s" fill="freeze"/>
+    </text>
+    <text x="110" y="370" text-anchor="middle" fill="white" font-size="16" font-weight="700" opacity="0">
+      Benchmarking<animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="4.0s" fill="freeze"/>
+    </text>
+    <text x="110" y="390" text-anchor="middle" fill="#ffcce0" font-size="13" opacity="0">
+      Hit@K · MRR · NDCG<animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="4.0s" fill="freeze"/>
+    </text>
+    <text x="110" y="412" text-anchor="middle" fill="#ff99bb" font-size="11" opacity="0">
+      Section Hit · Latency<animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="4.0s" fill="freeze"/>
+    </text>
+  </g>
+  <rect x="48" y="286" width="124" height="18" rx="9" fill="#c0395f" opacity="0">
+    <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="4.3s" fill="freeze"/>
+  </rect>
+  <text x="110" y="299" text-anchor="middle" fill="white" font-size="11" font-weight="700" opacity="0">
+    STAGE 8  ✅<animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="4.3s" fill="freeze"/>
+  </text>
+
+  <!-- ═══ Benchmark results callout (right of row 2) ═══ -->
+  <g opacity="0">
+    <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="4.4s" fill="freeze"/>
+    <rect x="775" y="305" width="295" height="115" rx="10" fill="#161b22" stroke="#30363d" stroke-width="1.5"/>
+    <text x="922" y="326" text-anchor="middle" fill="#8b949e" font-size="12" font-weight="700">BEST RESULTS @ k=5</text>
+    <!-- BM25 -->
+    <text x="832" y="356" text-anchor="middle" fill="#e74c3c" font-size="14" font-weight="800">BM25</text>
+    <text x="832" y="373" text-anchor="middle" fill="#cccccc" font-size="12">Hit 90.2%</text>
+    <text x="832" y="389" text-anchor="middle" fill="#8b949e" font-size="11">MRR 81.3%</text>
+    <!-- Hybrid -->
+    <text x="922" y="356" text-anchor="middle" fill="#9b59b6" font-size="14" font-weight="800">Hybrid</text>
+    <text x="922" y="373" text-anchor="middle" fill="#cccccc" font-size="12">Hit 91.5%</text>
+    <text x="922" y="389" text-anchor="middle" fill="#8b949e" font-size="11">MRR 80.6%</text>
+    <!-- Hierarchical -->
+    <text x="1020" y="356" text-anchor="middle" fill="#1abc9c" font-size="14" font-weight="800">Hier</text>
+    <text x="1020" y="373" text-anchor="middle" fill="#cccccc" font-size="12">SecHit 95%</text>
+    <text x="1020" y="389" text-anchor="middle" fill="#8b949e" font-size="11">MRR 78.7%</text>
+    <!-- dividers -->
+    <line x1="875" y1="340" x2="875" y2="398" stroke="#2a3045" stroke-width="1"/>
+    <line x1="970" y1="340" x2="970" y2="398" stroke="#2a3045" stroke-width="1"/>
+    <!-- connector dashes -->
+    <line x1="192" y1="362" x2="773" y2="362" stroke="#2a3045" stroke-width="1" stroke-dasharray="5,4"/>
+  </g>
+
+  <!-- ═══ Down arrow from Benchmarking → RAGAS ═══ -->
+  <path d="M110,427 L110,490" stroke="#f1c40f" stroke-width="3" fill="none" marker-end="url(#arrGold)" stroke-dasharray="66" stroke-dashoffset="66">
+    <animate attributeName="stroke-dashoffset" from="66" to="0" dur="0.4s" begin="4.5s" fill="freeze"/>
+  </path>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- RAGAS bar — final destination                       -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <g filter="url(#shadow)">
+    <rect x="30" y="492" width="1040" height="120" rx="14" fill="#13192a" stroke="#f1c40f" stroke-width="2" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="4.8s" fill="freeze"/>
+      <animate attributeName="stroke-width" values="2;3.5;2" dur="1.8s" begin="5.6s" repeatCount="indefinite"/>
+    </rect>
+
+    <text x="550" y="524" text-anchor="middle" fill="#f1c40f" font-size="22" font-weight="800" opacity="0">
+      ⭐  RAGAS — End-to-End RAG Evaluation  ⭐
+      <animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="4.8s" fill="freeze"/>
+    </text>
+
+    <!-- 4 RAGAS metrics -->
+    <text x="160" y="556" text-anchor="middle" fill="#a8d8ff" font-size="14" font-weight="700" opacity="0">
+      Faithfulness<animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="5.2s" fill="freeze"/>
+    </text>
+    <text x="160" y="574" text-anchor="middle" fill="#aaaaaa" font-size="12" opacity="0">
+      No hallucination?<animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="5.2s" fill="freeze"/>
+    </text>
+
+    <text x="380" y="556" text-anchor="middle" fill="#a8ffcc" font-size="14" font-weight="700" opacity="0">
+      Answer Relevancy<animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="5.4s" fill="freeze"/>
+    </text>
+    <text x="380" y="574" text-anchor="middle" fill="#aaaaaa" font-size="12" opacity="0">
+      Answers the question?<animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="5.4s" fill="freeze"/>
+    </text>
+
+    <text x="710" y="556" text-anchor="middle" fill="#ffd8a8" font-size="14" font-weight="700" opacity="0">
+      Context Precision<animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="5.6s" fill="freeze"/>
+    </text>
+    <text x="710" y="574" text-anchor="middle" fill="#aaaaaa" font-size="12" opacity="0">
+      Retrieved chunks useful?<animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="5.6s" fill="freeze"/>
+    </text>
+
+    <text x="940" y="556" text-anchor="middle" fill="#ffccf0" font-size="14" font-weight="700" opacity="0">
+      Context Recall<animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="5.8s" fill="freeze"/>
+    </text>
+    <text x="940" y="574" text-anchor="middle" fill="#aaaaaa" font-size="12" opacity="0">
+      Context covers answer?<animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="5.8s" fill="freeze"/>
+    </text>
+
+    <!-- Dividers -->
+    <line x1="270" y1="538" x2="270" y2="583" stroke="#2a3045" stroke-width="1.5" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="5.1s" fill="freeze"/>
+    </line>
+    <line x1="548" y1="538" x2="548" y2="583" stroke="#2a3045" stroke-width="1.5" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="5.3s" fill="freeze"/>
+    </line>
+    <line x1="825" y1="538" x2="825" y2="583" stroke="#2a3045" stroke-width="1.5" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="5.5s" fill="freeze"/>
+    </line>
+
+    <rect x="465" y="591" width="170" height="20" rx="10" fill="#b8860b" opacity="0">
+      <animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="6.0s" fill="freeze"/>
+    </rect>
+    <text x="550" y="606" text-anchor="middle" fill="white" font-size="12" font-weight="700" opacity="0">
+      🔄  NEXT STAGE — IN PROGRESS
+      <animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="6.0s" fill="freeze"/>
+    </text>
+  </g>
+
+  <!-- ─── Footer ─── -->
+  <text x="550" y="740" text-anchor="middle" fill="#3d4451" font-size="11">
+    src_v2/ · experiments/pipeline_validation.ipynb · notebooks/ragas_eval.ipynb
+  </text>
+</svg>

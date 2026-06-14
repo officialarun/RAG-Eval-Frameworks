@@ -10,4 +10,13 @@ from .bm25 import (
     BM25Retriever
 )
 
+from .hybrid import (
+    HybridRetriever
+)
 
+from .hierarchical import (
+    HierarchicalRetriever
+)
+from .neighbor import (
+    NeighborRetriever
+)
