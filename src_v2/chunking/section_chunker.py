@@ -81,7 +81,7 @@ class SectionChunker:
 
                 chunks.append(
                     Chunk(
-                        chunk_id=f"chunk_{chunk_counter}",
+                        chunk_id=f"{document.doc_id}"f"_{section.section_id}"f"_{chunk_counter}",
                         parent_doc_id=document.doc_id,
                         parent_section_id=section.section_id,
                         chunk_order=chunk_counter,
@@ -105,7 +105,7 @@ class SectionChunker:
                 # Parent section chunk
                 chunks.append(
                     Chunk(
-                        chunk_id=f"chunk_{chunk_counter}",
+                        chunk_id=f"{document.doc_id}"f"_{section.section_id}"f"_{chunk_counter}",
                         parent_doc_id=document.doc_id,
                         parent_section_id=section.section_id,
                         chunk_order=chunk_counter,
@@ -149,7 +149,7 @@ class SectionChunker:
 
                     chunks.append(
                         Chunk(
-                            chunk_id=f"chunk_{chunk_counter}",
+                            chunk_id=f"{document.doc_id}"f"_{section.section_id}"f"_{chunk_counter}",
                             parent_doc_id=document.doc_id,
                             parent_section_id=section.section_id,
                             chunk_order=chunk_counter,
@@ -257,7 +257,7 @@ class SectionChunker:
 
                             chunks.append(
                                 Chunk(
-                                    chunk_id=f"chunk_{chunk_counter}",
+                                    chunk_id=f"{document.doc_id}"f"_{section.section_id}"f"_{chunk_counter}",
                                     parent_doc_id=document.doc_id,
                                     parent_section_id=section.section_id,
                                     chunk_order=chunk_counter,
@@ -277,7 +277,7 @@ class SectionChunker:
 
                         chunks.append(
                             Chunk(
-                                chunk_id=f"chunk_{chunk_counter}",
+                                chunk_id=f"{document.doc_id}"f"_{section.section_id}"f"_{chunk_counter}",
                                 parent_doc_id=document.doc_id,
                                 parent_section_id=section.section_id,
                                 chunk_order=chunk_counter,
