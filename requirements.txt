@@ -1,0 +1,5 @@
+# For Streamlit Cloud / Hugging Face Spaces: installs raglens itself plus its
+# lean base dependencies (pyproject.toml [project.dependencies]) -- enough
+# for the dashboard and `raglens report`. The full ingest/index/benchmark/
+# evaluate pipeline needs `pip install -e ".[full]"` instead (see README).
+-e .

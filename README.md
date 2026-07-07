@@ -1,12 +1,26 @@
+---
+title: raglens
+emoji: 🔍
+colorFrom: blue
+colorTo: green
+sdk: streamlit
+sdk_version: "1.58.0"
+app_file: dashboard/app.py
+pinned: false
+---
+<!-- The block above is Hugging Face Spaces config metadata (read only when
+this repo is pushed to a Space) -- see docs/deploy-hf-space.md. It's inert
+everywhere else, including on GitHub. -->
+
 <p align="center">
   <img src="artifacts/pipeline_animation.svg" alt="Pipeline Workflow Animation" width="1100">
 </p>
 
-# RAG Evaluation Framework
+# raglens
 
-> A ground-up pipeline for building, benchmarking, and rigorously evaluating Retrieval-Augmented Generation systems — from PDF ingestion through RAGAS evaluation.
+> A ground-up, provider-agnostic toolkit for building, benchmarking, and rigorously evaluating Retrieval-Augmented Generation systems — from PDF ingestion through RAGAS evaluation. Point it at your own PDF corpus via the CLI, or explore the reference run in `experiments/pipeline_validation.ipynb`.
 
-**Current Stage:** Retrieval Benchmarking Complete &nbsp;|&nbsp; **Next:** RAGAS End-to-End Evaluation
+**Current Stage:** Retrieval Benchmarking Complete &nbsp;|&nbsp; **In Progress:** RAGAS End-to-End Evaluation (2/5 retrievers scored)
 
 ---
 
@@ -16,7 +30,38 @@ This is not a chatbot project. The goal is to rigorously measure every component
 
 The approach is deliberately ground-up: build the corpus, build the retrievers, generate the ground truth dataset by hand, benchmark exhaustively, then apply RAGAS. This gives full traceability from source chunk → Q&A pair → retrieval result → end-to-end answer quality — something off-the-shelf frameworks obscure.
 
-The current V2 pipeline is built entirely in `src_v2/`. A previous iteration (V1, using Wikipedia + LangChain) revealed fundamental problems that made a rebuild necessary. That transition is explained in [Why We Rebuilt](#why-we-rebuilt-v1--v2).
+The current V2 pipeline is built entirely in `raglens/` — a pip-installable, provider-agnostic package (Ollama / OpenAI / Groq) with its own CLI and Streamlit dashboard, not just notebook cells. A previous iteration (V1, using Wikipedia + LangChain, code kept in `src/` for historical reference) revealed fundamental problems that made a rebuild necessary. That transition is explained in [Why We Rebuilt](#why-we-rebuilt-v1--v2).
+
+---
+
+## Quickstart — Run This On Your Own Corpus
+
+```bash
+pip install -e .
+cp .env.example .env   # fill in whichever provider(s) you'll use
+
+# 1. Parse + structure-aware chunk your PDFs
+raglens ingest --docs ./my_pdfs
+
+# 2. Embed + index (local & free via Ollama, or --embedding-provider openai)
+raglens index --docs ./my_pdfs --embedding-provider ollama
+
+# 3. Generate Q&A ground truth (resumable — safe to Ctrl-C and re-run)
+raglens questions --docs ./my_pdfs --llm-provider openai
+
+# 4. Benchmark retrieval quality (Hit@K, MRR, NDCG across 5 strategies)
+raglens benchmark --docs ./my_pdfs --embedding-provider ollama
+
+# 5. RAGAS end-to-end evaluation — judge-LLM-bound, checkpointed every batch
+raglens evaluate --docs ./my_pdfs --embedding-provider ollama --judge-provider openai
+
+# 6. Visualize everything
+streamlit run dashboard/app.py
+```
+
+Every long-running stage (`questions`, `evaluate`) is resumable: it's keyed by `(chunk_id, retriever)` and skips whatever's already cached, so it's safe to run for a few hours a night and pick back up exactly where it left off. Supported providers today: **Ollama** (local, free) and **OpenAI** for embeddings; **Ollama, OpenAI, and Groq** for generation/judging.
+
+Want a public, zero-install link instead of running it locally? See [docs/deploy-hf-space.md](docs/deploy-hf-space.md) — the dashboard falls back to bundled reference results automatically, no API keys or local corpus needed for a hosted demo.
 
 ---
 
@@ -28,8 +73,8 @@ Stage 2: Section-Aware Hierarchical Chunking         ✅  Complete
 Stage 3: Embedding Generation & Vector Store         ✅  Complete
 Stage 4: Five Retrieval Strategies                   ✅  Complete
 Stage 5: LLM-Generated Benchmark Dataset (627 Q&As)  ✅  Complete
-Stage 6: Retrieval Benchmarking                      ✅  Complete  ← current
-Stage 7: RAGAS End-to-End Evaluation                 🔄  Next
+Stage 6: Retrieval Benchmarking                      ✅  Complete
+Stage 7: RAGAS End-to-End Evaluation                 🔄  In progress (2/5 retrievers scored)  ← current
 ```
 
 ---
@@ -61,9 +106,9 @@ Eight stages transform raw PDFs into benchmark-ready retrieval results.
 | 2 | Section Parsing + Hierarchy | MarkdownSectionParser → LevelInference → HierarchyBuilder | Markdown string | `Document` with nested `Section` tree |
 | 3 | Normalization | SectionFlattener | Nested Section tree | `List[FlattenedSection]` with pre-computed breadcrumb paths |
 | 4 | Section-Aware Chunking | SectionChunker + StructurePreserver | FlattenedSections | `List[Chunk]` — three types: `parent_section`, `table_fragment`, `section_fragment` |
-| 5 | Embedding | OllamaEmbeddingGenerator (nomic-embed-text) | Chunks | `List[ChunkEmbedding]` |
+| 5 | Embedding | EmbeddingGenerator (Ollama `nomic-embed-text` or OpenAI) | Chunks | `List[ChunkEmbedding]` |
 | 6 | Vector Store | ChromaStore (ChromaDB) | ChunkEmbeddings | Persisted similarity index |
-| 7 | Synthetic Q&A Generation | Qwen3:8B via Ollama | Chunks | 627 Q&A pairs in JSONL cache |
+| 7 | Synthetic Q&A Generation | Configurable LLM (Ollama / OpenAI / Groq) | Chunks | 627 Q&A pairs in JSONL cache |
 | 8 | Retrieval + Evaluation | 5 Retrievers + 3 Evaluators | QuestionSamples | Hit@K, MRR, NDCG, Section Hit, Latency |
 
 **The data transformation story:** A raw PDF becomes a `Document` (root container with metadata). The document's heading structure is parsed into a nested `Section` tree. That tree is flattened into `List[FlattenedSection]` — each section pre-annotated with its full breadcrumb path (e.g. `"lbdl > Chapter 3 > Optimization"`). The chunker then transforms each section into one or more `Chunk` objects — the atomic unit for embedding and retrieval. Finally, each chunk is embedded into a vector and stored in ChromaDB.
@@ -136,9 +181,9 @@ Five strategies are implemented, each building on the previous:
 
 ---
 
-## src_v2 Folder Stories
+## raglens Folder Stories
 
-Every folder in `src_v2/` has a specific responsibility. Here is the story of each one.
+Every folder in `raglens/` has a specific responsibility. Here is the story of each one.
 
 ### `models/` — The Schema Layer
 
@@ -197,7 +242,7 @@ These three fields are what make hierarchical and neighbor retrieval possible do
 
 ### `embedding/` — The Vectorization Layer
 
-Stateless: takes a `Chunk`, returns a vector. `OllamaEmbeddingGenerator` calls the local Ollama server with `nomic-embed-text`. No API keys, no cost, fully deterministic and reproducible. The model name and vector dimension are stored in an `EmbeddingModel` dataclass.
+Stateless: takes a `Chunk`, returns a vector. `EmbeddingGenerator` wraps whatever LangChain `Embeddings` instance `get_embedding_provider("ollama" | "openai")` returns — the same instance is used for both indexing (`embed_documents`) and query-time retrieval (`embed_query`), so there's exactly one embedding object per run. Ollama is free/local/deterministic with no API keys; OpenAI is available for higher-quality embeddings.
 
 ---
 
@@ -209,12 +254,12 @@ Stateless: takes a `Chunk`, returns a vector. `OllamaEmbeddingGenerator` calls t
 
 ### `config/` — The Settings Layer
 
-`retrieval_config.py` is a single file with three things:
-- `BAD_SECTIONS` — set of section titles to exclude: `references`, `bibliography`, `contents`, `index`, `list of figures`, `list of tables`
-- `EXCLUDE_REFERENCE_SECTIONS` — boolean flag
+`RetrievalConfig` is an injectable dataclass (constructor-passed to `BM25Retriever`/`DenseRetriever`, defaulting to a shared `DEFAULT_CONFIG` instance) with three fields:
+- `bad_sections` — section titles to exclude: `references`, `bibliography`, `contents`, `index`, `list of figures`, `list of tables`
+- `exclude_reference_sections` — boolean flag
 - `is_bad_section(title)` — normalizes title to lowercase alphanumeric, checks membership
 
-All five retrievers import from here. Without centralized filtering, BM25 retrieves bibliography entries because they contain topic-related keywords; Dense retrieves index pages because they share vocabulary with queries.
+All retrievers accept a `config` parameter. Without this filtering, BM25 retrieves bibliography entries because they contain topic-related keywords; Dense retrieves index pages because they share vocabulary with queries. Passing a custom `RetrievalConfig` lets a different corpus define its own excluded sections.
 
 ---
 
@@ -252,7 +297,7 @@ Three evaluator classes exist because each retriever returns a different result 
 
 Turns `List[Chunk]` into 627 evaluation Q&A pairs with full ground truth traceability.
 
-- `QuestionGenerator` — wraps Qwen3:8B; generates one Q&A per chunk with engineered prompts
+- `QuestionGenerator` — wraps an injectable `LLMProvider` (Ollama/OpenAI/Groq, defaults to OpenAI); generates one Q&A per chunk with engineered prompts
 - `QuestionDatasetBuilder` — orchestrates generation with resumability via `get_completed_chunk_ids()`
 - `question_cache.py` — JSONL persistence; append-only so the file survives mid-run interruptions
 - `QuestionDatasetLoader` — filters the cache to `status=success` records and returns `List[QuestionSample]`
@@ -322,49 +367,42 @@ Each question maps to exactly one "correct" chunk ID. Many questions can be corr
 
 ---
 
-## What's Next: RAGAS Evaluation Plan
+## RAGAS End-to-End Evaluation — In Progress
 
 RAGAS (Retrieval Augmented Generation Assessment) measures end-to-end RAG quality — not just whether the right chunk was retrieved, but whether the system produced a correct, faithful, relevant answer.
 
-### The Four RAGAS Metrics
+### The Four Metrics Actually Used
 
 | Metric | Question it answers |
 |--------|-------------------|
 | **Faithfulness** | Does the generated answer stay within what the retrieved context actually says? Detects hallucination. |
-| **Answer Relevancy** | Is the generated answer actually relevant to the question asked? |
-| **Context Precision** | Of the retrieved chunks, what fraction are genuinely useful for answering the question? |
+| **Factual Correctness** | Is the generated answer factually aligned with the reference answer? (Used in place of Answer Relevancy — a better fit here since every question already has a verified reference answer.) |
+| **Context Precision** | Of the retrieved chunks, what fraction are genuinely useful for answering the question? Scored with a custom `FastContextPrecision` metric that parallelizes ragas's default sequential per-context loop. |
 | **Context Recall** | Does the retrieved context contain all the information needed to construct the correct answer? |
 
-### How We Will Run It
+Judge LLM: `gpt-4o-mini` by default (configurable — `raglens evaluate --judge-provider ollama\|openai\|groq`).
 
-**Step 1 — Generate answers for all 627 samples, for each retriever.**
+### How It Runs
 
-For each `(retriever, question)` pair:
-1. Retrieve top-5 chunks using the retriever
-2. Pass retrieved chunk content as context to Qwen3:8B
-3. Generate an answer
-4. Store: `question`, `answer`, `contexts` (list of chunk texts), `reference_answer` (ground truth)
+1. **Retrieve + generate answers** (`raglens.ragas.EvaluationDatasetBuilder` + `AnswerDatasetBuilder`) — for a stratified 150-question sample (proportional per source document, seed 42) × each retriever, retrieve top-5 chunks and generate an answer. Cached to JSONL, resumable.
+2. **Score with RAGAS** (`raglens.ragas.RagasScorer`) — batches of 10 samples sent to the judge LLM, with results appended to a JSONL cache after every batch and keyed by `(retriever, chunk_id)`. An interrupted run — expected, since judge-LLM scoring runs at roughly 1-8 minutes per sample — resumes exactly where it left off; already-scored pairs are never re-sent.
+3. **Aggregate** (`raglens report`) — mean scores per retriever → comparison table + chart.
 
-**Step 2 — Run RAGAS evaluation.**
+### Status
 
-Feed the stored `(question, answer, contexts, reference_answer)` tuples to RAGAS. Output: per-question scores for Faithfulness, Answer Relevancy, Context Precision, Context Recall.
+| Retriever | Answers generated | RAGAS scored |
+|-----------|:---:|:---:|
+| BM25 | ✅ 150/150 | ✅ 150/150 |
+| Dense | ✅ 150/150 | ✅ 150/150 |
+| Hybrid | ✅ 150/150 (622/622 full set) | ⏳ 0/150 |
+| Hierarchical | ✅ 150/150 | ⏳ 0/150 |
+| Hier+Neighbor | ✅ 150/150 | ⏳ 0/150 |
 
-**Step 3 — Aggregate by retriever.**
+Resume scoring with `raglens evaluate` — it picks up on `hybrid` next automatically.
 
-Mean RAGAS scores per retriever → final comparison table.
+### The Key Insight RAGAS Unlocks
 
-This directly answers: *which retrieval strategy produces the best end-to-end RAG quality?*
-
-### Why V2 Is RAGAS-Ready
-
-- 627 Q&A pairs with `question`, `reference_answer`, and source `chunk_id` — exactly the inputs RAGAS requires
-- Five retrievers ready to compare in one benchmark run
-- `notebooks/ragas_eval.ipynb` already scaffolded (to be updated to use `src_v2` pipeline)
-- Qwen3:8B already configured locally via Ollama for answer generation
-
-### The Key Insight RAGAS Will Unlock
-
-Hit@K tells us *a chunk was retrieved*. RAGAS tells us *whether the LLM used that chunk to produce a correct, faithful answer*. A retriever that scores high on Hit@K may still produce hallucinations if its retrieved context is noisy or misaligned with the question. That is the gap this stage will close.
+Hit@K tells us *a chunk was retrieved*. RAGAS tells us *whether the LLM used that chunk to produce a correct, faithful answer*. A retriever that scores high on Hit@K may still produce hallucinations if its retrieved context is noisy or misaligned with the question. That is the gap this stage closes.
 
 ---
 
@@ -374,32 +412,40 @@ Hit@K tells us *a chunk was retrieved*. RAGAS tells us *whether the LLM used tha
 rag-evaluation-framework/
 │
 ├── data/
-│   └── documents/               # 13 curated PDFs (GenAI / RAG domain)
+│   └── documents/               # Your PDF corpus (BYO — 13 curated GenAI/RAG PDFs used for the reference run)
 │
 ├── experiments/
-│   ├── pipeline_validation.ipynb   # Main notebook — all V2 stages + benchmarking
+│   ├── pipeline_validation.ipynb   # Reference notebook — all stages run cell-by-cell
 │   └── experiments/data/
 │       ├── benchmark_results.json         # Saved benchmark numbers
 │       ├── Retrieval_Benchmark_Reults.png # Pandas styled results table
 │       └── benchmark_chart.png            # 4-panel comparison chart
 │
-├── notebooks/
-│   └── ragas_eval.ipynb         # RAGAS evaluation (next stage)
-│
-├── src_v2/                      # Core library
+├── raglens/                      # Core library (pip-installable)
 │   ├── models/                  # Dataclasses: Document, Section, Chunk, results
 │   ├── parsers/                 # Docling → Markdown → Section tree
 │   ├── normalization/           # Section tree → flat FlattenedSection list
 │   ├── chunking/                # SectionChunker + StructurePreserver
-│   ├── embedding/               # nomic-embed-text via Ollama
+│   ├── embedding/               # Ollama / OpenAI embedding providers + EmbeddingGenerator
+│   ├── llm/                     # Ollama / OpenAI / Groq text-generation providers
 │   ├── vectorstore/             # ChromaDB wrapper
-│   ├── config/                  # BAD_SECTIONS, retrieval settings
+│   ├── config/                  # Injectable RetrievalConfig (bad sections, top-k)
 │   ├── retrieval/               # BM25, Dense, Hybrid, Hierarchical, Neighbor
-│   ├── evaluation/              # Hit@K, MRR, NDCG, evaluator classes
-│   ├── question_generation/     # Qwen3:8B Q&A generation + JSONL cache
-│   ├── cache/                   # Pickle cache for parsed documents
+│   ├── evaluation/              # Hit@K, MRR, NDCG, benchmark runner + charts
+│   ├── question_generation/     # Q&A generation + JSONL cache
+│   ├── ragas/                   # RagasScorer, judge factory, sampling, dataset builders
+│   ├── cache/                   # Resumable caches (parsed docs, chunks, answers)
 │   ├── preprocessing/           # Formula cleaner
-│   └── validation/              # Chunk auditor
+│   ├── validation/              # Chunk auditor
+│   ├── pipeline.py              # RagLensPipeline — orchestrates every stage
+│   └── cli.py                   # `raglens` command (ingest/index/questions/benchmark/evaluate/report)
+│
+├── dashboard/
+│   └── app.py                   # Streamlit dashboard — visualizes CLI-produced results
+│
+├── tests/                       # pytest — pure-logic unit tests (metrics, config, sampling, scorer)
+│
+├── src/                          # V1 (legacy, kept for historical reference — see "Why We Rebuilt")
 │
 └── artifacts/
     └── processtillnow.png       # V1 architecture diagram
@@ -412,35 +458,19 @@ rag-evaluation-framework/
 | Component | Tool | Why |
 |-----------|------|-----|
 | PDF Parsing | [Docling](https://github.com/DS4SD/docling) | Formula-aware; preserves heading hierarchy from complex PDFs |
-| LLM | Qwen3:8B via Ollama | Local, no API cost, strong instruction-following for Q&A generation |
-| Embedding | nomic-embed-text via Ollama | Local, deterministic, reproducible — no cloud dependency |
+| LLM (Q&A gen / answers / judge) | Ollama, OpenAI, or Groq (your choice per-command) | Free local default via Ollama; cloud providers for quality/speed when needed |
+| Embedding | Ollama (`nomic-embed-text`) or OpenAI | Local, deterministic, no cloud dependency — or OpenAI when you want it |
 | Vector Store | ChromaDB | Lightweight, local persistence, no infrastructure required |
 | Lexical Retrieval | rank-bm25 (Okapi BM25) | Fast in-memory BM25, no external service |
 | Text Splitting | LangChain `RecursiveCharacterTextSplitter` | Used only for text fragments within large sections |
-| Evaluation Framework | RAGAS | Standard RAG evaluation library (next stage) |
+| Evaluation Framework | RAGAS | Standard RAG evaluation library |
+| CLI | Typer | `raglens` command: ingest/index/questions/benchmark/evaluate/report |
+| Dashboard | Streamlit | Local visualization of CLI-produced results |
 | Language | Python 3.12 | — |
 
 ---
 
-## Quick Start
-
-```bash
-# 1. Install dependencies
-pip install -e .
-
-# 2. Start Ollama and pull required models
-ollama pull qwen3:8b
-ollama pull nomic-embed-text
-
-# 3. Run the pipeline
-# Open and run experiments/pipeline_validation.ipynb from top to bottom
-# - Cells 1–47:  PDF ingestion → chunking → embedding → vector store
-# - Cells 48–101: Retriever setup + Q&A dataset generation
-# - Cells 102–127: Retrieval evaluation
-# - Cells 128–131: Full benchmark comparison + charts
-```
-
----
+See [Quickstart](#quickstart--run-this-on-your-own-corpus) above to run this on your own PDFs. To reproduce the exact reference run instead, open `experiments/pipeline_validation.ipynb` and run top to bottom.
 
 ---
 
