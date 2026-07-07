@@ -75,7 +75,7 @@ with tab_retrieval:
         styled = build_comparison_table(flat_bench, hier_bench, nbr_bench, k_values=k_values)
         st.dataframe(styled, width="stretch")
 
-        fig = plot_benchmark_chart(flat_bench, hier_bench, nbr_bench, k_values=k_values)
+        fig = plot_benchmark_chart(flat_bench, hier_bench, nbr_bench, k_values=k_values, save_path=None)
         st.pyplot(fig)
 
 with tab_ragas:
@@ -101,7 +101,7 @@ with tab_ragas:
 
         scored_retrievers = [r for r in retrievers if comparison.loc[r].notna().any()]
         if scored_retrievers:
-            fig = plot_ragas_scores(comparison.loc[scored_retrievers])
+            fig = plot_ragas_scores(comparison.loc[scored_retrievers], save_path=None)
             st.pyplot(fig)
         else:
             st.info("No retriever has any scored samples yet.")

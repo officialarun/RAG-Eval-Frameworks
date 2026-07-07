@@ -40,5 +40,6 @@ def plot_ragas_scores(
             )
 
     plt.tight_layout()
-    plt.savefig(save_path, dpi=150, bbox_inches="tight")
+    if save_path:
+        plt.savefig(save_path, dpi=150, bbox_inches="tight")
     return fig

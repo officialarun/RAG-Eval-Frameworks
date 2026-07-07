@@ -241,7 +241,8 @@ def plot_benchmark_chart(
     ax4.grid(True, alpha=0.25, axis="y")
 
     plt.tight_layout(pad=2.5)
-    plt.savefig(save_path, dpi=150, bbox_inches="tight")
-    print(f"Chart saved to {save_path}")
+    if save_path:
+        plt.savefig(save_path, dpi=150, bbox_inches="tight")
+        print(f"Chart saved to {save_path}")
 
     return fig
