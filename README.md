@@ -3,14 +3,15 @@ title: raglens
 emoji: 🔍
 colorFrom: blue
 colorTo: green
-sdk: streamlit
-sdk_version: "1.58.0"
-app_file: dashboard/app.py
+sdk: docker
+app_port: 7860
 pinned: false
+license: mit
 ---
 <!-- The block above is Hugging Face Spaces config metadata (read only when
 this repo is pushed to a Space) -- see docs/deploy-hf-space.md. It's inert
-everywhere else, including on GitHub. -->
+everywhere else, including on GitHub. HF Spaces no longer offers a native
+Streamlit SDK card in its "New Space" UI, so this runs via Dockerfile. -->
 
 <p align="center">
   <img src="artifacts/pipeline_animation.svg" alt="Pipeline Workflow Animation" width="1100">
