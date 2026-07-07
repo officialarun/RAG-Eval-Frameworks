@@ -71,6 +71,12 @@ class RagLensPipeline:
 
         sources = [str(p) for p in Path(pdf_dir).glob("*.pdf")]
 
+        if not sources:
+            raise ValueError(
+                f"No PDF files found in {pdf_dir!r}. Check the path exists "
+                f"and contains .pdf files directly (not in a subdirectory)."
+            )
+
         if use_cache and parsed_documents_exist():
             all_markdowns = load_parsed_documents()
         else:

@@ -1,6 +1,6 @@
 [project]
 name = "raglens-toolkit"
-version = "0.2.0"
+version = "0.2.1"
 description = "A provider-agnostic toolkit for benchmarking retrieval strategies and running RAGAS end-to-end evaluation against your own PDF corpus."
 readme = "README.md"
 requires-python = ">=3.12"

@@ -2,6 +2,17 @@
 
 All notable changes to this project are documented here. Format loosely follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [0.2.1] - 2026-07-08
+
+### Added
+- `raglens --version` and `raglens info` (version, install status, next steps, links) — a first-time user shouldn't have to open the README to understand what they installed.
+- Rich `--help` epilog pointing at `raglens info` and `raglens COMMAND --help`, flagging upfront that `ingest`/`index`/`questions`/`benchmark`/`evaluate` need the `[full]` extra and that the Streamlit dashboard is a separate command, not part of this CLI.
+- `evaluate --reranker <name>` (e.g. `cross_encoder`) exposes the reranker via the CLI for the first time — scores under new `<name>_reranked` entries so it never collides with existing un-reranked scores.
+- Friendly, actionable errors instead of raw tracebacks: running a `[full]`-only command without the extra installed now prints one line with the fix (`pip install raglens-toolkit[full]`) instead of a bare `ModuleNotFoundError`; pointing `ingest`/`index`/`questions`/`benchmark`/`evaluate` at a directory with no PDFs now fails fast with a clear message instead of crashing several frames deep in `ChunkAuditor` on an empty list.
+
+### Fixed
+- `raglens.__version__` was hardcoded and had already drifted (still said `0.1.0` after two releases) — now reads from installed package metadata (`importlib.metadata.version`), so it can't go stale again.
+
 ## [0.2.0] - 2026-07-08
 
 ### Added
