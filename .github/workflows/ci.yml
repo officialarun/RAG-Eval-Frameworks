@@ -17,11 +17,33 @@ jobs:
       - name: Set up Python
         run: uv python install 3.12
 
-      - name: Install dependencies
-        run: uv sync --extra dev
+      - name: Install dependencies (dev + full)
+        run: uv sync --extra dev --extra full
 
       - name: Lint
         run: uv run ruff check raglens tests
 
       - name: Test
         run: uv run pytest tests/ -v
+
+  lean-install:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v3
+
+      - name: Set up Python
+        run: uv python install 3.12
+
+      - name: Install base dependencies only (no [full], no [dev])
+        run: uv sync
+
+      - name: Verify dashboard/report path imports without [full]
+        run: |
+          uv run python -c "
+          from raglens.evaluation import build_comparison_table, plot_benchmark_chart
+          from raglens.ragas import RagasScorer, plot_ragas_scores
+          print('lean base install OK: dashboard/report imports work without [full]')
+          "
