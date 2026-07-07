@@ -2,6 +2,23 @@
 
 All notable changes to this project are documented here. Format loosely follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## [0.2.0] - 2026-07-08
+
+### Added
+- Cross-encoder reranker (`raglens/retrieval/reranker/`): `RerankerProvider` (Protocol, matching the embedding/LLM provider pattern), `CrossEncoderReranker` (local, free, `BAAI/bge-reranker-base` via `sentence-transformers`), and `RerankedRetriever`, which wraps any existing retriever (BM25/Dense/Hybrid/Hierarchical/Neighbor) with a `Retriever → Reranker → LLM` stage — opt-in, not part of the default retriever set. `sentence-transformers` added to the `[full]` extra.
+- `Dockerfile` for the Hugging Face Spaces deployment (Docker SDK — HF's "New Space" UI no longer offers a native Streamlit card).
+- Tag-triggered PyPI publish workflow (`.github/workflows/publish.yml`): pushing a `v*` tag now runs tests/lint, builds, and publishes via PyPI Trusted Publishing (OIDC, no stored token) automatically — replaces manual `twine upload`.
+- `lean-install` CI job asserting `raglens.evaluation`/`raglens.ragas` still import correctly with zero extras installed.
+
+### Fixed
+- Dashboard crash on Hugging Face Spaces: `plot_benchmark_chart`/`plot_ragas_scores` unconditionally wrote a PNG to a hardcoded path that doesn't exist in the slim Docker image — `save_path` now accepts `None` to skip the disk write. Found live on the deployed Space, not by local testing (which always had the full repo present).
+- CI: the initial workflow only installed `[dev]`, so `tests/test_bm25_retriever.py` (needs `rank_bm25`, a `[full]`-only dependency) failed on the very first real run — now installs `[dev,full]`.
+- HF Spaces deploy: the repo's git history contains old binary files (pre-`.gitignore` `chroma_db/` artifacts) that HF's pre-receive hook rejects on a plain `git push`; deploys now push a single orphan commit containing only the files the Docker build needs.
+
+### Changed
+- README rewritten with current state (PyPI package, live HF Spaces demo, CLI, tests/CI) and restructured for both a first-time visitor and interview prep — added "From Research Pipeline to Open-Source Tool," "Bugs Found and Fixed," and "Engineering Decisions Worth Discussing" sections.
+- `artifacts/pipeline_animation.svg` updated to match current state (multi-provider LLM, `FactualCorrectness` metric, in-progress RAGAS status, productized footer).
+
 ## [0.1.0] - 2026-07-07
 
 ### Added
