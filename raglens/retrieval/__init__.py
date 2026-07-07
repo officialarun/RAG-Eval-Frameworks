@@ -21,3 +21,8 @@ from .neighbor import (
     NeighborRetriever,
     NeighborHierarchicalRetriever
 )
+from .reranker import (
+    RerankerProvider,
+    get_reranker_provider,
+    RerankedRetriever
+)

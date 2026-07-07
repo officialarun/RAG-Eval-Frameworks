@@ -56,7 +56,7 @@ That's the whole install-to-first-result path. No API keys needed if you use Oll
 - [Quickstart](#quickstart--run-this-on-your-own-corpus)
 - [Why We Rebuilt (V1 → V2)](#why-we-rebuilt-v1--v2)
 - [Pipeline Stages](#pipeline-stages)
-- [Strategies at Each Stage](#strategies-at-each-stage) — chunking, retrieval, question generation design rationale
+- [Strategies at Each Stage](#strategies-at-each-stage) — chunking, retrieval, reranking, question generation design rationale
 - [Benchmark Results](#benchmark-results)
 - [RAGAS End-to-End Evaluation](#ragas-end-to-end-evaluation--in-progress)
 - [From Research Pipeline to Open-Source Tool](#from-research-pipeline-to-open-source-tool) — the productization story
@@ -192,6 +192,24 @@ Five strategies are implemented, each building on the previous:
 **Two flavours of neighbor retrieval** — `NeighborRetriever` uses global `chunk_order` (a monotonic counter) to find adjacent chunks; this can cross section boundaries. `NeighborHierarchicalRetriever` uses `fragment_index` (section-local counter) to expand only within the same section — the version used in benchmarking.
 
 **Candidate over-retrieval** — All retrievers retrieve more candidates than k before filtering. Reference sections, bibliographies, and indices are excluded via an injectable `RetrievalConfig`. Over-retrieval guarantees k clean results remain after filtering.
+
+---
+
+### Reranking — an Optional Pipeline Stage, Not a 6th Strategy
+
+`Retriever → Reranker → LLM`. Reranking isn't a peer alternative to BM25/Dense/Hybrid/etc. — it's a stage that wraps *any* of them: over-retrieve a candidate pool, score every candidate against the query with a cross-encoder (which sees the query and document together, unlike embedding-based retrieval which scores them independently), and keep only the reordered top-k. `RerankedRetriever` (`raglens/retrieval/reranker/`) composes with an existing retriever exactly the way `HybridRetriever` composes Dense+BM25:
+
+```python
+from raglens.retrieval import RerankedRetriever, get_reranker_provider
+
+reranker = get_reranker_provider("cross_encoder")  # BAAI/bge-reranker-base, local, free
+reranked_hybrid = RerankedRetriever(retrievers["hybrid"], reranker, candidate_k=25)
+results = reranked_hybrid.retrieve("your query", k=5)
+```
+
+It's opt-in, not part of the default retriever set `raglens benchmark`/`evaluate` build — reranking adds real inference cost and a new dependency (`sentence-transformers`, in the `[full]` extra), so it shouldn't silently attach itself to every existing run.
+
+**Why a `Protocol`, not a subclass of `BaseRetriever`.** A reranker is a *provider* (an interchangeable scoring backend), matching `get_embedding_provider`/`get_llm_provider`'s existing pattern, not a retriever. `RerankerProvider.rerank(query, documents) -> list[(index, score)]` stays domain-agnostic (raw strings in, ranked indices out) — it never sees `RetrievalResult`/`Chunk`; `RerankedRetriever` is the one place that maps back to domain objects, the same layering `EmbeddingGenerator` uses for `Chunk` ↔ vector. The `(index, score)` return shape (rather than a parallel list of scores) is deliberate too: it matches both a local cross-encoder's `predict()`-then-sort *and* how hosted rerank APIs (Cohere, Jina) already respond — so adding one of those later via `get_reranker_provider("cohere")` is a new branch in `raglens/retrieval/reranker/providers.py`, not an interface redesign.
 
 ---
 
@@ -565,6 +583,7 @@ rag-evaluation-framework/
 | Embedding | Ollama (`nomic-embed-text`) or OpenAI | Local, deterministic, no cloud dependency — or OpenAI when you want it |
 | Vector Store | ChromaDB | Lightweight, local persistence, no infrastructure required |
 | Lexical Retrieval | rank-bm25 (Okapi BM25) | Fast in-memory BM25, no external service |
+| Reranking (optional) | `sentence-transformers` CrossEncoder (`BAAI/bge-reranker-base`) | Local, free; wraps any retriever via `RerankedRetriever` |
 | Text Splitting | LangChain `RecursiveCharacterTextSplitter` | Used only for text fragments within large sections |
 | Evaluation Framework | RAGAS | Standard RAG evaluation library |
 | CLI | Typer | `raglens` command: ingest/index/questions/benchmark/evaluate/report |
