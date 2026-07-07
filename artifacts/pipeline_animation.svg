@@ -226,7 +226,7 @@
       627 Q&amp;A pairs · JSONL<animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="3.0s" fill="freeze"/>
     </text>
     <text x="670" y="412" text-anchor="middle" fill="#d4aaff" font-size="11" opacity="0">
-      gpt-5-nano · Ground truth<animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="3.0s" fill="freeze"/>
+      Ollama/OpenAI/Groq · Ground truth<animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="3.0s" fill="freeze"/>
     </text>
   </g>
   <rect x="610" y="286" width="120" height="18" rx="9" fill="#8e44ad" opacity="0">
@@ -361,10 +361,10 @@
     </text>
 
     <text x="380" y="556" text-anchor="middle" fill="#a8ffcc" font-size="14" font-weight="700" opacity="0">
-      Answer Relevancy<animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="5.4s" fill="freeze"/>
+      Factual Correctness<animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="5.4s" fill="freeze"/>
     </text>
     <text x="380" y="574" text-anchor="middle" fill="#aaaaaa" font-size="12" opacity="0">
-      Answers the question?<animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="5.4s" fill="freeze"/>
+      Matches reference answer?<animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="5.4s" fill="freeze"/>
     </text>
 
     <text x="710" y="556" text-anchor="middle" fill="#ffd8a8" font-size="14" font-weight="700" opacity="0">
@@ -392,17 +392,17 @@
       <animate attributeName="opacity" from="0" to="1" dur="0.3s" begin="5.5s" fill="freeze"/>
     </line>
 
-    <rect x="465" y="591" width="170" height="20" rx="10" fill="#b8860b" opacity="0">
+    <rect x="400" y="591" width="300" height="20" rx="10" fill="#b8860b" opacity="0">
       <animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="6.0s" fill="freeze"/>
     </rect>
     <text x="550" y="606" text-anchor="middle" fill="white" font-size="12" font-weight="700" opacity="0">
-      🔄  NEXT STAGE — IN PROGRESS
+      🔄  IN PROGRESS — 2/5 RETRIEVERS SCORED
       <animate attributeName="opacity" from="0" to="1" dur="0.4s" begin="6.0s" fill="freeze"/>
     </text>
   </g>
 
   <!-- ─── Footer ─── -->
   <text x="550" y="740" text-anchor="middle" fill="#3d4451" font-size="11">
-    src_v2/ · experiments/pipeline_validation.ipynb · notebooks/ragas_eval.ipynb
+    pip install raglens-toolkit · raglens CLI + Streamlit Dashboard · live demo on Hugging Face Spaces
   </text>
 </svg>
